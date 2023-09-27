@@ -1,0 +1,95 @@
+---
+id: functional-spinner
+title: Spinner
+---
+
+import { Spinner, Flex, IconButton } from "@captalys-platform/core";
+import {
+  Interactive,
+  boolean,
+  select,
+  pill,
+} from "../src/components/Interactive";
+
+import { Icon, sizes, colors } from "../src/examples/Components/Elements/Icon";
+import { SpinnerExample } from "../src/examples/Components/Elements/Spinner";
+import { Notification } from "../src/examples/Components/Containers/Notification";
+
+import Link from "@docusaurus/Link";
+
+`Spinner` é um Indicador indeterminado, demonstra um tempo de espera não especificado, de um processo em progresso, como o envio de um formulário, ou atualizações.
+
+### Tamanho
+
+Para controlar o tamanho do `Spinner` basta usar a prop `size`
+
+<Flex mb="xl">
+  <Spinner size={50} />
+</Flex>
+
+```jsx
+<Spinner size={50} />
+```
+
+Para usar tamanhos definidos pelo tema basta coloca-lo dentro de um `Icon`, veja a pagina do icon para mais detalhes.
+
+<Interactive lineLength={30}>
+  <Icon size={pill("Size", sizes[3], sizes)} icon={<Spinner />} />
+</Interactive>
+
+### Cor
+
+`Spinner` suporta todas as cores do tema
+
+<Interactive lineLength={20}>
+  <Spinner size={30} color={select("Color", colors[0], colors)} />
+</Interactive>
+
+### Exemplo
+
+É possivel utilizar o `Spinner` em qualquer componente que aceite um `Icon` como prop.
+
+<Flex mb="xl" gap="small">
+  <IconButton icon={<Icon icon={<Spinner />} />}  size="small"/>
+  
+  <SpinnerExample />
+
+  <Notification
+    closable
+    type="block"
+    variant="primary"
+    title="aguarde..."
+    message="Estamos processando sua requisição"
+    icon={<Icon icon={<Spinner />} />}
+  />
+</Flex>
+
+```jsx {2,7,19}
+<IconButton
+  icon={<Icon icon={<Spinner />} />}
+  size="small"
+/>
+
+<Input
+  icon={<Icon icon={<Spinner />} />}
+  onChange={(e) => setValue(e.target.value)}
+  size="compact"
+  value={value}
+/>
+
+<Notification
+  closable
+  type="block"
+  variant="primary"
+  title="aguarde..."
+  message="Estamos processando sua requisição"
+  icon={<Icon icon={<Spinner />} />}
+/>
+```
+
+## Spinner API
+
+| Propriedade | Tipo                                         | Padrão | Descrição                                                   |
+| ----------- | -------------------------------------------- | ------ | ----------------------------------------------------------- |
+| color       | <Link to="/docs/themes-colors">Colors</Link> |        | A cor do spinner, suporta todas as cores disponivel no tema |
+| size        | number \| string                             |        | Tamanho do ícone em pixel                                   |

@@ -1,0 +1,17 @@
+.input {
+  -webkit-appearance:     none;
+  -moz-appearance:        none;
+  -ms-appearance:         none;
+  -o-appearance:          none;
+  appearance:             none;
+  background-color: var(--ifm-background-surface-color);
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--ifm-font-family-base);
+  color: var(--ifm-font-base-color);
+}
+
+.input:focus {
+  outline: none;
+}

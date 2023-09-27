@@ -1,0 +1,94 @@
+---
+id: containers-scroll
+title: Scroll
+---
+
+import { Flex, Text } from "@captalys-platform/core";
+import { ScrollExample } from "../src/examples/Components/Containers/Scroll";
+
+`CustomScroll` substitui a barra de rolagem padrão por uma mais simples e _clean_.
+
+**Obs**: `CustomScroll` não suporta barra de rolagem horizontal.
+
+<Flex flexDirection="row" gap="small" mb="xl">
+  <ScrollExample height={200}>
+    <Text align="justify" display="inline-block">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed cum quisquam
+      sapiente ab consequatur natus ducimus obcaecati minus rerum adipisci
+      laudantium debitis, perferendis pariatur iste provident dolorum ratione
+      voluptate, repudiandae placeat inventore amet quasi ea facere? Delectus
+      numquam vel inventore quasi excepturi. Minus nulla dolore ad animi
+      pariatur provident assumenda dolorum voluptatem porro harum quo aspernatur
+      error placeat sapiente, magnam, atque id molestiae dignissimos corrupti
+      nobis doloremque iure. Voluptate nulla itaque vitae provident, voluptatem
+      numquam sequi suscipit ducimus similique quidem, neque minima architecto
+      tempore asperiores, nihil quae ratione dicta quia unde consectetur
+      tenetur! Aspernatur eveniet dolorem nesciunt sint et eligendi enim quidem
+      blanditiis tenetur! Blanditiis non modi amet, quaerat, vitae consectetur
+      placeat porro dicta, ipsum natus ea possimus. Odio magni possimus modi
+      nemo doloribus corrupti tempora. Aliquid eos error modi non repudiandae
+      illum atque voluptatibus? Odio quod placeat facere sed eligendi, adipisci
+      commodi natus magni soluta dignissimos, aperiam fuga magnam saepe itaque
+      voluptas optio fugiat veritatis velit architecto dolore animi cum sequi
+      quas accusantium!
+    </Text>
+  </ScrollExample>
+  <ScrollExample height={200} />
+</Flex>
+
+```jsx
+import { CustomScroll } from "@captalys-platform/core";
+
+const Content = (
+  <CustomScroll height={200}>
+    {/* Seu conteúdo aqui */}
+  <CustomScroll/>
+);
+```
+
+### Exemplo
+
+<ScrollExample height={200} mb="xl">
+  <Flex gap="large">
+    <Text fontWeight="bold" fontSize="large" align="center" display="block">
+      Termos de Uso e Política de Privacidade
+    </Text>
+    <Text>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed cum quisquam
+      sapiente ab consequatur natus ducimus obcaecati minus rerum adipisci
+      laudantium debitis, perferendis pariatur iste provident dolorum ratione
+      voluptate, repudiandae placeat inventore amet quasi ea facere? Delectus
+      numquam vel inventore quasi excepturi. Minus nulla dolore ad animi
+      pariatur provident assumenda dolorum voluptatem porro harum quo aspernatur
+      error placeat sapiente, magnam, atque id molestiae dignissimos corrupti
+      nobis doloremque iure. Voluptate nulla itaque vitae provident, voluptatem
+      numquam sequi suscipit ducimus similique quidem, neque minima architecto
+      tempore asperiores, nihil quae ratione dicta quia unde consectetur
+      tenetur! Aspernatur eveniet dolorem nesciunt sint et eligendi enim quidem
+      blanditiis tenetur! Blanditiis non modi amet, quaerat, vitae consectetur
+      placeat porro dicta, ipsum natus ea possimus. Odio magni possimus modi
+      nemo doloribus corrupti tempora. Aliquid eos error modi non repudiandae
+      illum atque voluptatibus? Odio quod placeat facere sed eligendi, adipisci
+      commodi natus magni soluta dignissimos, aperiam fuga magnam saepe itaque
+      voluptas optio fugiat veritatis velit architecto dolore animi cum sequi
+      quas accusantium!
+    </Text>
+  </Flex>
+</ScrollExample>
+
+```jsx {1}
+<CustomScroll height={200}>
+  <Flex gap="large">
+    <Text fontWeight="bold" fontSize="large" align="center" display="block">
+      Termos de Uso e Política de Privacidade
+    </Text>
+    <Text>Lorem ipsum dolor ...</Text>
+  </Flex>
+</CustomScroll>
+```
+
+## CustomScroll API
+
+| Propriedade | Tipo             | Padrão | Descrição |
+| ----------- | ---------------- | ------ | --------- |
+| height      | string \| number |        |           |

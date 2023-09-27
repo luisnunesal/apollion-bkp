@@ -1,0 +1,221 @@
+---
+id: elements-icon
+title: Icon
+---
+
+import { Flex } from "@captalys-platform/core";
+import {
+  Icon,
+  IconSrcExample,
+  IconArrow,
+  IconEmoji,
+  IconAlert,
+  IconAlign,
+  IconFile,
+  IconInterface,
+  IconMedia,
+  IconSocial,
+  IconStatus,
+  IconUser,
+  colors,
+  sizes,
+} from "../src/examples/Components/Elements/Icon";
+
+import { Interactive, text, select } from "../src/components/Interactive";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+Há três formas de usar o componente `Icon`:
+
+- Usando ícones padrões do Apollion atraves da prop `name`.
+- Ícones de customizados de terceiros com a prop `icon`.
+- Ícones de customizados de terceiros com a prop `src`.
+
+### Usando ícones do Apollion
+
+basta passar o nome do icone `name`.
+
+<Flex ml="small" mb="small">
+  <Icon name="userConfig" size="xl" color="danger" />
+</Flex>
+
+```jsx
+<Icon name="userConfig" size="xl" color="danger" />
+```
+
+### Usando ícones customizados
+
+`Icon` também aceita icones externos através da prop `icon` ou passando como `children`.
+
+<Flex ml="small" mb="small">
+  <Icon size="xl" color="danger">
+    <svg viewBox="0 0 24 24">
+      <path d="M21.007 8.222A3.738 3.738 0 0 0 15.045 5.2a3.737 3.737 0 0 0 1.156 6.583 2.988 2.988 0 0 1-2.668 1.67h-2.99a4.456 4.456 0 0 0-2.989 1.165V7.4a3.737 3.737 0 1 0-1.494 0v9.117a3.776 3.776 0 1 0 1.816.099 2.99 2.99 0 0 1 2.668-1.667h2.99a4.484 4.484 0 0 0 4.223-3.039 3.736 3.736 0 0 0 3.25-3.687zM4.565 3.738a2.242 2.242 0 1 1 4.484 0 2.242 2.242 0 0 1-4.484 0zm4.484 16.441a2.242 2.242 0 1 1-4.484 0 2.242 2.242 0 0 1 4.484 0zm8.221-9.715a2.242 2.242 0 1 1 0-4.485 2.242 2.242 0 0 1 0 4.485z"></path>
+    </svg>
+  </Icon>
+</Flex>
+
+```jsx
+<Icon icon={<VscSourceControl />} size="xl" color="danger"/>
+
+//ou
+
+<Icon size="xl" color="danger">
+  {/* Ícone do VsCode */}
+  <svg viewBox="0 0 24 24">
+    <path d="M21.007 8.222A3.738 3.738 0 0 0 15.045 5.2a3.737 3.737 0 0 0 1.156 6.583 2.988 2.988 0 0 1-2.668 1.67h-2.99a4.456 4.456 0 0 0-2.989 1.165V7.4a3.737 3.737 0 1 0-1.494 0v9.117a3.776 3.776 0 1 0 1.816.099 2.99 2.99 0 0 1 2.668-1.667h2.99a4.484 4.484 0 0 0 4.223-3.039 3.736 3.736 0 0 0 3.25-3.687zM4.565 3.738a2.242 2.242 0 1 1 4.484 0 2.242 2.242 0 0 1-4.484 0zm4.484 16.441a2.242 2.242 0 1 1-4.484 0 2.242 2.242 0 0 1 4.484 0zm8.221-9.715a2.242 2.242 0 1 1 0-4.485 2.242 2.242 0 0 1 0 4.485z"></path>
+  </svg>
+</Icon>
+```
+
+### Usando ícones com `src`
+
+Também é possivel utilizar link/url como fonte para o ícone.
+
+**Obs**: É preferivel utilizar os metodos anteriores devido ao delay ao fazer o _fetch_.
+
+<Flex ml="small" mb="small">
+  <Icon
+    src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/regular/clipboard.svg"
+    size="xl"
+    color="danger"
+  />
+</Flex>
+
+```jsx
+<Icon
+  src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/svgs/regular/clipboard.svg"
+  size="xl"
+  color="danger"
+/>
+```
+
+### Alterando o Tamanho
+
+É possivel alterar o tamanho utilizando valores definidos, (`xs`, `small`, `xl`...) ou usando valores numericos.
+
+<Flex ml="small" mb="small">
+  <Icon name="userConfig" size={32} color="warning" />
+</Flex>
+
+```jsx
+<Icon size={32} name="userConfig" color="warning" />
+```
+
+## Demo Interativa
+
+<Interactive>
+  <Icon
+    name={select("Icone", "running", [
+      "arrowLeft",
+      "arrowRight",
+      "sort",
+      "sortUp",
+      "sortDown",
+      "chevronLeft",
+      "chevronRight",
+      "chevronDown",
+      "emojiAngry",
+      "emojiBeamSweat",
+      "emojiSadTear",
+      "emojiSquintTear",
+      "emojiTired",
+      "emojiTongue",
+      "emojiTongueSquint",
+      "emojiStar",
+      "alertInfo",
+      "attention",
+      "roundedInfo",
+      "roundedAttention",
+      "alignCenter",
+      "alignJustify",
+      "alignLeft",
+      "alignRight",
+      "picture",
+      "pictures",
+      "upload",
+      "pen",
+      "spinner",
+      "roundedCheck",
+      "ellipsisH",
+      "menuBars",
+      "trash",
+      "times",
+      "clock",
+      "minus",
+      "check",
+      "plus",
+      "playCircle",
+      "shareAlt",
+      "shareSquare",
+      "thumbsUp",
+      "thumbsDown",
+      "ban",
+      "unlink",
+      "phoneAlt",
+      "phoneSlash",
+      "running",
+      "user",
+      "userConfig",
+      "userAdd",
+      "userDelete",
+      "userLocked",
+      "userEdit",
+      "userCheck",
+      "userBlock",
+      "userInvalid",
+    ])}
+    size={select("Tamanho", "xl", sizes)}
+    color={select("Color", "primary", colors)}
+  />
+</Interactive>
+
+## Ícones
+
+### Arrow
+
+<IconArrow />
+
+### Emoji
+
+<IconEmoji />
+
+### Alert
+
+<IconAlert />
+
+### Align
+
+<IconAlign />
+
+### File
+
+<IconFile />
+
+### Interface
+
+<IconInterface />
+
+### Media
+
+<IconMedia />
+
+### Social
+
+<IconSocial />
+
+### Status
+
+<IconStatus />
+
+### User
+
+<IconUser />
+
+## Icon API
+
+| Propriedade | Tipo                        | Padrão         | Descrição |
+| ----------- | --------------------------- | -------------- | --------- |
+| color       | string                      | 'grayscale.70' |           |
+| size        | 'xs' \| 'small' \| 'medium' | 'small'        |           |
+| icon        |                             | undefined      |           |
+| iconProps   |                             | undefined      |           |

@@ -1,0 +1,99 @@
+---
+id: hook-usemediaquery
+title: useMediaQuery
+---
+
+import { Card, Flex, Text, Button, Image } from "@captalys-platform/core";
+
+import {
+  MediaQueryExample,
+  CardExample,
+} from "../src/examples/Hooks/useMediaQuery";
+
+Este é um hook de consulta de mídia CSS para `breakpoints` definidos no [theme](./themes-apollion-provider)
+
+```jsx
+const { isLaptop, isMobile, isTablet, isPortrait } = useMediaQuery();
+```
+
+| Propriedade | Breakpoint (px)  |
+| ----------- | ---------------- |
+| `isMobile`  | <= `md`          |
+| `isTablet`  | > `md` & <= `lg` |
+| `isLaptop`  | > `lg` & <= `xl` |
+
+### Alterando `Breakpoints`
+
+`useMediaQury` utiliza os **breakpoints** `md`, `lg` e `xl` para alteralos basta passar os novos valores no `theme` da seguinte forma:
+
+```jsx
+<ApollionProvider
+  theme={createTheme({
+    breakpoints: {
+      values: {
+        md: 767, // valor padrão
+        lg: 990, // valor padrão
+        xl: 1200, // valor padrão
+      },
+    },
+  })}
+>
+  <App />
+</ApollionProvider>
+```
+
+### Exemplos
+
+Neste exemplo utilizamos `useMediaQuery` para adaptar os Botões do [card](./containers-card) no **mobile**.
+
+<Flex mb="xl">
+  <CardExample />
+</Flex>
+
+```jsx
+const { isMobile } = useMediaQuery();
+
+return (
+  <Card
+    width={300}
+    media={
+      <Image cover height={200} src="http://picsum.photos/200?random=10" />
+    }
+    actionComponent={
+      <Flex
+        gap="medium"
+        alignItems="center"
+        justifyContent="between"
+        flexDirection={isMobile ? "column-reverse" : "row"}
+      >
+        <Button
+          size="small"
+          color="danger"
+          text="Deletar"
+          variant="outlined"
+          fullWidth={isMobile}
+        />
+        <Button size="small" text="Confirmar" fullWidth={isMobile} />
+      </Flex>
+    }
+  >
+    <Text variant="p">Uhuul Botões de ação</Text>
+  </Card>
+);
+```
+
+No exemplo a seguir redimensione a janela do navegador para ver o `hook` em ação!
+
+```jsx
+function Component() {
+  const query = useMediaQuery();
+
+  return (
+    <pre>
+      <code>{JSON.stringify(query, null, 2)}</code>
+    </pre>
+  );
+}
+```
+
+<MediaQueryExample />

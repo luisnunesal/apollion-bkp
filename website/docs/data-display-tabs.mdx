@@ -1,0 +1,149 @@
+---
+id: data-display-tabs
+title: Tabs
+---
+
+import {
+  TabsExample,
+  TabsExampleColor,
+  TabsExampleIndex,
+  TabsExampleActive,
+} from "../src/examples/DataDisplay/Tabs";
+
+Esse é o nosso incrível componente de Tabs (Abas/Guias). As guias organizam conteúdo em diferentes telas,
+conjuntos de dados e outras interações.
+
+## Demonstração Interativa
+
+Esta demonstração permite visualizar o componente de Tabs, suas variações e opções de configuração. Cada aba exibe um tipo diferente de guia.
+
+<TabsExample />
+
+## Uso
+
+O Tabs possui uma grande personalização através das `props` passadas, abaixo você pode conferir o código do nosso exemplo interativo e verificar como
+é simples montar as abas e como uma prop pode mudar o estilo e a maneira de como elas são apresentadas.
+
+```jsx
+const FirstPage = () => (
+  <Flex height="200px" justifyContent="center">
+    <Typography text="Essa é primeira aba com um título de texto simpels :)" />
+  </Flex>
+);
+
+const SecondPage = () => (
+  <Flex height="200px" justifyContent="center">
+    <Typography text="Oba você chegou na segunda aba! O titulo pode usar cores do tema como `danger`" />
+  </Flex>
+);
+
+const ThirdPage = () => (
+  <Flex height="200px" justifyContent="center">
+    <Typography text="E esta é aba mais legal, O titulo pode ser qualquer componente (ReactNode) :)" />
+  </Flex>
+);
+
+const TabNotify = () => (
+  <Content
+    opener={<Icon name="emojiStar" size="small" color="warning" />}
+    closer={<Icon name="emojiStar" size="small" color="warning" />}
+  >
+    Terceira Aba
+  </Content>
+);
+
+export const TabsExample = () => {
+  const [index, changeIndex] = React.useState(0);
+
+  return (
+    <BrowserOnly>
+      {() => (
+        <ApollionProvider>
+          <Tabs
+            onChange={changeIndex}
+            selectedIndex={index}
+            tabs={[
+              {
+                tabTitle: "Primeira Aba",
+                content: <FirstPage />,
+              },
+              {
+                tabTitle: "Segunda Aba",
+                content: <SecondPage />,
+              },
+              {
+                tabTitle: <TabNotify />,
+                content: <ThirdPage />,
+              },
+            ]}
+          />
+        </ApollionProvider>
+      )}
+    </BrowserOnly>
+  );
+};
+```
+
+## Trocando a cor
+
+Para trocar a cor da borda inferior, basta passar a prop `color` dentro do array de tabs.
+
+<TabsExampleColor />
+
+```jsx {6,11}
+<Tabs
+  tabs={[
+    {
+      tabTitle: "Primeira Aba",
+      content: <FirstPage />,
+      color: "warning",
+    },
+    {
+      tabTitle: "Segunda Aba",
+      content: <ThirdPage />,
+      color: "danger",
+    },
+  ]}
+/>
+```
+
+## Sempre Ativa
+
+Se uma aba é muito especial para você e queira sempre deixar ela com borda inferior indicando que está ativa utiliza a
+prop `isActive`.
+
+<TabsExampleActive />
+
+```jsx {8}
+<Tabs
+  tabs={[
+    {
+      tabTitle: "Primeira Aba",
+      content: <FirstPage />,
+    },
+    {
+      isActive: true,
+      color: "warning",
+      tabTitle: <TabNotify />,
+      content: <ThirdPage />,
+    },
+  ]}
+/>
+```
+
+## Tabs API
+
+Essas são todas as póssíveis props detalhadas que podem ser aplicadas no tabs. Use com sabedoria jovem padawan. :)
+
+| Propriedade     | Tipo                                                                  | Padrão    | Descrição                                                                                                   |
+| --------------- | --------------------------------------------------------------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
+| selectedIndex   | `number`                                                              | 0         | Passe o index da aba que você quer iniciar primeiro                                                         |
+| tabs            | `array`                                                               | []        | Array com as props obrigátórias `tableTitle` e `Content` para formar as abas, pode passar quantas quiser :) |
+| tabTitle        | `React.ReactNode`                                                     | null      | Aqui no `TableTitle` você passa o título da aba                                                             |
+| content         | `React.ReactNode`                                                     | null      | No `Content` você passa o conteúdo da aba                                                                   |
+| isActive        | `string`                                                              | boolean   | Torna a aba sempre ativa (com a borda embaixo).                                                             |
+| color           | [`ColorsType`](/docs/themes-colors)                                   | 'primary' | Permite trocar a cor da linha abaixo dos títulos das abas                                                   |
+| tabHeaderProps  | [`DefaultFlexInterface`](/docs/containers-flex)                       | null      | Propriedades do Flex que voce pode passar para o Header                                                     |
+| tabContentProps | [`DefaultFlexInterface`](/docs/containers-flex)                       | null      | Propriedades que Flex voce poder passar para o Content                                                      |
+| buttonProps     | [`ButtonInterface`](/docs/elements-button#button-api)                 | null      | Propriedades de botão que você pode passar ao botão do Header                                               |
+| handleClick     | `(index?: number, e?: React.MouseEvent<Element, MouseEvent>) => void` | undefined | Propriedades de clique do botão que você pode passar para os botões do tabs                                 |

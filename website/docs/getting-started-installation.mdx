@@ -1,0 +1,34 @@
+---
+id: getting-started-installation
+title: Instalação
+---
+
+Execute o comando a seguir:
+
+```bash
+npm install --save @captalys-platform/core
+
+# Ou
+
+yarn add @captalys-platform/core
+```
+
+## Setup do projeto
+
+Para que os componentes funcionem corretamente é necessario fazer uso do `ApollionProvider` na raiz do projeto:
+
+```jsx
+import React from "react";
+import { render } from "react-dom";
+import { ApollionProvider } from "@captalys-platform/core";
+import { App } from "./app";
+
+render(
+  <React.StrictMode>
+    <ApollionProvider>
+      <App />
+    </ApollionProvider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```

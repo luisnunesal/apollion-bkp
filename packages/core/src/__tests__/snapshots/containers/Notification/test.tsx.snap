@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Input for bases of other "input types" Snapshot should match variant="error" 1`] = `
+<div
+  class="sc-eCApnc iosejU sc-hBMUJo bQnoOk"
+  data-testid="notification-block"
+  title="Esse é um título"
+>
+  <div
+    class="sc-eCApnc sc-gKAaRy jdzLuu eHgCmr"
+  >
+    <div
+      class="sc-eCApnc sc-gKAaRy jdzLuu kCiKtv"
+    >
+      <div
+        class="sc-eCApnc sc-gKAaRy jdzLuu hsTmZw"
+      >
+        <h3
+          class="sc-crzoAE sc-dIsUp izrEtt kaAoYQ"
+        >
+          Esse é um título
+        </h3>
+        <p
+          class="sc-crzoAE sc-dIsUp XmEEv dPHTpT"
+        >
+          Essa é uma mensagem de erro
+        </p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="sc-eCApnc sc-gKAaRy sc-kEqXSa sc-iqAclL izURfJ dggSFQ evmcch jSPqyO"
+  >
+    <div
+      class="sc-eCApnc sc-jSFjdj BFsXK gNRWka"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 352 512"
+        width="1em"
+      >
+        <path
+          d="M242.7 256l100-100a31.5 31.5 0 000-44.5l-22.2-22.3a31.5 31.5 0 00-44.4 0L176 189.2 76 89.3a31.5 31.5 0 00-44.5 0L9.2 111.5a31.5 31.5 0 000 44.4l100 100.1-100 100a31.5 31.5 0 000 44.5l22.3 22.3a31.5 31.5 0 0044.4 0l100.1-100 100 100a31.5 31.5 0 0044.5 0l22.3-22.2a31.5 31.5 0 000-44.5L242.8 256z"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Default Input for bases of other "input types" Snapshot should match variant="primary" 1`] = `
+<div
+  class="sc-eCApnc iosejU sc-hBMUJo jtDUSY"
+  data-testid="notification-block"
+  title="Esse é um título"
+>
+  <div
+    class="sc-eCApnc sc-gKAaRy jdzLuu eHgCmr"
+  >
+    <div
+      class="sc-eCApnc sc-gKAaRy jdzLuu kCiKtv"
+    >
+      <div
+        class="sc-eCApnc sc-gKAaRy jdzLuu hsTmZw"
+      >
+        <h3
+          class="sc-crzoAE sc-dIsUp izrEtt kaAoYQ"
+        >
+          Esse é um título
+        </h3>
+        <p
+          class="sc-crzoAE sc-dIsUp XmEEv dPHTpT"
+        >
+          Essa é uma mensagem padrão
+        </p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="sc-eCApnc sc-gKAaRy sc-kEqXSa sc-iqAclL izURfJ dggSFQ evmcch jSPqyO"
+  >
+    <div
+      class="sc-eCApnc sc-jSFjdj BFsXK gNRWka"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 352 512"
+        width="1em"
+      >
+        <path
+          d="M242.7 256l100-100a31.5 31.5 0 000-44.5l-22.2-22.3a31.5 31.5 0 00-44.4 0L176 189.2 76 89.3a31.5 31.5 0 00-44.5 0L9.2 111.5a31.5 31.5 0 000 44.4l100 100.1-100 100a31.5 31.5 0 000 44.5l22.3 22.3a31.5 31.5 0 0044.4 0l100.1-100 100 100a31.5 31.5 0 0044.5 0l22.3-22.2a31.5 31.5 0 000-44.5L242.8 256z"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Default Input for bases of other "input types" Snapshot should match variant="success" 1`] = `
+<div
+  class="sc-eCApnc iosejU sc-hBMUJo iVVxwg"
+  data-testid="notification-block"
+  title="Esse é um título"
+>
+  <div
+    class="sc-eCApnc sc-gKAaRy jdzLuu eHgCmr"
+  >
+    <div
+      class="sc-eCApnc sc-gKAaRy jdzLuu kCiKtv"
+    >
+      <div
+        class="sc-eCApnc sc-gKAaRy jdzLuu hsTmZw"
+      >
+        <h3
+          class="sc-crzoAE sc-dIsUp izrEtt kaAoYQ"
+        >
+          Esse é um título
+        </h3>
+        <p
+          class="sc-crzoAE sc-dIsUp XmEEv dPHTpT"
+        >
+          Essa é uma mensagem de successo
+        </p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="sc-eCApnc sc-gKAaRy sc-kEqXSa sc-iqAclL izURfJ dggSFQ evmcch jSPqyO"
+  >
+    <div
+      class="sc-eCApnc sc-jSFjdj BFsXK gNRWka"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 352 512"
+        width="1em"
+      >
+        <path
+          d="M242.7 256l100-100a31.5 31.5 0 000-44.5l-22.2-22.3a31.5 31.5 0 00-44.4 0L176 189.2 76 89.3a31.5 31.5 0 00-44.5 0L9.2 111.5a31.5 31.5 0 000 44.4l100 100.1-100 100a31.5 31.5 0 000 44.5l22.3 22.3a31.5 31.5 0 0044.4 0l100.1-100 100 100a31.5 31.5 0 0044.5 0l22.3-22.2a31.5 31.5 0 000-44.5L242.8 256z"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Default Input for bases of other "input types" Snapshot should match variant="warning" 1`] = `
+<div
+  class="sc-eCApnc iosejU sc-hBMUJo jBuUZq"
+  data-testid="notification-block"
+  title="Esse é um título"
+>
+  <div
+    class="sc-eCApnc sc-gKAaRy jdzLuu eHgCmr"
+  >
+    <div
+      class="sc-eCApnc sc-gKAaRy jdzLuu kCiKtv"
+    >
+      <div
+        class="sc-eCApnc sc-gKAaRy jdzLuu hsTmZw"
+      >
+        <h3
+          class="sc-crzoAE sc-dIsUp izrEtt kaAoYQ"
+        >
+          Esse é um título
+        </h3>
+        <p
+          class="sc-crzoAE sc-dIsUp XmEEv dPHTpT"
+        >
+          Essa é uma mensagem de aviso
+        </p>
+      </div>
+    </div>
+  </div>
+  <button
+    class="sc-eCApnc sc-gKAaRy sc-kEqXSa sc-iqAclL izURfJ dggSFQ evmcch jSPqyO"
+  >
+    <div
+      class="sc-eCApnc sc-jSFjdj BFsXK gNRWka"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 352 512"
+        width="1em"
+      >
+        <path
+          d="M242.7 256l100-100a31.5 31.5 0 000-44.5l-22.2-22.3a31.5 31.5 0 00-44.4 0L176 189.2 76 89.3a31.5 31.5 0 00-44.5 0L9.2 111.5a31.5 31.5 0 000 44.4l100 100.1-100 100a31.5 31.5 0 000 44.5l22.3 22.3a31.5 31.5 0 0044.4 0l100.1-100 100 100a31.5 31.5 0 0044.5 0l22.3-22.2a31.5 31.5 0 000-44.5L242.8 256z"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;

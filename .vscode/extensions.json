@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "silvenon.mdx",
+    "EditorConfig.editorconfig",
+    "jpoissonnier.vscode-styled-components",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
+  ]
+}

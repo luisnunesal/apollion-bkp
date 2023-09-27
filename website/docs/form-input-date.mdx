@@ -1,0 +1,100 @@
+---
+id: form-input-date
+title: InputDate
+---
+
+import {
+  Flex,
+  Field,
+  Icon,
+  InputDate,
+  Input,
+  ApollionProvider,
+} from "@captalys-platform/core";
+
+import {
+  InputDateExample,
+  InputDateFormExample,
+} from "../src/examples/Components/Form/Inputs/InputDate";
+
+Campos de texto permitem que os usuários digitem e editem texto.
+
+:::note
+A data exibida é diferente do **value** atual. O formato da data mostrada será escolhido baseado na localização definida no navegador do usuário, enquanto que a data em value sempre será formatado como **yyyy-mm-dd**.
+:::
+
+:::caution
+**Safari** para Desktop não suporta `<input type="date" />`
+:::
+
+### Exemplo
+
+```jsx
+export function InputDateExample() {
+  const [value, setDate] = useState("2012-12-12");
+
+  return (
+    <Flex gap="small">
+      <InputDate value={value} onChange={(e) => setDate(e.target.value)} />
+      <pre>
+        <code>{JSON.stringify({ value }, null, 2)}</code>
+      </pre>
+    </Flex>
+  );
+}
+```
+
+<Flex mb="small">
+  <InputDateExample />
+</Flex>
+
+### Usando com `Form`
+
+No exemplo abaixo é utilizado `date-fns` para validar e formatar o valor inicial do `InputDate`.
+
+```jsx
+import { isValid, parse, format } from "date-fns";
+import * as Yup from "yup";
+
+export function InputDateFormExample() {
+  const initialValues = {
+    birthDay: format(new Date(), "yyyy-MM-dd");
+  }
+
+  return (
+    <Form
+      handleSubmit={(v) => alert(JSON.stringify(v, null, 2))}
+      initialValues={initialValues}
+      fields={{
+        birthDay: newField({
+          label: "Data de Nascimento",
+          component: InputDate,
+          validation: Yup.mixed()
+            .test({
+              name: "date",
+              test: (d) => isValid(parse(d, "yyyy-MM-dd", new Date())),
+              message: "Insira uma data válida",
+            })
+            .required("Required"),
+        }),
+      }}
+    />
+  );
+}
+```
+
+<InputDateFormExample />
+
+## Input API
+
+| Propriedade  | Tipo                                                  | Padrão    | Descrição                                                                                                |
+| ------------ | ----------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------- |
+| placeholder  | string                                                |           | O atributo placeholder especifica uma pequena dica que descreve o valor esperado de um campo de entrada. |
+| type         | `text` \| `password` \| `number` \| `email` \| `text` | `text`    | O tipo de Input                                                                                          |
+| icon         | React.ReactNode                                       |           | Deve ser um componente `Icon` do Apollion                                                                |
+| variant      | `default` \| `success` \| `error`                     | `default` | Variante indica o estado do componente.                                                                  |
+| iconPosition | `left` \| `right`                                     | `right`   | A posição do ícone                                                                                       |
+| size         | `micro` \| `compact` \| `medium` \| `expansive`       | false     | Tamanho da altura do `Input`                                                                             |
+| disabled     | boolean                                               | false     | Desabilitar a entrada de valor e torna o `Input` não clicável.                                           |
+| cleareable   | boolean                                               | false     | A propriedade mostra um botão para limpar o conteudo do `Input`.                                         |
+| reset        | () => void                                            | false     | Função que deve retornar o valor **default** para o input .                                              |

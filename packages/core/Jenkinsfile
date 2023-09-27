@@ -1,0 +1,116 @@
+//Criado dia 2019-09-13 - Michael Marques
+
+env.PROJECT = "apollion"
+env.PROJECT_SECONDARY = "apollion-staging"
+env.CLOUDFRONT_MAIN = 'E3RQTS7ERTU5T9'
+env.CLOUDFRONT_SECONDARY = 'E19BH3NWZ6VYHI'
+env.TESTS = 1
+
+def getBuildStages(){
+  def stages = []
+  if (env.ENABLED == 0) {
+    return stages
+  }
+  if (env.BRANCH_NAME == 'master') {
+    env.FULL = '0'
+    env.BUILD = '1'
+    env.RUN_ENVIRONMENT = 'production'
+    env.PROJECT_ENV = env.PROJECT
+    env.CLOUDFRONT_ID = env.CLOUDFRONT_MAIN
+    stages = ["deps", "tests", "build", "deploy"]
+  } else if ( env.BRANCH_NAME == 'staging') {
+    env.FULL = '1'
+    env.BUILD = '1'
+    env.RUN_ENVIRONMENT = 'staging'
+    env.PROJECT_ENV = env.PROJECT_SECONDARY
+    env.CLOUDFRONT_ID = env.CLOUDFRONT_SECONDARY
+    stages = ["deps", "tests", "code analysis", "build", "deploy"]
+  } else if ( env.BRANCH_NAME == 'hotfix') {
+    env.FULL = '1'
+    env.BUILD = '1'
+    env.RUN_ENVIRONMENT = 'staging'
+    env.PROJECT_ENV = env.PROJECT_SECONDARY
+    env.CLOUDFRONT_ID = env.CLOUDFRONT_SECONDARY
+    stages = ["deps", "tests", "code analysis"]
+  } else if ((env.BRANCH_NAME =~ '.*feature.*').matches()) {
+    env.FULL = '0'
+    env.BUILD = '0'
+    stages = ["deps", "tests"]
+  } else {
+    env.FULL = '0'
+    env.BUILD = '0'
+    stages = ["deps", "tests"]
+  }
+  return stages
+}
+
+properties([[$class: 'GitLabConnectionProperty', gitLabConnection: 'GitLabCaptalys']])
+node('master') {
+  stage("Checkout") {
+  checkout([
+      $class: 'GitSCM',
+      branches: scm.branches,
+      doGenerateSubmoduleConfigurations: scm.doGenerateSubmoduleConfigurations,
+      extensions: scm.extensions + [[$class: 'CloneOption', noTags: false, reference: '', shallow: false]],
+      submoduleCfg: [],
+      userRemoteConfigs: scm.userRemoteConfigs
+  ])}
+
+  gitlabBuilds(builds: getBuildStages()) {
+
+  docker.image('harbor.captalysplatform.io/platform-v2/reactest:latest').inside("-u 109:113") {
+    stage("Dependencies"){ gitlabCommitStatus(name: 'deps') {
+      updateGitlabCommitStatus name: 'deps', state: 'running'
+      try {
+        sh "yarn"
+        updateGitlabCommitStatus name: 'deps', state: 'success'
+      } catch (exc) {
+          updateGitlabCommitStatus name: 'deps', state: 'failed'
+    }}}
+    if (env.TESTS == "1"){
+      stage("Tests") { gitlabCommitStatus(name: 'tests') {
+        updateGitlabCommitStatus name: 'tests', state: 'running'
+        try {
+          sh "yarn lint"
+          sh "yarn test"
+          updateGitlabCommitStatus name: 'tests', state: 'success'
+        } catch (exc) {
+            updateGitlabCommitStatus name: 'tests', state: 'failed'
+            sh "exit 1"
+      }}}}
+      else {
+        updateGitlabCommitStatus name: 'tests', state: 'success'
+    }
+    if (env.FULL == "1"){
+      stage("Code Analysis") {gitlabCommitStatus(name: 'code analysis') {
+        updateGitlabCommitStatus name: 'code analysis', state: 'running'
+        try {
+          sh "sonar-scanner"
+          updateGitlabCommitStatus name: 'code analysis', state: 'success'
+        } catch (exc) {
+            updateGitlabCommitStatus name: 'code analysis', state: 'failed'
+            sh "exit 1"
+    }}}}
+    if (env.BUILD == "1"){
+      stage("Build Artifact") { gitlabCommitStatus(name: 'build') {
+        updateGitlabCommitStatus name: 'build', state: 'running'
+          try {
+            sh "yarn build"
+            updateGitlabCommitStatus name: 'build', state: 'success'
+          } catch (exc) {
+              updateGitlabCommitStatus name: 'build', state: 'failed'
+              sh "exit 1"
+    }}}}}
+  if (env.BUILD == "1"){
+  stage("Deploy") { gitlabCommitStatus(name: 'deploy') {
+    updateGitlabCommitStatus name: 'deploy', state: 'running'
+    try {
+      sh "aws s3 rm s3://front-${env.PROJECT_ENV} --recursive"
+      s3Upload consoleLogLevel: 'INFO', entries: [[bucket: "front-${env.PROJECT_ENV}", selectedRegion: 'sa-east-1', sourceFile: 'dist/**', storageClass: 'STANDARD']], profileName: 'jenkins'
+      sh "aws cloudfront create-invalidation --distribution-id ${env.CLOUDFRONT_ID} --paths /\\*"
+      sh "rm -fr dist/"
+      updateGitlabCommitStatus name: 'deploy', state: 'success'
+    } catch (exc) {
+        updateGitlabCommitStatus name: 'deploy', state: 'failed'
+        sh "exit 1"
+}}}}}}

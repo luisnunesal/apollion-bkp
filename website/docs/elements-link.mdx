@@ -1,0 +1,72 @@
+---
+id: elements-link
+title: Link
+---
+
+import { Link, Flex } from "@captalys-platform/core";
+import { Interactive, text } from "../src/components/Interactive";
+import DocsLink from "@docusaurus/Link";
+
+O componente Link é construído sobre o componente <DocsLink to="/docs/elements-typography">Typography</DocsLink>. Você pode aproveitar suas propriedades.
+
+### Link Comum
+
+Para utilizar o link basta passar as props `text` e `href` este processo criará um link básico.
+
+<Interactive>
+  <Link
+    href={text("Href", "https://pt-br.reactjs.org/")}
+    text={text("Text", "Link React")}
+    target="_blank"
+    rel="noopener"
+  />
+</Interactive>
+
+Quando você usar `target="_blank"` com Links, é recomendado sempre definir `rel="noopener"` ou `rel="noreferrer"` quando conectando a conteúdo de terceiros.
+
+### Usando com `react-router`
+
+Para usar como o `react-router` basta substituir a prop `href` por `to`
+
+<Flex mb="xl">
+  <Link to="/docs/elements-typography" text="Veja Aqui docs Typography" />
+</Flex>
+
+```jsx
+<Link to="/docs/elements-typography" text="Veja Aqui docs Typography" />
+```
+
+### Link como um Botão
+
+Para o link assumir aparencia de `Button` basta usar `Link.Button`.
+
+<Flex mb="xl">
+  <Link.Button
+    href="https://pt-br.reactjs.org/"
+    text={"Link React como um Botão"}
+    target="_blank"
+    variant="contained"
+    color="warning"
+  />
+</Flex>
+
+```jsx
+<Link.Button
+  href="https://pt-br.reactjs.org/"
+  text={"Link React como um Botão"}
+  target="_blank"
+  variant="contained"
+  color="warning"
+/>
+```
+
+## Link API
+
+| Propriedade | Tipo   | Padrão    | Descrição |
+| ----------- | ------ | --------- | --------- |
+| to          | string | undefined |           |
+| href        | string | undefined |           |
+| text        | string | undefined |           |
+| target      | string | undefined |           |
+| variant     | string | undefined |           |
+| color       | string | undefined |           |

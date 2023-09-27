@@ -1,0 +1,28 @@
+.playground-options {
+	display: grid;
+	grid-template-columns: 1fr;
+	background-color: var(--ifm-pre-background);
+	padding: 24px;
+	border-radius: 8px;
+	margin: 24px 0;
+}
+
+@media all and (min-width: 450px) {
+	.playground-options {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media all and (min-width: 600px) {
+	.playground-options {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+}
+
+.playground-options .item {
+	margin-bottom: 16px;
+}
+
+.playground-options .item:only-child {
+	grid-column: 1 / -1;
+}

@@ -1,0 +1,70 @@
+---
+id: skeleton-presets
+title: Preset Skeletons
+---
+
+import {
+  ListPresetSkeleton,
+  CodePresetSkeleton,
+  ItemPresetSkeleton,
+  BulletListPresetSkeleton,
+  TextPreset,
+} from "@captalys-platform/core";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+Assim que se detecta um padrão de Skeleton, nós criamos um componente preset para economizar tempo.
+
+```jsx
+import React from "react";
+import { ListPresetSkeleton, Flex } from "@captalys-platform/core";
+
+export function PresetSkeletonExample(props) {
+  if (props.isLoading) {
+    return <ListPresetSkeleton width={300} height={100} />;
+  }
+
+  return <Flex />;
+}
+```
+
+### TextPreset
+
+<BrowserOnly>{() => <TextPreset width="80%" />}</BrowserOnly>
+
+Se torna mais simple implementar um loader de texto. Excelente para células de uma tabela
+
+```jsx
+import React from "react";
+import { TextPreset, Text } from "@captalys-platform/core";
+
+export function TextPresetExample(props) {
+  if (props.isLoading) {
+    return <TextPreset width="80%" />;
+  }
+
+  return <Typography as="h1" text="Some Text" />;
+}
+```
+
+### ListPresetSkeleton
+
+<BrowserOnly>{() => <ListPresetSkeleton />}</BrowserOnly>
+
+### BulletListPresetSkeleton
+
+<BrowserOnly>{() => <BulletListPresetSkeleton />}</BrowserOnly>
+
+### ItemPresetSkeleton
+
+<BrowserOnly>{() => <ItemPresetSkeleton />}</BrowserOnly>
+
+### CodePresetSkeleton
+
+<BrowserOnly>{() => <CodePresetSkeleton />}</BrowserOnly>
+
+## Preset Skeleton API
+
+| Propriedade | Tipo                 | Padrão | Descrição |
+| ----------- | -------------------- | ------ | --------- |
+| width       | 'number' \| 'string' |        |           |
+| height      | 'number' \| 'string' |        |           |

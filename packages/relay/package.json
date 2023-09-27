@@ -1,0 +1,71 @@
+{
+  "name": "@captalys-platform/relay",
+  "version": "0.22.1",
+  "description": "Frontend services regarding Relay Environment",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "prepare": "yarn build",
+    "pretest": "relay-compiler --src ./src/__tests__ --schema ./jestSetup/schema.graphql --extensions tsx",
+    "audit-dependencies": "audit-ci --config audit-ci.js",
+    "coverage": "jest --coverage",
+    "lint": "eslint src --quiet --ext ts,tsx --fix --ignore-path .gitignore",
+    "check-types": "tsc --noEmit",
+    "prettier": "prettier --check **/*.{ts,tsx} --ignore-path .gitignore --no-error-on-unmatched-pattern",
+    "format": "yarn prettier --write",
+    "validate": "./scripts/validate.sh",
+    "validate:tests": "jest --coverage",
+    "build": "node ./esbuild",
+    "test": "yarn validate",
+    "code:check": "yarn lint && yarn coverage"
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "dependencies": {
+    "fetch-multipart-graphql": "2.0.1",
+    "graphql": "15.4.0",
+    "js-cookie": "2.2.1",
+    "nanoid": "3.1.10",
+    "react-relay": "9.0.0",
+    "relay-devtools": "1.4.0",
+    "relay-runtime": "9.0.0",
+    "relay-test-utils": "9.1.0",
+    "@testing-library/jest-dom": "4.2.0",
+    "subscriptions-transport-ws": "0.9.16"
+  },
+  "devDependencies": {
+    "@babel/core": "7.12.3",
+    "@babel/plugin-proposal-class-properties": "7.12.1",
+    "@babel/plugin-transform-runtime": "7.12.1",
+    "@babel/preset-env": "7.12.1",
+    "@babel/preset-react": "7.12.5",
+    "@babel/preset-typescript": "7.12.1",
+    "@captalys-platform/eslint-config-captalys-platform": "0.4.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/cookie": "0.4.0",
+    "@types/graphql": "14.5.0",
+    "@types/jest": "24.0.21",
+    "@types/lodash": "4.14.152",
+    "@types/nanoid": "2.1.0",
+    "@types/react": "16.9.41",
+    "@types/react-relay": "7.0.8",
+    "@types/relay-runtime": "9.1.0",
+    "@types/relay-test-utils": "6.0.4",
+    "babel-plugin-relay": "10.1.0",
+    "express": "4.17.1",
+    "express-graphql": "0.11.0",
+    "graphql-relay": "0.6.0",
+    "isomorphic-fetch": "3.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.1",
+    "relay-compiler": "10.1.0",
+    "typescript": "4.2.4"
+  }
+}

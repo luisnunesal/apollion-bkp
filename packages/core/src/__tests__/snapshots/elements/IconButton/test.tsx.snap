@@ -1,0 +1,602 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButton Snapshot should match color="danger" 1`] = `
+<button
+  class="sc-eCApnc sc-jSFjdj sc-jrsJWt sc-kEqXSa ejifez gNlPzj hpiJKe gZaeBO"
+>
+  <div
+    class="sc-eCApnc sc-iqAclL BFsXK eUTSYc"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 512 512"
+      width="1em"
+    >
+      <path
+        d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6a12 12 0 005.5-14 249 249 0 00-54.7-94.6 12 12 0 00-14.8-2.3L380.8 110A188.7 188.7 0 00320 74.9V25.8a12 12 0 00-9.4-11.7 251.4 251.4 0 00-109.2 0 12 12 0 00-9.4 11.7V75a194.7 194.7 0 00-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3a247.6 247.6 0 00-54.7 94.6 12 12 0 005.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6a12 12 0 00-5.5 14 249 249 0 0054.7 94.6 12 12 0 0014.8 2.3l42.6-24.6a188.7 188.7 0 0060.8 35.1v49.2a12 12 0 009.4 11.7c36.7 8.2 74.3 7.8 109.2 0a12 12 0 009.4-11.7v-49.2a194.7 194.7 0 0060.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3a247.6 247.6 0 0054.7-94.6c1.5-5.5-.7-11.3-5.6-14.1zM256 336a80.1 80.1 0 010-160 80.1 80.1 0 010 160z"
+      />
+    </svg>
+  </div>
+</button>
+`;
+
+exports[`IconButton Snapshot should match color="primary" 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;
+
+exports[`IconButton Snapshot should match color="secondary" 1`] = `
+<button
+  class="sc-eCApnc sc-jSFjdj sc-jrsJWt sc-kEqXSa ferFjW gNlPzj idaBEm gZaeBO"
+>
+  <div
+    class="sc-eCApnc sc-iqAclL BFsXK eUTSYc"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 512 512"
+      width="1em"
+    >
+      <path
+        d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6a12 12 0 005.5-14 249 249 0 00-54.7-94.6 12 12 0 00-14.8-2.3L380.8 110A188.7 188.7 0 00320 74.9V25.8a12 12 0 00-9.4-11.7 251.4 251.4 0 00-109.2 0 12 12 0 00-9.4 11.7V75a194.7 194.7 0 00-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3a247.6 247.6 0 00-54.7 94.6 12 12 0 005.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6a12 12 0 00-5.5 14 249 249 0 0054.7 94.6 12 12 0 0014.8 2.3l42.6-24.6a188.7 188.7 0 0060.8 35.1v49.2a12 12 0 009.4 11.7c36.7 8.2 74.3 7.8 109.2 0a12 12 0 009.4-11.7v-49.2a194.7 194.7 0 0060.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3a247.6 247.6 0 0054.7-94.6c1.5-5.5-.7-11.3-5.6-14.1zM256 336a80.1 80.1 0 010-160 80.1 80.1 0 010 160z"
+      />
+    </svg>
+  </div>
+</button>
+`;
+
+exports[`IconButton Snapshot should match color="success" 1`] = `
+<button
+  class="sc-eCApnc sc-jSFjdj sc-jrsJWt sc-kEqXSa dpxeBW gNlPzj bCrvPu gZaeBO"
+>
+  <div
+    class="sc-eCApnc sc-iqAclL BFsXK eUTSYc"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 512 512"
+      width="1em"
+    >
+      <path
+        d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6a12 12 0 005.5-14 249 249 0 00-54.7-94.6 12 12 0 00-14.8-2.3L380.8 110A188.7 188.7 0 00320 74.9V25.8a12 12 0 00-9.4-11.7 251.4 251.4 0 00-109.2 0 12 12 0 00-9.4 11.7V75a194.7 194.7 0 00-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3a247.6 247.6 0 00-54.7 94.6 12 12 0 005.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6a12 12 0 00-5.5 14 249 249 0 0054.7 94.6 12 12 0 0014.8 2.3l42.6-24.6a188.7 188.7 0 0060.8 35.1v49.2a12 12 0 009.4 11.7c36.7 8.2 74.3 7.8 109.2 0a12 12 0 009.4-11.7v-49.2a194.7 194.7 0 0060.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3a247.6 247.6 0 0054.7-94.6c1.5-5.5-.7-11.3-5.6-14.1zM256 336a80.1 80.1 0 010-160 80.1 80.1 0 010 160z"
+      />
+    </svg>
+  </div>
+</button>
+`;
+
+exports[`IconButton Snapshot should match color="tertiary" 1`] = `
+<button
+  class="sc-eCApnc sc-jSFjdj sc-jrsJWt sc-kEqXSa fyccwu gNlPzj ctzaEr gZaeBO"
+>
+  <div
+    class="sc-eCApnc sc-iqAclL BFsXK eUTSYc"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 512 512"
+      width="1em"
+    >
+      <path
+        d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6a12 12 0 005.5-14 249 249 0 00-54.7-94.6 12 12 0 00-14.8-2.3L380.8 110A188.7 188.7 0 00320 74.9V25.8a12 12 0 00-9.4-11.7 251.4 251.4 0 00-109.2 0 12 12 0 00-9.4 11.7V75a194.7 194.7 0 00-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3a247.6 247.6 0 00-54.7 94.6 12 12 0 005.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6a12 12 0 00-5.5 14 249 249 0 0054.7 94.6 12 12 0 0014.8 2.3l42.6-24.6a188.7 188.7 0 0060.8 35.1v49.2a12 12 0 009.4 11.7c36.7 8.2 74.3 7.8 109.2 0a12 12 0 009.4-11.7v-49.2a194.7 194.7 0 0060.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3a247.6 247.6 0 0054.7-94.6c1.5-5.5-.7-11.3-5.6-14.1zM256 336a80.1 80.1 0 010-160 80.1 80.1 0 010 160z"
+      />
+    </svg>
+  </div>
+</button>
+`;
+
+exports[`IconButton Snapshot should match color="warning" 1`] = `
+<button
+  class="sc-eCApnc sc-jSFjdj sc-jrsJWt sc-kEqXSa uhDct gNlPzj SSISg gZaeBO"
+>
+  <div
+    class="sc-eCApnc sc-iqAclL BFsXK eUTSYc"
+  >
+    <svg
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 512 512"
+      width="1em"
+    >
+      <path
+        d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6a12 12 0 005.5-14 249 249 0 00-54.7-94.6 12 12 0 00-14.8-2.3L380.8 110A188.7 188.7 0 00320 74.9V25.8a12 12 0 00-9.4-11.7 251.4 251.4 0 00-109.2 0 12 12 0 00-9.4 11.7V75a194.7 194.7 0 00-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3a247.6 247.6 0 00-54.7 94.6 12 12 0 005.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6a12 12 0 00-5.5 14 249 249 0 0054.7 94.6 12 12 0 0014.8 2.3l42.6-24.6a188.7 188.7 0 0060.8 35.1v49.2a12 12 0 009.4 11.7c36.7 8.2 74.3 7.8 109.2 0a12 12 0 009.4-11.7v-49.2a194.7 194.7 0 0060.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3a247.6 247.6 0 0054.7-94.6c1.5-5.5-.7-11.3-5.6-14.1zM256 336a80.1 80.1 0 010-160 80.1 80.1 0 010 160z"
+      />
+    </svg>
+  </div>
+</button>
+`;
+
+exports[`IconButton Snapshot should match disabled 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;
+
+exports[`IconButton Snapshot should match size="extraSmall" 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;
+
+exports[`IconButton Snapshot should match size="large" 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;
+
+exports[`IconButton Snapshot should match size="medium" 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;
+
+exports[`IconButton Snapshot should match size="small" 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;
+
+exports[`IconButton Snapshot should match variant="contained" 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;
+
+exports[`IconButton Snapshot should match variant="linked" 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;
+
+exports[`IconButton Snapshot should match variant="outlined" 1`] = `
+Object {
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+}
+`;

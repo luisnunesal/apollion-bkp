@@ -1,0 +1,239 @@
+---
+id: containers-notification
+title: Notification
+---
+
+import { Flex, Icon, Button } from "@captalys-platform/core";
+
+import {
+  Interactive,
+  select,
+  text,
+  boolean,
+} from "../src/components/Interactive";
+
+import {
+  Notification,
+  NotificationExample,
+  NotificationAction,
+  ToastExample,
+} from "../src/examples/Components/Containers/Notification";
+
+Um alerta exibe uma mensagem curta e importante de uma forma que atrai a atenção do usuário sem interromper o que ele estiver fazendo.
+
+<Flex mb="xl">
+  <Notification
+    closable
+    type="block"
+    variant="primary"
+    icon={<Icon name="cog" />}
+    title="I'm a Notification title :)"
+    message="And I'm a text to complete notification XOXO"
+  />
+</Flex>
+
+```jsx
+<Notification
+  closable
+  type="block"
+  variant="primary"
+  icon={<Icon name="cog" />}
+  title="I'm a Notification title :)"
+  message="And I'm a text to complete notification XOXO"
+/>
+```
+
+### Ações
+
+Um alerta pode conter uma ação, como um botão de fechar ou desfazer.
+
+<Flex mb="xl">
+  <NotificationAction />
+</Flex>
+
+```jsx
+<Notification
+  closable
+  type="block"
+  variant="primary"
+  icon={<Icon name="cog" />}
+  title="I'm a Notification title :)"
+  message="And I'm a text to complete notification XOXO"
+  action={({ close }) => (
+    <Button
+      onClick={() => {
+        // disparar alguma ação
+        console.log("Ola Mundo");
+        // por ultimo fechar o Notification
+        close();
+      }}
+      size="small"
+      text="Confirmar"
+    />
+  )}
+/>
+```
+
+### Variações
+
+O `Notification` oferece quatro variações de cores:
+
+- `primary` (padrão)
+- `success`
+- `warning`
+- `danger`
+
+<Flex gap="small" mb="xl">
+  <Notification
+    closable
+    type="block"
+    variant="primary"
+    icon={<Icon name="cog" />}
+    title="I'm a Notification title :)"
+    message="And I'm a text to complete notification XOXO"
+  />
+  <Notification
+    closable
+    type="block"
+    variant="success"
+    icon={<Icon name="cog" />}
+    title="I'm a Notification title :)"
+    message="And I'm a text to complete notification XOXO"
+  />
+  <Notification
+    closable
+    type="block"
+    variant="warning"
+    icon={<Icon name="cog" />}
+    title="I'm a Notification title :)"
+    message="And I'm a text to complete notification XOXO"
+  />
+  <Notification
+    closable
+    type="block"
+    variant="danger"
+    icon={<Icon name="cog" />}
+    title="I'm a Notification title :)"
+    message="And I'm a text to complete notification XOXO"
+  />
+</Flex>
+
+```jsx {4,12,20,28}
+<Notification
+  closable
+  type="block"
+  variant="primary"
+  icon={<Icon name="cog" />}
+  title="I'm a Notification title :)"
+  message="And I'm a text to complete notification XOXO"
+/>
+<Notification
+  closable
+  type="block"
+  variant="success"
+  icon={<Icon name="cog" />}
+  title="I'm a Notification title :)"
+  message="And I'm a text to complete notification XOXO"
+/>
+<Notification
+  closable
+  type="block"
+  variant="warning"
+  icon={<Icon name="cog" />}
+  title="I'm a Notification title :)"
+  message="And I'm a text to complete notification XOXO"
+/>
+<Notification
+  closable
+  type="block"
+  variant="danger"
+  icon={<Icon name="cog" />}
+  title="I'm a Notification title :)"
+  message="And I'm a text to complete notification XOXO"
+/>
+```
+
+### Tipos
+
+Há dois tipos principais de `Notification`:
+
+- `block` (padrão)
+- `page`
+- [`toast`](#notificação-toast)
+
+<Interactive>
+  <Notification
+    type={select("Type", "block", ["block", "page"])}
+    variant={select("Variant", "primary", [
+      "primary",
+      "success",
+      "warning",
+      "danger",
+    ])}
+    title="I'm a Notification title :)"
+    message="And I'm a text to complete notification XOXO"
+  />
+</Interactive>
+
+### Notificação Toast
+
+Você pode usar o hook `useNotification` para exibir um notification do tipo toast.
+
+<ToastExample />
+
+```jsx
+import { useNotification } from "@captalys-platform/core";
+
+function Component() {
+  const { showNotification } = useNotification();
+
+  const successNotification = () => showNotification({
+    title: "Super Titulo",
+    message: "Messagem super criativa",
+    variant: "success",
+  });
+
+  const warningNotification = () => showNotification({
+    title: "Super Titulo",
+    message: "Messagem super criativa",
+    variant: "warning",
+  });
+
+  const dangerNotification = () => showNotification({
+    title: "Super Titulo",
+    message: "Messagem super criativa",
+    variant: "danger",
+  });
+
+  const autoCloseNotification = () => showNotification({
+    title: "Super Titulo",
+    message: "Messagem super criativa",
+    autoClose: 10,
+  });
+
+  return (
+    <Flex flexDirection="row" gap="small">
+      <Button onClick={displayNotification} text="Sucesso" />;
+      <Button onClick={warningNotification} text="Warning" />;
+      <Button onClick={dangerNotification} text="Danger" />;
+      <Button onClick={autoCloseNotification} text="Auto Close" />;
+    <Flex>
+  )
+}
+```
+
+### Notification API
+
+| Propriedade  | Tipo                                            | Padrão    | Descrição                                                                                    |
+| ------------ | ----------------------------------------------- | --------- | -------------------------------------------------------------------------------------------- |
+| variant      | `primary` \| `success` \| `warning` \| `danger` | 'primary' | A cor da notificação.                                                                        |
+| type         | `block` \| `page`                               | 'block'   |                                                                                              |
+| pagePosition | `top` \| `bottom`                               | 'bottom'  | Quando o `type` for `page`, posiciona a notificação na parte inferior ou superior da página. |
+| title        | string                                          | undefined |                                                                                              |
+| message      | ReactNode                                       |           |                                                                                              |
+| icon         | ReactNode                                       | null      |                                                                                              |
+| button       | ReactNode                                       | null      |                                                                                              |
+| linkName     | string                                          | undefined |                                                                                              |
+| linkUrl      | string                                          | undefined |                                                                                              |
+| closable     | boolean                                         | true      |                                                                                              |
+| autoClose    | number                                          | undefined | Tempo em segundos para fechar a notificação automaticamente                                  |

@@ -1,0 +1,79 @@
+---
+id: functional-progress-bar
+title: Progress Bar
+---
+
+import { ProgressBar, Link } from "@captalys-platform/core";
+import {
+  Interactive,
+  text,
+  boolean,
+  select,
+} from "../src/components/Interactive";
+import {
+  TimeredProgressBar,
+  ConditionalTimeredProgressBar,
+} from "../src/examples/Components/Elements/ProgressBar";
+
+## Quando usar
+
+A barra de progresso é utilizada para representar o progresso de uma operação.
+
+## Demo
+
+<Interactive>
+  <ProgressBar
+    progress={text("progress (from 0 to 100)", "10")}
+    color={select("color", "primary", [
+      "primary",
+      "secondary",
+      "tertiary",
+      "success",
+      "warning",
+      "danger",
+    ])}
+    size={select("size", "default", [
+      "default",
+      "extraSmall",
+      "small",
+      "large",
+    ])}
+    border={boolean("border", true)}
+    showProgressLabel={boolean("Progress Label", true)}
+  />
+</Interactive>
+
+## Exemplos
+
+### Timered ProgressBar
+
+<TimeredProgressBar />
+
+### Conditional Render On 100%
+
+<ConditionalTimeredProgressBar />
+
+```jsx import React from 'react'; import {(ProgressBar, Typography, Flex)} from '@captalys-platform/core';
+function TimeredProgressBar(progress) {
+  return progress !== 100 ? (
+    <ProgressBar progress={progress} showProgressLabel={true} />
+  ) : (
+    <Paper mb="large" alignItems="center" deepColor="information">
+      <Typography variant="h6" color="information">
+        Ao final da operação renderizamos esse Paper. Caso não tenha visto a
+        barra de progresso, carregue a página novamente.
+      </Typography>
+    </Paper>
+  );
+}
+```
+
+## ProgressBar API
+
+| Propriedade       | Tipo                                                          | Padrão  | Descrição |
+| ----------------- | ------------------------------------------------------------- | ------- | --------- |
+| color             | <Link to="/docs/themes-colors">Colors</Link>                  | primary |           |
+| size              | `extraSmall` \| `default` \|`small` \| `medium` \| `large` \| | default |
+| border            | boolean                                                       | false   |           |
+| showProgressLabel | boolean                                                       | false   |           |
+| progress          | number                                                        | 0       |           |

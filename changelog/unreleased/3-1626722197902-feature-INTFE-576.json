@@ -1,0 +1,8 @@
+{
+  "packageName": "core",
+  "category": "feature",
+  "title": "Incrementa o pipeline dos projetos",
+  "author": "Samuel Monteiro",
+  "version": "2.4.6",
+  "issue": 576
+}

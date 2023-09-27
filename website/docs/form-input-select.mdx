@@ -1,0 +1,144 @@
+---
+id: form-input-select
+title: InputSelect
+---
+
+import { InputSelect, Flex } from "@captalys-platform/core";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import {
+  Interactive,
+  text,
+  select,
+  boolean,
+} from "../src/components/Interactive";
+
+import { InputSelectExampleButton } from "../src/examples/Components/Form/Inputs/InputSelect";
+
+export const options = [
+  { value: "inception", label: "Inception" },
+  { value: "interstellar", label: "Interstellar" },
+  { value: "dunkirk", label: "Dunkirk" },
+  { value: "memento", label: "Memento" },
+  { value: "tenet", label: "Tenet" },
+];
+
+export function loadOptions(inputValue) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(options);
+    }, 10000);
+  });
+}
+
+Os componentes de seleção são usados para coletar informações fornecidas pelo usuário em uma lista de opções.
+
+Usa as mesmas props que o ➞ [React-Select](https://react-select.com/home).
+
+### Interativo
+
+<Interactive>
+  <Flex margin="0 0 1rem">
+    <InputSelect
+      isClearable
+      size={select("Size", "compact", [
+        "expansive",
+        "medium",
+        "compact",
+        "micro",
+      ])}
+      menuPlacement="top"
+      variant={select("Variant", "default", ["default", "success", "error"])}
+      onChange={console.log}
+      small={boolean("Small", false)}
+      isMulti={boolean("isMulti", false)}
+      isLoading={boolean("isLoading", false)}
+      isDisabled={boolean("isDisabled", false)}
+      placeholder={text("Placeholder", "Selecione...")}
+      loadingPlaceholder={text("Loading Placeholder", "Carregando...")}
+      emptyMessage={text("Empty <Message>", "Sem Opções")}
+      options={options}
+    />
+  </Flex>
+</Interactive>
+
+### Exemplo
+
+<InputSelectExampleButton />
+
+```jsx
+<Form
+  // @ts-ignore
+  autoComplete="nope"
+  handleSubmit={(values) => alert(JSON.stringify(values))}
+  fields={{
+    gender: {
+      label: "Gênero",
+      component: InputSelect,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        placeholder: "Selecione seu gênero",
+        isSearchable: false,
+        isClearable: true,
+        options: [
+          { label: "Masculino", value: "M" },
+          { label: "Feminino", value: "F" },
+          { label: "Outro", value: "N/A" },
+        ],
+      },
+    },
+    person: {
+      label: "Tipo de pessoa",
+      component: InputSelect,
+      validation: Yup.boolean().required("Required"),
+      inputProps: {
+        placeholder: "Tipo pessoa",
+        loadingPlaceholder: "Carregando...",
+        isClearable: true,
+        options: [
+          { value: "PF", label: "PF" },
+          { value: "PJ", label: "PJ" },
+        ],
+      },
+    },
+  }}
+>
+  {({ gender, person }) => {
+    const isDisabled = !person || !gender;
+
+    return <Button text="Avançar" type="submit" disabled={isDisabled} />;
+  }}
+</Form>
+```
+
+### `loadOptions` prop
+
+Use para carregar opções de uma fonte remota enquanto o usuário digita.
+
+<InputAsyncSelectExample />
+
+```jsx
+<InputSelect
+  isMulti
+  loadingPlaceholder='Carregando (aguarde)...' // Optional
+  loadOptions={(input) => ... Promise<OptionType[]>}
+/>
+```
+
+### InputSelect API
+
+| Propriedade         | Tipo                                              | Padrão                    | Descrição                                                                                                                  |
+| ------------------- | ------------------------------------------------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| placeholder         | string                                            | 'Selecione...'            |                                                                                                                            |
+| loadingPlaceholder  | string                                            | 'Carregando (aguarde)...' |                                                                                                                            |
+| emptyMessage        | string                                            | 'Sem Opções'              |                                                                                                                            |
+| hideSelectedOptions | boolean                                           | false                     |                                                                                                                            |
+| isClearable         | boolean                                           | -                         |                                                                                                                            |
+| isDisabled          | boolean                                           | -                         |                                                                                                                            |
+| isMulti             | boolean                                           | -                         |                                                                                                                            |
+| menuPlacement       | `auto` \| `bottom` \| `top`                       | 'bottom'                  |                                                                                                                            |
+| size                | `micro` \| `compact` \| `medium` \| `expansive`   | -                         |                                                                                                                            |
+| small               | boolean                                           | -                         |                                                                                                                            |
+| options             | array                                             | -                         |                                                                                                                            |
+| variant             | `default` \| `success` \| `error` \|              | 'default'                 |                                                                                                                            |
+| loadOptions         | loadOptions={(input) => ... Promise<OptionType[]> |                           | Função que retorna uma `promise`, que é o que é o conjunto de opções a serem usadas uma vez que a `promise` seja resolvida |
+| onChange            | () => undefined                                   |                           | Lida com eventos de mudança no `select`                                                                                    |

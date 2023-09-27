@@ -1,0 +1,56 @@
+---
+id: form-basic
+title: Básico
+---
+
+import { BasicFormExample } from "../src/examples/Components/Form/Form";
+
+## Objetivo
+
+Fornece uma maneira dinâmica de criar um formulário com validação, usando [Flex](containers-flex) ou [Grid](containers-grid) e objetos literais.
+
+## Implementação
+
+Para usa-lo, precisamos:
+
+- Definir um objeto que vai guardar todos os **valores iniciais**(initialValues) para ele.
+- Declarar uma **função de envio** (submit method) que vai ser chamado quando o usuário submeter o formulário.
+- Definir um objeto que contém **todos os campos** que serão renderizados no formulário.
+- Definir um objeto do tipo [Grid Breakpoints](containers-grid) que vai organizar todos os nossos `inputs`.
+
+## Formulário Básico
+
+<BasicFormExample />
+
+### Botão de envio personalizado
+
+```jsx {2-6}
+<Form {...{ fields }}>
+  {({ acceptedTermsOfService, ...otherValues }) => {
+    const isDisabled = !acceptedTermsOfService;
+
+    return <Button disabled={isDisabled} text="Manda Bala" />;
+  }}
+</Form>
+```
+
+### Ajuste automático de tela
+
+- Formulários podem ser utilizados com o Flex ou com o Grid (é só passar o `medias` como prop).
+  No caso do Grid, podemos alterar a diagramação de acordo com o tamanho de tela. Clique aqui -> [Grid](containers-grid).
+
+### Form API
+
+| Propriedade         | Tipo                                                                        | Padrão    | Descrição                                                                                                                                                                                         |
+| ------------------- | --------------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| fields              | [Fields]                                                                    |           | Receberá os campos e os renderizará dentro do formulário, respeitando o `grid` que foi passado também. Cada ** key **(chave) no objeto ** fields **(campos) será considerada como `área` no Grid. |
+| handleSubmit        | (values, helpers) => void                                                   | null      | função que é chamada sempre que o formulário é enviado. Com isso, você pode acessar os valores do formulário (1º argumento) e alguns auxiliares (2º argumento).                                   |
+| initialValues       | [key: string]: string / boolean / number / { value: string, label: string } | ''        | Objeto contendo qualquer valor inicial que seus campos possam ter. Eles são preenchidos pela chave fornecida no objeto.                                                                           |
+| children?           | ReactNode                                                                   |           | Componente filho que renderiza qualquer coisa, mas é usado para renderizar o botão com ** type = 'submit' **.                                                                                     |
+| medias?             | [Grid Breakpoints](containers-grid)                                         |           | Tipo de Grid que define onde cada um dos elementos será colocado.                                                                                                                                 |
+| flex?               | [Flex Properties](containers-flex)                                          |           | Tipo de Grid que define onde cada um dos elementos será colocado.                                                                                                                                 |
+| inverted?           | boolean                                                                     | false     | Use quando você tiver um fundo escuro.                                                                                                                                                            |
+| submitLabel?        | string                                                                      | 'Enviar'  | Texto do rótulo que será colocado no botão de envio padrão se o filho for igual a nulo.                                                                                                           |
+| validationOnBlur?   | boolean                                                                     | false     | Se verdadeiro, toda vez que um campo acionar o evento 'blur' (desfoque), ele validará aquele campo com base na validação que foi fornecida no campo do objeto.                                    |
+| validationOnChange? | boolean                                                                     | false     | Se verdadeiro, toda vez que um campo acionar o evento 'change' (mudança), ele validará aquele campo com base na validação que foi fornecida no campo do objeto .                                  |
+| conditionalFields   | [key in keyof Fields]?: (values: Partial<Values<Fields\>\>) => boolean;     | undefined | Um objeto em que cada chave corresponde a uma chave do `Field`, o valor deve ser uma função retornando um **boolean**                                                                             |

@@ -1,0 +1,38 @@
+---
+id: hook-useclipboard
+title: useClipboard
+---
+
+import { UseClipboardExample } from "../src/examples/Hooks/useClipboard";
+
+Hook para copiar conteudo textual para a areá de transferencia.
+
+## Exemplo
+
+```jsx
+export function UseClipboardExample() {
+  const [inputValue, setInputValue] = useState(
+    "Super important text to long to type manually"
+  );
+
+  const { onCopy, hasCopied } = useClipboard(inputValue);
+
+  return (
+    <Flex gap="large">
+      <TextArea
+        size="compact"
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+
+      <Button size="extraSmall" variant="outlined" onClick={onCopy}>
+        {hasCopied ? "Copiado" : "Copiar"}
+      </Button>
+
+      <TextArea size="compact" placeholder="Cole Aqui" />
+    </Flex>
+  );
+}
+```
+
+<UseClipboardExample />

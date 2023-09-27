@@ -1,0 +1,3 @@
+## Release Date - {releaseDate}
+
+{packageContent}

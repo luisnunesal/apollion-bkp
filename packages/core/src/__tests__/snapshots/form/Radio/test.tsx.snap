@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Should match the layout 1`] = `
+.c4 {
+  position: relative;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #143D66;
+  border-radius: 16px;
+  box-shadow: inset 0px 0px 4px 0px rgba(128,128,128,0.3);
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.c5 {
+  --size: 20px;
+  --checked-size: calc(var(--size) * 0.5);
+  width: var(--size);
+  height: var(--size);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+}
+
+.c5::before {
+  content: '';
+  border-radius: 50%;
+  display: inline-block;
+  width: var(--checked-size);
+  height: var(--checked-size);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  opacity: 0;
+}
+
+.c0 {
+  cursor: pointer;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0rem 2rem 1rem 0rem;
+  color: #143D66;
+}
+
+.c0 > .c3 {
+  border: 2px solid #143D66;
+}
+
+.c0 > .c3::before {
+  background: #3399FF;
+}
+
+.c0:hover > .c3,
+.c0:focus > .c3 {
+  border-color: #297ACC;
+}
+
+.c0 > .c1:checked ~ .c3 {
+  border-color: #3399FF;
+  box-shadow: 0px 0px 0px rgba(19,66,83,0.15);
+}
+
+.c0 .c1:checked ~ .c3::before {
+  opacity: 1;
+}
+
+<label
+  class="c0"
+>
+  <input
+    class="c1 c2"
+    name="Input"
+    type="radio"
+  />
+  <div
+    class="c3 c4 c5"
+  />
+  Input
+</label>
+`;
+
+exports[`Radio Should render with disabled={true} 1`] = `
+.c4 {
+  position: relative;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #143D66;
+  border-radius: 16px;
+  box-shadow: inset 0px 0px 4px 0px rgba(128,128,128,0.3);
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.c5 {
+  --size: 20px;
+  --checked-size: calc(var(--size) * 0.5);
+  width: var(--size);
+  height: var(--size);
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+}
+
+.c5::before {
+  content: '';
+  border-radius: 50%;
+  display: inline-block;
+  width: var(--checked-size);
+  height: var(--checked-size);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  opacity: 0;
+}
+
+.c0 {
+  cursor: pointer;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0rem 2rem 1rem 0rem;
+  color: #143D66;
+  color: #BBCED4;
+}
+
+.c0 > .c3 {
+  border: 2px solid #143D66;
+}
+
+.c0 > .c3::before {
+  background: #3399FF;
+}
+
+.c0:hover > .c3,
+.c0:focus > .c3 {
+  border-color: #297ACC;
+}
+
+.c0 > .c1:checked ~ .c3 {
+  border-color: #3399FF;
+  box-shadow: 0px 0px 0px rgba(19,66,83,0.15);
+}
+
+.c0 > .c1:disabled {
+  cursor: default;
+}
+
+.c0 > .c1:disabled ~ .c3 {
+  background-color: #F1F5F6;
+  border-color: #F1F5F6;
+}
+
+.c0 > .c1:disabled ~ .c3::before {
+  background: #BBCED4;
+}
+
+.c0 .c1:checked ~ .c3::before {
+  opacity: 1;
+}
+
+<label
+  class="c0"
+  disabled=""
+>
+  <input
+    class="c1 c2"
+    disabled=""
+    name="Input"
+    type="radio"
+  />
+  <div
+    class="c3 c4 c5"
+  />
+  Input
+</label>
+`;

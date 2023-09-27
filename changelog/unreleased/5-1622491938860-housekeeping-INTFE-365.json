@@ -1,0 +1,8 @@
+{
+  "packageName": "core",
+  "category": "housekeeping",
+  "title": "Adicionar tratamento a função currencyToNumber",
+  "author": "GabrielEsnack",
+  "version": "2.3.0",
+  "issue": 365
+}

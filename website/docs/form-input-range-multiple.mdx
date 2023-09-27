@@ -1,0 +1,48 @@
+---
+id: form-input-range-multiple
+title: InputRangeMultiple
+---
+
+import { InputRangeMultiple } from "@captalys-platform/core";
+import { Interactive, text, boolean } from "../src/components/Interactive";
+
+O elemento do tipo `range` (faixa) permite ao usuário especificar um valor numérico que
+não deve ser menor que um determinado valor e não mais que outro valor fornecido. Agora múltiplo (duas bolinhas).
+
+## Como usar
+
+As principais propriedades são `max` e `min`. Elas são nativas do _input range_ do html.
+Em adição à elas, adicionamos as props `label`, `leftValue` e `rightValue`.
+
+## Demo Interativa
+
+<Interactive>
+  <InputRangeMultiple
+    label={boolean("label", false)}
+    min={text("min", "0")}
+    max={text("max", "100")}
+    leftValue={text("leftValue", "25")}
+    rightValue={text("rightValue", "75")}
+  />
+</Interactive>
+
+### Props Padrão HTML
+
+- `max` - especifica o valor máximo permitido
+- `min` - especifica o valor mínimo permitido
+
+### Props do Apollion
+
+- `label` - Altera o valor exibido para o que foi colocado no input. O padrão é Tooltip.
+- `leftValue` - Especificar o valor do indicador (bolinha) esquerda do input
+- `rightValue` - Especificar o valor do indicador (bolinha) direita do input
+
+## InputRangeMultiple Doc
+
+| Propriedade | Tipo    | Padrão | Descrição |
+| ----------- | ------- | ------ | --------- |
+| max         | string  | '100'  |           |
+| min         | string  | '0'    |           |
+| leftValue   | string  | '25'   |           |
+| rightValue  | string  | '75'   |           |
+| label       | boolean | false  |           |

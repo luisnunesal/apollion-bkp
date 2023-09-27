@@ -1,0 +1,220 @@
+---
+id: containers-grid
+title: Grid
+---
+
+import { Grid, Flex, Typography } from "@captalys-platform/core";
+import { Interactive, boolean } from "../src/components/Interactive";
+
+A grade cria consistência visual entre layouts, permitindo flexibilidade em uma ampla variedade de designs
+
+# Exemplos
+
+## Exemplo Básico
+
+<Grid
+  mb="xl"
+  medias={{
+    xs: {
+      columns: "33%",
+      rows: "100px",
+      areas: `
+    "a b c"
+  `,
+    },
+    sm: {
+      columns: "50px",
+      rows: "100px",
+      areas: `
+    "c b a"
+  `,
+    },
+    md: {
+      columns: "500px",
+      rows: "100px",
+      areas: `
+    "b c a"
+  `,
+    },
+  }}
+>
+  <Flex bgColor="main" area="a" justifyContent="center" alignItems="center">
+    <Typography contrast="main">A</Typography>
+  </Flex>
+  <Flex
+    bgColor="neutral.100"
+    area="b"
+    justifyContent="center"
+    alignItems="center"
+  >
+    <Typography contrast="main">B</Typography>
+  </Flex>
+  <Flex
+    bgColor="grayscale.20"
+    area="c"
+    justifyContent="center"
+    alignItems="center"
+  >
+    <Typography contrast="main">C</Typography>
+  </Flex>
+</Grid>
+
+**Observe que ao alterar o tamanho da janela do browser os componentes se ajustam conforme os breakpoints definidos.**
+
+```jsx
+import { Flex, Grid, GridBreakpoints, Typography } from "@captalys-platform/core"
+
+const medias: GridBreakpoints = {
+    xs:{
+    columns:"33%",
+    rows:"100px",
+    areas:`
+    "a b c"
+  `},
+  sm:{
+    columns:"10px",
+    rows:"100px",
+    areas:`
+    "c b a"
+  `},
+  md:{
+    columns:"500px",
+    rows:"100px",
+    areas:`
+    "b c a"
+  `},
+}
+
+
+<Grid medias={medias}>
+  <Flex bgColor="main" area="a" justifyContent="center" alignItems="center">
+  <Typography contrast="main">A</Typography>
+  </Flex>
+  <Flex bgColor="neutral.100" area="b" justifyContent="center" alignItems="center">
+  <Typography contrast="main">B</Typography>
+  </Flex>
+  <Flex bgColor="grayscale.20" area="c" justifyContent="center" alignItems="center">
+  <Typography contrast="main">C</Typography>
+  </Flex>
+</Grid>
+```
+
+## Exemplo de Layout
+
+<Grid
+  mb="xl"
+  medias={{
+    xs: {
+      columns: "100px",
+      areas: `
+                "Head Head"
+                "Content Sidebar"
+            `,
+      rows: "1fr 100px",
+    },
+    sm: {
+      columns: "100px",
+      areas: `
+                "Content Sidebar"
+                "Head Head"
+            `,
+      rows: "1fr 100px",
+    },
+    md: {
+      columns: "100px",
+      areas: `
+                "Head Head"
+                "Sidebar Content"
+            `,
+      rows: "1fr 100px",
+    },
+  }}
+>
+  <Flex area="Head" bgColor="main">
+    <Typography contrast="main">HEADER</Typography>
+  </Flex>
+  <Flex area="Content" bgColor="neutral.100" color="grayscale.0">
+    <Typography contrast="neutral.100">CONTENT</Typography>
+  </Flex>
+  <Flex area="Sidebar" bgColor="grayscale.20" color="grayscale.0">
+    <Typography contrast="grayscale.20">SIDEBAR</Typography>
+  </Flex>
+</Grid>
+
+```jsx
+import { Flex, Grid, GridBreakpoints, Typography } from "@captalys-platform/core"
+
+const medias: GridBreakpoints = {
+    xs: {
+        columns: '100px',
+        areas: `
+            "Head Head"
+            "Content Sidebar"
+        `,
+        rows: '1fr 100px',
+    },
+    sm: {
+        columns: '100px',
+        areas: `
+            "Content Sidebar"
+            "Head Head"
+        `,
+        rows: '1fr 100px',
+    },
+    md: {
+        columns: '100px',
+        areas: `
+            "Head Head"
+            "Sidebar Content"
+        `,
+        rows: '1fr 100px',
+    },
+}
+
+
+<Grid medias={medias}>
+  <Flex area="Head" bgColor="main">
+    <Typography contrast="main">HEADER</Typography>
+  </Flex>
+
+  <Flex area="Content" bgColor="neutral.100" color="grayscale.0">
+    <Typography contrast="neutral.100">CONTENT</Typography>
+  </Flex>
+
+  <Flex area="Sidebar" bgColor="grayscale.20" color="grayscale.0">
+    <Typography contrast="grayscale.20">SIDEBAR</Typography>
+  </Flex>
+</Grid>
+```
+
+## Grid API
+
+| Propriedade  | Tipo                         | Padrão        | Descrição                                                              |
+| ------------ | ---------------------------- | ------------- | ---------------------------------------------------------------------- |
+| medias       | `GridBreakpoints`            |               |                                                                        |
+| borderStyle  | string                       |               | "solid" \| "dotted" \| "dashed"                                        |
+| borderWidth  | string                       |               | "none" \| "thin" \| "regular" \| "great" \| "bold"                     |
+| borderColor  | `BgColorsTypes`              | grayscale.100 |                                                                        |
+| borderRadius | string                       |               | "straight" \| "micro" \| "xs" \| "sm" \| "md" \| "large" \| "circular" |
+| bgColor      | `BgColorsTypes`              |               |                                                                        |
+| color        | `BgColorsTypes`              |               |                                                                        |
+| height       | number \| string             |               |                                                                        |
+| maxHeight    | number \| string             |               |                                                                        |
+| minHeight    | number \| string             |               |                                                                        |
+| width        | number \| string             |               |                                                                        |
+| maxWidth     | number \| string             |               |                                                                        |
+| minWidth     | number \| string             |               |                                                                        |
+| p            | number \| `SpacingInterface` |               | padding                                                                |
+| px           | number \| `SpacingInterface` |               | padding horizontal                                                     |
+| py           | number \| `SpacingInterface` |               | padding vertical                                                       |
+| pt           | number \| `SpacingInterface` |               | padding-top                                                            |
+| pb           | number \| `SpacingInterface` |               | padding-bottom                                                         |
+| pl           | number \| `SpacingInterface` |               | padding-left                                                           |
+| pr           | number \| `SpacingInterface` |               | padding-right                                                          |
+| m            | number \| `SpacingInterface` |               | margin                                                                 |
+| mx           | number \| `SpacingInterface` |               | margin horizontal                                                      |
+| my           | number \| `SpacingInterface` |               | margin vertical                                                        |
+| mt           | number \| `SpacingInterface` |               | margin-top                                                             |
+| mb           | number \| `SpacingInterface` |               | margin-bottom                                                          |
+| ml           | number \| `SpacingInterface` |               | margin-left                                                            |
+| mr           | number \| `SpacingInterface` |               | margin-right                                                           |

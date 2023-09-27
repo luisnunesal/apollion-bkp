@@ -1,0 +1,1 @@
+export { responsiveToken } from './component';

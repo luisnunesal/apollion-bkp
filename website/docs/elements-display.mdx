@@ -1,0 +1,48 @@
+---
+id: elements-display
+title: Display
+---
+
+import { Display, Flex, Paper } from "@captalys-platform/core";
+import { Interactive, text, pill, select } from "../src/components/Interactive";
+
+Quando falamos de títulos do tipo Display, estamos nos referindo aqueles utilizados em sua maioria para páginas com grandes CTAs e institucionais - normalmente se aplicam a landing pages e outras páginas de apresentação de conteúdo. São muito comuns em áreas de banner, páginas de login e de produtos.
+
+**Obs**: É possivel utilizar todas as propiedades do componente [Typography](/docs/elements-typography)
+
+### Variantes
+
+<Flex gap="large" mb="xl">
+  <Flex gap="micro">
+    <Display variant="h1" text="Display - h1" />
+    <Display variant="h2" text="Display - h2" />
+    <Display variant="h3" text="Display - h3" />
+    <Display variant="h4" text="Display - h4" />
+  </Flex>
+</Flex>
+
+```jsx
+<Display variant="h1" text="Display - h1" />
+<Display variant="h2" text="Display - h2" />
+<Display variant="h3" text="Display - h3" />
+<Display variant="h4" text="Display - h4" />
+```
+
+## Headline API
+
+| Propriedade    | Tipo                                                                                                                        | Padrão        | Descrição |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------- | --------- |
+| children       | ReactNode                                                                                                                   |               |           |
+| variant        | `h1` \| `h2` \| `h3` \| `h4`                                                                                                | none          |           |
+| align          | `start` \| `end` \| `left` \| `right` \| `center` \| `justify` \| `match-parent`                                            | none          |           |
+| fontSize       | `nano` \| `micro` \| `small` \| `normal` \| `medium` \| `large` \| `xl` \| `xxl` \| `giant` \| `colossal` \| `gargantua` \| |               |           |
+| fontWeight     | `light` \| `regular` \| `bold` \| `stronger`                                                                                |               |           |
+| lineHeight     | `tight` \| `close` \| `regular` \| `wild`                                                                                   |               |           |
+| letterSpacing  | `tight` \| `regular` \| `wild`                                                                                              |               |           |
+| textTransform  | `uppercase` \| `lowercase` \| `captalyze` \| `none`                                                                         |               |           |
+| textDecoration | `none` \| `overline` \| `underline` \| `line-through`                                                                       |               |           |
+| fontStyle      | `normal` \| `code`                                                                                                          | `normal`      |           |
+| area           | String                                                                                                                      |               |           |
+| color          | String                                                                                                                      | `neutral.180` |           |
+| text           | String                                                                                                                      |               |           |
+| htmlFor        | String                                                                                                                      |               |           |

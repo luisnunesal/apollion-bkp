@@ -1,0 +1,59 @@
+---
+id: form-checkbox
+title: Checkbox
+---
+
+import {
+  Flex,
+  Field,
+  Checkbox,
+  Input,
+  Typography,
+} from "@captalys-platform/core";
+import {
+  Interactive,
+  text,
+  select,
+  boolean,
+} from "../src/components/Interactive";
+
+## Objetivo
+
+Renderiza uma caixa de seleção. Utilizado em formulários quando um usuário precisa selecionar múltiplos valores dentre várias opções.
+
+### Import
+
+> `import {Checkbox} from '@captalys-platform/core';`
+
+### Implementação
+
+Exemplo:
+
+<Checkbox name={"fieldName3"} label={"Olá Mundo"} />
+<Checkbox name={"fieldName"} label={"Checkbox colorido"} variant={"error"} />
+<Checkbox name={"fieldName2"} label={"Checkbox desativado"} disabled={"true"} />
+
+> `<Checkbox name={'fieldName'} label={'Olá Mundo'} /> `
+
+> `<Checkbox name={'fieldName2'} label={'Checkbox colorido'} variant={'error'}/>`
+
+> `<Checkbox name={'fieldName3'} label={'Checkbox desativado'} disabled={'true'} />`
+
+### Demo Interativa
+
+<Interactive>
+  <Checkbox
+    name={"fieldName"}
+    label={text("Label Text", "Checkbox Label")}
+    variant={select("Variant", "default", ["default", "success", "error"])}
+    disabled={boolean("Disabled", false)}
+  />
+</Interactive>
+
+### CheckBox API
+
+| Propriedade | Tipo                        | Padrão | Descrição                                             |
+| ----------- | --------------------------- | ------ | ----------------------------------------------------- |
+| label       | string \| ReactNode         | ' '    | Atribui um título na caixa de seleção exibida na tela |
+| variant     | default \| success \| error | ' '    | Muda a cor                                            |
+| disabled    | boolean                     | false  | Ativa ou desativa a caixa                             |

@@ -1,0 +1,36 @@
+---
+id: themes-global-style
+title: GlobalStyle
+---
+
+import { ApollionProvider, Button, Flex } from "@captalys-platform/core";
+
+## Objetivo
+
+Componente que quando renderizado aplica padrões de estilo onde for definido.
+
+### Exemplo
+
+No exemplo a seguir, através do css foi possível aplicar um determinado estilo nos elementos `html` e `body`.
+
+```jsx
+import { css } from "styled-components";
+import { ApollionProvider, GlobalStyle } from "@captalys-platform/core";
+
+<GlobalStyle
+  extend={css`
+    html,
+    body {
+      background-color: ${({ theme }) => theme.colors.neutral[10]};
+      font-family: ${({ theme }) => theme.font.fontFamily.code};
+    }
+  `}
+/>;
+```
+
+### GlobalStyle API
+
+| Propriedade | Tipo                                          | Padrão | Descrição                                        |
+| ----------- | --------------------------------------------- | ------ | ------------------------------------------------ |
+| theme       | DefaultTheme                                  |        | Thema que deve ser aplicado globalmente          |
+| extend      | FlattenInterpolation<{ theme: DefaultTheme }> |        | Extensão css que deverá ser aplicada globalmente |

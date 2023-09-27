@@ -1,0 +1,55 @@
+---
+id: themes-colors
+title: Colors
+---
+
+import { Flex, Text } from "@captalys-platform/core";
+import { ColorPalleteProvider, Colors } from "../src/components/ColorPallete";
+import { ColorsCustomizerExample } from "../src/examples/Colors";
+
+Cores em um Design System são praticamente um subsistema, com motivações muito além da estética. Quando apontamos cores para uso em interfaces digitais nos apoiamos em decisões de marca mas que reflitam interações específicas e padrões presentes em cada interface.
+
+Cada um desses grupos representa um nível de design e estão categorizados seguindo sua importância. Porém, isso não significa que eles aparecem menos. Por exemplo, as cores em Tonalidade são utilizadas com frequência maior nas interfaces, mas não ditam variações, na escala hierárquica elas são mais aplicadas, mas influenciam em nada a estrutura de composição das outras categorias.
+
+Um resumo de cada uma das categorias pode ser feito como:
+
+- **Marca**: São cores que variam de acordo com as guias visuais de marca (branding) das empresas ou de produtos específicos. Eles determinam os tons a serem utilizados para gerar o tom e temperatura das interfaces.
+- **Contraste**: Toda plataforma precisa respeitar um duotone para cores mais escuras e mais claras. Normalmente, preto e branco são cores fundamentais, mas para designs que utilizam estruturas em modo escuro a base geral de cores passa ser uma mescla entre marca e os tons mais profundos de claro ou escuro.
+- **Função**: Em interfaces computacionais, cores representam ações ou indicam que determinados elementos são abertos a interações. Essas cores sinalizam ações primárias ou secundárias, bem como comportamentos esperados pelo usuário para estados.
+- **Resposta**: Do mesmo modo que Cores de Função representam interações, existem determinadas sinalizações de estados esperados em todas as plataformas, como indicativos de sucesso ou erro - tais cores ficam reservadas as ações de resposta (ou feedback).
+- **Tonalidade**: São utilizadas para gerar profundidade e tonalidade associados ao branding, dando consistência as plataformas. As cores variam entre escala de neutras (para contraste e tom) e escala de cinza (para profundidade, como sombras, por exemplo).
+
+### Exemplos
+
+O sistema de cores pode ser usado para criar um tema que reflete sua marca ou estilo.
+
+<Flex mb="xl">
+  <ColorsCustomizerExample />
+</Flex>
+
+```jsx
+import { ApollionProvider, Button, createTheme } from "@captalys-platform/core";
+
+const theme = createTheme({
+  colors: {
+    primary,
+  },
+});
+
+<ApollionProvider theme={theme}>
+  <Button text="Editar cor Primary" />
+  <Notification
+    title="Uma notificação"
+    message={`Click em "Editar cor Primary" para alterar a cor`}
+    action={<Button size="extraSmall" text="Desfazer" />}
+  />
+</ApollionProvider>;
+```
+
+### Criando seu Esquema de Cores
+
+Crie seu esquema de cores utilizando o `ColorPicker` ao lado
+
+<ColorPalleteProvider>
+  <Colors />
+</ColorPalleteProvider>

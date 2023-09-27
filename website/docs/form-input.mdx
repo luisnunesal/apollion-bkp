@@ -1,0 +1,195 @@
+---
+id: form-input
+title: Input
+---
+
+import { Flex, Field, Icon } from "@captalys-platform/core";
+
+import {
+  Interactive,
+  text,
+  select,
+  boolean,
+} from "../src/components/Interactive";
+
+import {
+  Input,
+  InputFormExample,
+} from "../src/examples/Components/Form/Inputs/Input";
+
+Campos de texto permitem que os usuários digitem e editem texto.
+
+### Tamanhos
+
+`Input` possui quatro variações de tamanhos:
+
+- `micro`
+- `compact`
+- `medium` (padrão)
+- `expansive`
+
+<Flex gap="small" mb="xl">
+  <Input size="micro" placeholder="micro" />
+  <Input size="compact" placeholder="compact" />
+  <Input size="medium" placeholder="medium" />
+  <Input size="expansive" placeholder="expansive" />
+</Flex>
+
+```jsx
+<Input size="micro" placeholder="micro" />
+<Input size="compact" placeholder="compact" />
+<Input size="medium" placeholder="medium" />
+<Input size="expansive" placeholder="expansive" />
+```
+
+### Ícones
+
+`Icon` pode ser posicionados tanto na direita e esquerda.
+
+<Flex gap="small" mb="xl">
+  <Input iconPosition="left" icon={<Icon name="search" />} />
+  <Input icon={<Icon name="search" />} />
+</Flex>
+
+```jsx
+<Input iconPosition="left" icon={<Icon name="search" />} />
+<Input icon={<Icon name="search" />} />
+```
+
+### Variantes
+
+`Input` possui três variações de cor:
+
+- `default`
+- `error`
+- `success`
+
+<Flex gap="small" mb="xl">
+  <Input icon={<Icon name="search" />} />
+  <Input icon={<Icon name="search" />} variant="error" />
+  <Input icon={<Icon name="search" />} variant="success" />
+</Flex>
+
+```jsx
+<Input icon={<Icon name="search" />} />
+<Input icon={<Icon name="search" />} variant="error" />
+<Input icon={<Icon name="search" />} variant="success" />
+```
+
+### Usando `clearable`
+
+Passando `clearable` como prop é possivel resetar o valor do input.
+
+<Flex mb="xl">
+  <Input clearable value="lorem ipsum" />
+</Flex>
+
+```jsx {7,10}
+import { useState } from 'react'
+import { Input } from "@captalys-platform/core"
+
+const [vale, setValue] = useState("lorem ipsum")
+
+<Input
+  clearable
+  value={value}
+  onChange={e => setValue(e.target.value)}
+  reset={() => setValue('')}
+/>
+```
+
+:::caution
+É necessario também passar uma função `reset`, quando utilizar o input fora do componente `Form`.
+:::
+
+### Exemplo
+
+Um simples de form de login, com `toggle` para visualizar a senha.
+
+<Flex mb="xl">
+  <InputFormExample />
+</Flex>
+
+```jsx
+export const InputForm = () => {
+  const [type, setType] = useState("password");
+  const toggleType = () => {
+    setType((type) => (type === "password" ? "text" : "password"));
+  };
+
+  return (
+    <Form
+      handleSubmit={(e) => window.alert(JSON.stringify(e, null, 2))}
+      initialValues={{
+        user: "admin@admin.com",
+        password: "12345",
+      }}
+      fields={{
+        user: {
+          component: InputComponent,
+          label: "Usuario",
+          validation: Yup.string().required("Obrigatorio"),
+          inputProps: {
+            clearable: true,
+          },
+        },
+        password: {
+          component: InputComponent,
+          label: "Senha",
+          validation: Yup.string().required("Obrigatorio"),
+          inputProps: {
+            type,
+            icon: (
+              <Icon
+                size="medium"
+                name={type === "password" ? "eye" : "eyeSlash"}
+                onClick={toggleType}
+              />
+            ),
+          },
+        },
+      }}
+    >
+      <Button text="Entrar" />
+    </Form>
+  );
+};
+```
+
+### Demo Interativa
+
+<Interactive>
+  <Input
+    placeholder={text("Placeholder", "Type here")}
+    size={select("Size", "compact", [
+      "expansive",
+      "medium",
+      "compact",
+      "micro",
+    ])}
+    type={select("Type", "text", ["text", "password", "number", "email"])}
+    icon={select("Icon", <Icon name="pen" />, [
+      { label: "Pen", value: <Icon name="pen" /> },
+      { label: "User", value: <Icon name="user" /> },
+      { label: "Edit", value: <Icon name="running" /> },
+    ])}
+    variant={select("Variant", "default", ["default", "success", "error"])}
+    iconPosition={select("iconPosition", "right", ["right", "left"])}
+    disabled={boolean("Disabled", false)}
+    value="Lorem ipsum"
+  />
+</Interactive>
+
+## Input API
+
+| Propriedade  | Tipo                                                  | Padrão    | Descrição                                                                                                |
+| ------------ | ----------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------- |
+| placeholder  | string                                                |           | O atributo placeholder especifica uma pequena dica que descreve o valor esperado de um campo de entrada. |
+| type         | `text` \| `password` \| `number` \| `email` \| `text` | `text`    | O tipo de Input                                                                                          |
+| icon         | React.ReactNode                                       |           | Deve ser um componente `Icon` do Apollion                                                                |
+| variant      | `default` \| `success` \| `error`                     | `default` | Variante indica o estado do componente.                                                                  |
+| iconPosition | `left` \| `right`                                     | `right`   | A posição do ícone                                                                                       |
+| size         | `micro` \| `compact` \| `medium` \| `expansive`       | false     | Tamanho da altura do `Input`                                                                             |
+| disabled     | boolean                                               | false     | Desabilitar a entrada de valor e torna o `Input` não clicável.                                           |
+| cleareable   | boolean                                               | false     | A propriedade mostra um botão para limpar o conteudo do `Input`.                                         |
+| reset        | () => void                                            | false     | Função que deve retornar o valor **default** para o input .                                              |

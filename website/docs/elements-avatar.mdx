@@ -1,0 +1,112 @@
+---
+id: elements-avatar
+title: Avatar
+---
+
+import { Avatar, Flex, Icon } from "@captalys-platform/core";
+
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+import {
+  Interactive,
+  boolean,
+  select,
+  text,
+} from "../src/components/Interactive";
+
+O componente `Avatar` é usado como auxiliar em todo o Design System do Apollion.
+
+<Flex mb="xl">
+  <Avatar label="G" />
+</Flex>
+
+```jsx
+import { Avatar } from "@captalys-platform/core";
+
+const Example = () => {
+  return <Avatar label="G" />;
+};
+```
+
+### Variações
+
+Podemos utilizar o componente Avatar de diferentes formas. Através da propriedade `imgSrc`, `icon` ou `label`.
+
+<Flex mb="xl" gap="large" flexDirection="row">
+  <Avatar
+    size="large"
+    imgSrc="https://media3.s-nbcnews.com/j/newscms/2019_41/3047866/191010-japan-stalker-mc-1121_06b4c20bbf96a51dc8663f334404a899.fit-760w.JPG"
+  />
+  <Avatar size="large" icon="trash" />
+  <Avatar size="large" label="G" />
+</Flex>
+
+```jsx
+<Flex mb="xl" gap="large" flexDirection="row">
+  <Avatar
+    size="large"
+    imgSrc="https://media3.s-nbcnews.com/j/newscms/2019_41/3047866/191010-japan-stalker-mc-1121_06b4c20bbf96a51dc8663f334404a899.fit-760w.JPG"
+  />
+  <Avatar size="large" icon="trash" />
+  <Avatar size="large" label="G" />
+</Flex>
+```
+
+## Demo Interativa
+
+## src
+
+<Interactive>
+  <Avatar
+    imgSrc={text(
+      "Source",
+      "https://media3.s-nbcnews.com/j/newscms/2019_41/3047866/191010-japan-stalker-mc-1121_06b4c20bbf96a51dc8663f334404a899.fit-760w.JPG"
+    )}
+    size={select("Size", "extraLarge", [
+      "small",
+      "medium",
+      "large",
+      "extraLarge",
+    ])}
+  />
+</Interactive>
+
+## label
+
+<Interactive>
+  <Avatar
+    label={text("Label", "G")}
+    size={select("Size", "extraLarge", [
+      "small",
+      "medium",
+      "large",
+      "extraLarge",
+    ])}
+  />
+</Interactive>
+
+## icon
+
+<Interactive>
+  <Avatar
+    icon={select("Icon", "trash", [
+      { label: "trash", value: "trash" },
+      { label: "upload", value: "upload" },
+    ])}
+    size={select("Size", "extraLarge", [
+      "small",
+      "medium",
+      "large",
+      "extraLarge",
+    ])}
+  />
+</Interactive>
+
+### Avatar API
+
+| Propriedade | Tipo                                                      | Padrão   | Descrição             |
+| ----------- | --------------------------------------------------------- | -------- | --------------------- |
+| size        | 'small' \| 'medium' \| 'large' \| 'extraLarge' \| 'giant' | 'medium' | Tamanho do componente |
+| imgSrc      | string                                                    |          | url da imagem         |
+| icon        | icon                                                      |          | icone                 |
+| label       | string                                                    |          | label                 |

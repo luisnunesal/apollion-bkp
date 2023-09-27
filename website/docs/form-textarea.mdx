@@ -1,0 +1,42 @@
+---
+id: form-textarea
+title: TextArea
+---
+
+import { TextArea, Field } from "@captalys-platform/core";
+import {
+  Interactive,
+  text,
+  boolean,
+  select,
+} from "../src/components/Interactive";
+
+`TextArea` é campo de texto multi-linha, útil quando você deseja permitir que os usuários insiram uma quantidade considerável de texto de formato livre, por exemplo, um comentário em um formulário.
+
+### Exemplo
+
+<Interactive>
+  <TextArea
+    size={select("Size", "compact", [
+      "expansive",
+      "medium",
+      "compact",
+      "micro",
+    ])}
+    placeholder={text("Placeholder", "Type here")}
+    maxLength={text("Max Length", "10")}
+    resize={boolean("Resize", false)}
+    disabled={boolean("Disabled", false)}
+    variant={select("Variant", "default", ["default", "success", "error"])}
+  />
+</Interactive>
+
+### TextArea API
+
+| Propriedade | Tipo                                            | Padrão    | Descrição                                                                                                |
+| ----------- | ----------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------- |
+| placeholder | string                                          |           | O atributo placeholder especifica uma pequena dica que descreve o valor esperado de um campo de entrada. |
+| variant     | `default` \| `success` \| `error`               | `default` | Variante indica o estado do componente.                                                                  |
+| size        | `micro` \| `compact` \| `medium` \| `expansive` | false     | Tamanho da altura do `TextArea`                                                                          |
+| disabled    | boolean                                         | false     | Desabilitar a entrada de valor e torna o `TextArea` não clicável.                                        |
+| resize      | boolean                                         | false     | Permitir redimensionar o `TextArea`                                                                      |

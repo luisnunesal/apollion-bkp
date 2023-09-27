@@ -1,0 +1,86 @@
+---
+id: form-input-mask
+title: Input Mask
+---
+
+import { Flex } from "@captalys-platform/core";
+import {
+  InputMask,
+  InputMaskDateExample,
+} from "../src/examples/Components/Form/Inputs/InputMask";
+import { Interactive, select, boolean } from "../src/components/Interactive";
+
+`InputMask` herda todas as props do componente `Input` com adição da propriedade **mask**.
+
+### Demo Interativa
+
+<Interactive>
+  <InputMask
+    placeholder="Digite aqui"
+    clearable={boolean("clearable", false)}
+    mask={select("Mask", "(00) 00000-0000", [
+      "(00) 00000-0000",
+      "00.000.000/0000-00",
+      "00.000.000-0",
+      "00/00/0000",
+    ])}
+  />
+</Interactive>
+
+### Exemplo
+
+Um `InputDate` pode ser criado usando ` InputMask` e alguma biblioteca de análise de data, como `dateFns`
+
+<Flex mb="xl">
+  <InputMaskDateExample />
+</Flex>
+
+```jsx
+import { InputMask, Form, Button, Icon } from "@captalys-platform/core";
+import { isValid, parse } from "date-fns";
+import * as Yup from "yup";
+
+<Form
+  handleSubmit={(e) => alert(JSON.stringify(e, null, 2))}
+  fields={{
+    birthDate: {
+      component: InputMask,
+      label: "Data de Nascimento",
+      inputProps: {
+        mask: "00/00/0000",
+        placeholder: "dia/mês/ano",
+      },
+      validation: Yup.mixed()
+        .test({
+          name: "date",
+          test: (d) => isValid(parse(d, "dd/MM/yyyy", new Date())),
+          message: "Insira uma data válida",
+        })
+        .required("Required"),
+    },
+  }}
+>
+  <Button
+    mt="medium"
+    text="Prosseguir"
+    size="small"
+    icon={<Icon name="arrowRight" />}
+    iconPosition="right"
+  />
+</Form>;
+```
+
+## Input API
+
+| Propriedade  | Tipo                                                  | Padrão    | Descrição                                                                                                |
+| ------------ | ----------------------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------- |
+| mask         | string                                                |           | `String` representando a mascara do input                                                                |
+| placeholder  | string                                                |           | O atributo placeholder especifica uma pequena dica que descreve o valor esperado de um campo de entrada. |
+| type         | `text` \| `password` \| `number` \| `email` \| `text` | `text`    | O tipo de Input                                                                                          |
+| icon         | React.ReactNode                                       |           | Deve ser um componente `Icon` do Apollion                                                                |
+| variant      | `default` \| `success` \| `error`                     | `default` | Variante indica o estado do componente.                                                                  |
+| iconPosition | `left` \| `right`                                     | `right`   | A posição do ícone                                                                                       |
+| size         | `micro` \| `compact` \| `medium` \| `expansive`       | false     | Tamanho da altura do `Input`                                                                             |
+| disabled     | boolean                                               | false     | Desabilitar a entrada de valor e torna o `Input` não clicável.                                           |
+| cleareable   | boolean                                               | false     | A propriedade mostra um botão para limpar o conteudo do `Input`.                                         |
+| reset        | () => void                                            | false     | Função que deve retornar o valor **default** para o input .                                              |

@@ -1,0 +1,17 @@
+{
+  "include": ["src"],
+  "exclude": ["./src/template"],
+  "compilerOptions": {
+    "outDir": "lib",
+    "module": "CommonJS",
+    "target": "es2018",
+    "moduleResolution": "node",
+    "declaration": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "allowJs": true
+  }
+}

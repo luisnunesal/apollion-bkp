@@ -1,0 +1,32 @@
+{
+  "project-name": "Jovian",
+  "project-url": "https://jovian.sandbox.captalysplatform.io",
+  "base-issue-url": "https://captalys.atlassian.net/browse/INTFE-",
+  "release-weeks": 2,
+  "release-day-of-week": "Tuesday",
+  "allowed-branchs": ["sandbox"],
+  "packages": [
+    "changelog-generator",
+    "core",
+    "eslint-config-captalys-platform",
+    "relay",
+    "scripts"
+  ],
+  "categories": [
+    {
+      "category": "feature",
+      "label": "feature",
+      "emoji": "rocket"
+    },
+    {
+      "category": "fix",
+      "label": "fix",
+      "emoji": "bug"
+    },
+    {
+      "category": "housekeeping",
+      "label": "housekeeping",
+      "emoji": "house"
+    }
+  ]
+}

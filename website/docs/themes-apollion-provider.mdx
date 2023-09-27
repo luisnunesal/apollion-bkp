@@ -1,0 +1,32 @@
+---
+id: themes-apollion-provider
+title: ApollionProvider
+---
+
+import { Flex } from "@captalys-platform/core";
+import { DarkModeExample } from "../src/examples/Themes";
+
+## Objetivo
+
+O Objetivo deste componente é fornecer uma padronização de cor, espaçamento entre outras propriedades a todos os componentes que forem filhos deste componente.
+
+## Implementação
+
+Inicialmente é preciso definir um tema, para isso é possível utilizar a função [createTheme](./themes-create.mdx). A criação do tema é opcional, é possível utilizar o tema padrão do Apollion, para isso não é necessário utilizar a propriedade `theme`.
+
+```jsx
+import { ApollionProvider, createTheme } from "@captalys-platform/core";
+
+render(
+  <ApollionProvider>
+    <App />
+  </ApollionProvider>,
+  document.getElementById("#root")
+);
+```
+
+### ApollionProvider API
+
+| Propriedade | Tipo                | Padrão       | Descrição                                                  |
+| ----------- | ------------------- | ------------ | ---------------------------------------------------------- |
+| theme       | typeof defaultTheme | defaultTheme | Definição do tema que será aplicado nos componentes filhos |

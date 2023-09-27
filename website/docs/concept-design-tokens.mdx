@@ -1,0 +1,91 @@
+---
+id: concept-design-tokens
+title: Design Tokens
+---
+
+> Tokens são contratos entre o time de `Design` e o time de `Desenvolvimento`. Eles têm como principal função garantir que as definições na documentação de Design estão sendo cumpridas "à risca" no Front. <**Poe, Fernando**>
+
+**Então, se não tem nada especificado na documentação de Design eu não desenvolvo um Token?**
+
+_**R:** Sim, podemos abrir para discussão seu uso caso apresente facilidades para o desenvolvimento._
+
+## Porque usar?
+
+Tokens têm como função garantir que o componente possui todas as propriedades de estilo de acordo com a documentação de Design.
+
+Isso quer dizer que: se o componente usa um Token, então as propriedades previstas nele estarão contempladas no estilo.
+
+Veja esse exemplo, considere o Token abaixo:
+
+```tsx
+export const FontFactory = (customProps: FontFactoryProps) => (
+  contextProps: FontThemePropsType
+): CSSObject => {
+  const {
+    theme,
+    fontFamily,
+    fontSize,
+    fontStyle,
+    fontWeight,
+    letterSpacing,
+    lineHeight,
+    textTransform,
+    textDecoration,
+    align,
+  } = { ...customProps, ...contextProps };
+
+  return {
+    textDecoration,
+    textAlign: align,
+    fontSize: theme.font.fontSize[fontSize] || "inherit",
+    fontWeight: theme.font.fontWeight[fontWeight] || "inherit",
+    fontFamily: theme.font.fontFamily[fontFamily || "main"],
+    letterSpacing: theme.font.letterSpacing[letterSpacing || "regular"],
+    lineHeight: theme.font.lineHeight[lineHeight || "regular"],
+    fontStyle: fontStyle || theme.font.fontStyle.normal,
+    textTransform: theme.font.textTransform[
+      textTransform || "normal"
+    ] as React.CSSProperties["textTransform"],
+  };
+};
+```
+
+> Note que o `Token` sempre deve usar as propriedades do tema (theme).
+
+Sem considerar a otimização que o próprio `Styled Components` faz, ele deve resultar em um código assim:
+
+```css
+.h45Adf {
+  // Classe gerada do Styled Components
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.006rem;
+}
+```
+
+Com isso, ao aplicar o `Token` em algum componente:
+
+```jsx
+import styled from "styled-component";
+import { FontFactory, Typography } from "@captalys-platform/core";
+
+const MyCustomTypography = styled(Typography)`
+  ${FontFactory}
+
+  ...outras propriedades
+`;
+
+export function MyCustomComponent(props) {
+  return <MyCustomTypography {...props} />;
+}
+```
+
+> Ao seguir esse padrão de implementação você está garantindo que as propriedades do `Token` estão sendo usadas no componente. Evitando que o mesmo utilize as propriedades no `parent`.
+
+### Porque eu tenho (ou teria) que usar isso?
+
+Esse padrão de desenvolvimento é utilizado em toda base de código do `Apollion`. Ele ajuda o time de desenvolvimento na manutenção e nos testes, já que cada Token/Semântica tem definições claras de interface.
+
+Mas isso não quer dizer que em seu projeto seja necessário utilizar um token. Fica a cargo das suas decisões técnicas no projeto.

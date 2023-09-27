@@ -1,0 +1,146 @@
+---
+id: functional-dropdown
+title: Dropdown
+---
+
+import { Flex } from "@captalys-platform/core";
+import {
+  DropdownExample,
+  DropdownListExample,
+  DropdownListHoverExample,
+} from "../src/examples/Components/Elements/Dropdown";
+
+Fornece uma maneira fácil de criar uma lista suspensa que pode renderizar qualquer componente como uma lista de itens ou um botão, por exemplo.
+
+### Usando `content`
+
+`Dropdown` recebe qualquer componente, como um `List`
+
+<Flex mb="xl">
+  <DropdownListExample />
+</Flex>
+
+```jsx {3-13}
+<Dropdown
+  full
+  content={
+    <List
+      multiple
+      color="primary"
+      content={[
+        { title: "Item 1", icon: <Icon name="clock" /> },
+        { title: "Item 2", icon: <Icon name="emojiStar" /> },
+        { title: "Item 3", icon: <Icon name="pen" /> },
+      ]}
+    />
+  }
+>
+  <Button color="primary" text="Dropdown com Lista" />
+</Dropdown>
+```
+
+### Usando `options`
+
+usar um `List` com `Dropdown` é um caso de uso comum, uma alternativa é usar o atalho `options`
+
+```jsx {3-7}
+<Dropdown
+  full
+  options={[
+    { title: "Item 1", icon: <Icon name="clock" /> },
+    { title: "Item 2", icon: <Icon name="emojiStar" /> },
+    { title: "Item 3", icon: <Icon name="pen" /> },
+  ]}
+>
+  <Button color="primary" text="Dropdown" />
+</Dropdown>
+```
+
+### Abrir Dropdown no `hover`
+
+Com `hoverable`, o dropdown aparecerá quando **_hovering_** o _children_.
+
+<Flex mb="xl" flexDirection="row">
+  <DropdownListHoverExample />
+</Flex>
+
+```jsx {3}
+<Dropdown
+  full
+  hoverable
+  content={
+    <List
+      showCheckIcon
+      content={[
+        { title: "Item 1", icon: <Icon name="clock" /> },
+        { title: "Item 2", icon: <Icon name="emojiStar" /> },
+        { title: "Item 3", icon: <Icon name="pen" /> },
+      ]}
+    />
+  }
+>
+  <Button color="primary" text="Hover me :)" />
+</Dropdown>
+```
+
+### Exemplo
+
+<Flex mb="xl">
+  <DropdownExample />
+</Flex>
+
+```jsx
+function CustomTriggerDropdown() {
+  const { showNotification } = useNotification();
+
+  const listItemAction = ({ title }: ItemContent) => {
+    showNotification({
+      title: "Você Selecionou a Opção",
+      message: title,
+      autoClose: 5,
+    });
+  };
+
+  return (
+    <Dropdown
+      full
+      options={[
+        {
+          title: "Item 1",
+          icon: <Icon name="clock" />,
+          action: listItemAction,
+        },
+        {
+          title: "Item 2",
+          icon: <Icon name="emojiStar" />,
+          action: listItemAction,
+        },
+      ]}
+    >
+      {({ isOpen, toggle }) => (
+        <Button
+          onClick={toggle}
+          color="primary"
+          size="small"
+          text="Dropdown"
+          iconPosition="right"
+          icon={
+            isOpen ? <Icon name="chevronDown" /> : <Icon name="chevronRight" />
+          }
+        />
+      )}
+    </Dropdown>
+  );
+}
+```
+
+### Dropdown API
+
+| Propriedade | Tipo                          | Padrão | Descrição                                                             |
+| ----------- | ----------------------------- | ------ | --------------------------------------------------------------------- |
+| content     | ReactNode                     |        | Um componente para renderizar dentro do Dropdown.                     |
+| options     | ItemContent[]                 |        | Atalho para renderizar um `List`.                                     |
+| position    | `left` \| `center` \| `right` | `left` | Posição do Dropdown.                                                  |
+| hoverable   | boolean                       | false  | Caso `true` o Dropdown e aticado no hover do componente _children_.   |
+| full        | boolean                       | false  | Caso `true` o Dropdown terá a mesma largura do componente _children_. |
+| width       | string \| number              |        | Largura do `Dropdown`.                                                |

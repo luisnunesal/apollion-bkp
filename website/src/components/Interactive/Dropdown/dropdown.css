@@ -1,0 +1,4 @@
+.dropdown__menu {
+  max-height: 320px;
+  overflow: auto;
+}

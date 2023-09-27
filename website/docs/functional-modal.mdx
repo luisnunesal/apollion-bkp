@@ -1,0 +1,199 @@
+---
+id: functional-modal
+title: Modal
+---
+
+<!-- apollion packages -->
+
+import { Flex, Typography, Button } from "@captalys-platform/core";
+
+<!-- website packages -->
+
+import { Interactive, boolean, pill } from "../src/components/Interactive";
+
+<!-- example packages -->
+
+import {
+  ControlledExample,
+  UncontrolledExample,
+  OverflowExample,
+  SizeExample,
+  FooterExample,
+  ModalVariantExample,
+} from "../src/examples/Components/Elements/Modal";
+
+Ao exigir que os usuários interajam com o aplicativo, mas sem pular para uma nova página e interromper o fluxo de trabalho do usuário, você pode usar o Modal para criar uma nova camada flutuante sobre a página atual para obter feedback do usuário ou exibir informações.
+
+### Modal
+
+O conteúdo pode ser passado através de `children`.
+
+```jsx {4}
+<Modal
+  trigger={<Button text="modal simples" />}
+>
+  <Typography text="Lorem ipsum dolor, sit amet consectetur adipisicing elit.">
+</Modal>
+```
+
+### Variantes
+
+O modal possui quatro variantes de cor:
+
+- `primary` (padrão)
+- `warning`
+- `success`
+- `danger`
+
+<Flex mb="xl">
+  <ModalVariantExample />
+</Flex>
+
+```jsx
+<Modal variant="danger" {...otherProps} />
+
+<Modal variant="warning" {...otherProps} />
+
+<Modal variant="success" {...otherProps} />
+
+<Modal variant="primary" {...otherProps} />
+```
+
+### Modal `Controlled`
+
+O modal `controlled` não possui `state`, o estado do componente precisar ser definido no componente _pai_ e passado nas props `isOpen` e `onDismiss`.
+
+<Flex mb="xl">
+  <ControlledExample />
+</Flex>
+
+```jsx {10-11}
+import {Modal, useToggle} from "@captalys-platform/core";
+
+const Example = () => {
+  const {active: isOpen, disable, enable} = useToggle();
+
+  return (
+    <Button onClick={enable} text="Show Modal"/>
+
+    <Modal
+      isOpen={isOpen}
+      onDismiss={disable}
+      icon={<Icon name="cog" />}
+      title='Modal Title'
+      tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    />
+  )
+};
+```
+
+### Modal `Uncontrolled`
+
+O Modal `uncontrolled` não precisa de estado externo, apenas de um componente que funcione como `toggle` do modal.
+
+<Flex mb="xl">
+  <UncontrolledExample />
+</Flex>
+
+```jsx {2,4}
+<Modal
+  trigger={<Button text="Show Modal" />}
+  {/* trigger também recebe uma função com as props "open" e "isOpen" */}
+  trigger={({ open, isOpen }) => <Button onClick={open} isLoading={isOpen} />}
+  icon={<Icon name="cog" />}
+  title="Modal Title"
+  tagline="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+>
+  <Image src={imageUrl} />
+</Modal>
+```
+
+### Modal sizes
+
+`Modal` possui quatro tamanhos que alteram sua largura:
+
+- `small`
+- `base` (padrão)
+- `medium`
+- `large`
+
+<Flex mb="xl">
+  <SizeExample />
+</Flex>
+
+```jsx
+<Modal size="small" trigger={<Button color="primary" text="Modal small" />}>
+  <Flex flexDirection="row" justifyContent="center">
+    <Image style={{ width: 300, height: "auto" }} src={image} />
+  </Flex>
+</Modal>
+
+<Modal trigger={<Button color="primary" text="Modal base" />}>
+  <Flex flexDirection="row" justifyContent="center">
+    <Image style={{ width: 300, height: "auto" }} src={image} />
+  </Flex>
+</Modal>
+
+<Modal size="medium" trigger={<Button color="primary" text="Modal medium" />}>
+  <Flex flexDirection="row" justifyContent="center">
+    <Image style={{ width: 300, height: "auto" }} src={image} />
+  </Flex>
+</Modal>
+
+<Modal size="large" trigger={<Button color="primary" text="Modal large" />}>
+  <Flex flexDirection="row" justifyContent="center">
+    <Image style={{ width: 300, height: "auto" }} src={image} />
+  </Flex>
+</Modal>
+```
+
+### Modal Footer
+
+Para o `footer` ser exibido é necessario passar a prop `onConfirm`. É possivel definir o **text** dos butões com as props `cancelText` e `confirmText`
+Também há a possibilidade de escolher entre três tipos de `footer`:
+
+- `expanded`
+- `right` (padrão)
+- `full`
+
+<Flex mb="xl">
+  <FooterExample />
+</Flex>
+
+```jsx
+<Modal
+  footer="right"
+  cancelText="Cancelar"
+  confirmText="Confirmar"
+  onConfirm={({ close }) => {
+    // disparar alguma ação
+    console.log("Ola mundo");
+    // ao final fechar o modal
+    close();
+  }}
+  {...otherProps}
+>
+  <Image src={imageUrl} />
+</Modal>
+```
+
+## Modal API
+
+| Propriedade   | Tipo                                                  | Padrão    | Descrição                               |
+| ------------- | ----------------------------------------------------- | --------- | --------------------------------------- |
+| icon          | `React.ReactNode`                                     |           | ícone exbido ao lado esquerdo do titulo |
+| title         | string                                                |           | titulo                                  |
+| tagline       | string                                                |           | texto exibido abaixo do titulo          |
+| isOpen        | boolean                                               |           |                                         |
+| onDismiss     | () => void                                            |           |                                         |
+| trigger       | `React.ReactNode` \| () => `React.ReactNode`          |           |                                         |
+| size          | `small` \| `base` \| `medium` \| `large`              | `base`    | largura do modal                        |
+| onConfirm     | ({ close }) => void                                   |           | callback do footer                      |
+| confirmButton | `React.ReactNode`                                     |           |                                         |
+| cancelButton  | `React.ReactNode` \| ({ close }) => `React.ReactNode` |           |                                         |
+| footer        | `expanded` \| `right` \| `full`                       | `right`   | Posição dos botões do footer            |
+| variant       | `primary` \| `danger` \| `success` \| `warning`       | `primary` | Cor tema do modal                       |
+| noCloseButton | boolean                                               | false     | não exibir butão de fechar              |
+| maxWidth      | string                                                | sm        | Avaliable sizes: xs\sm\md\lg\xl         |

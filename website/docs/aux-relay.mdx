@@ -1,0 +1,100 @@
+---
+id: aux-relay
+title: Relay Core
+---
+
+## Para que serve?
+
+É usado para controlar a comunicação do `frontend` com o `Relay`.
+Com a finalidade de reduzir o código que por muitas vezes é repetitivo em projetos com GraphQL/Relay. Facilita os testes e o monitoramento.
+
+## O que faz?
+
+A `lib` usa chamadas `XHR` encapsuladas por um `Observable`. Isso quer dizer que está preparada para utilizar as `diretivas` do próprio Relay. Como o `@defer`.
+
+## Instalação
+
+Use o comando a seguir:
+
+```bash
+npm install --save @captalys-platform/relay
+
+# Ou
+
+yarn add @captalys-platform/relay
+```
+
+## Setup do projeto
+
+Exporte a variável `CreateRelayEnvironment` e utilize nas chamadas do projeto.
+
+```jsx
+import { CreateRelayEnvironment } from "@captalys-platform/relay";
+
+export const { Environment } = new CreateRelayEnvironment({
+  url: "<url/do/graphql>",
+});
+```
+
+## Como armazenar variáveis de autenticação no cliente
+
+Existem duas estratégias para armazenar variáveis no navegador do cliente: `localStorage (padrão)` e `cookie`.
+
+Ao criar um novo ambiente, a própria classe exporta um `handler` para gerenciar as variáveis no cliente baseado na estratégia esscolhida.
+
+```jsx
+export const { Environment, StorageHandler } = new CreateRelayEnvironment({
+  url: "<url/do/graphql>",
+});
+```
+
+O `StorageHandler` possui 3 métodos:
+
+### setTokens
+
+Grava os tokens de autenticação no navegador.
+
+```js
+StorageHandler.setTokens({
+  sessionToken,
+  refreshToken,
+});
+```
+
+### getTokens
+
+Recupera os tokens de autenticação do navegador.
+
+```js
+const { sessionToken, refreshToken } = StorageHandler.getTokens();
+```
+
+### clear
+
+Limpa qualquer registro de auutenticação do navegador
+
+```js
+StorageHandler.clear();
+```
+
+## Properties
+
+| propname           | proptype                 | default                             | description                                                                                                                    |
+| ------------------ | ------------------------ | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| url                | string                   | (obrigatório)                       | Url do servidor GraphQL                                                                                                        |
+| socket             | boolean                  | false                               | Url do WebSocket                                                                                                               |
+| retries            | number[]                 | [1s, 2s, 3s, 5s, 8s, 13s, 21s, 34s] | Caso o servidor esteja fora do ar. O sistema fará uma nova tentativa respeitando os tempos (em segundos) no Array              |
+| timeout            | number                   | 15 minutos                          | Tempo de `timeout` do sistema                                                                                                  |
+| useSubscription    | boolean                  | false                               | Habilita o suporte a WebSocket                                                                                                 |
+| useAuthorization   | boolean                  | false                               | Adiciona as variáveis de autenticação no Header                                                                                |
+| useCache           | boolean                  | false                               | Habilita a funcionalidade de Cache do cliente                                                                                  |
+| cacheTime          | number                   | 60000                               | Tempo que o sistema irá reter a chamada do cliente                                                                             |
+| cacheSize          | number                   | 250                                 | Quantidade máxima de `queries` armazenadas                                                                                     |
+| sessionStorageProp | string                   | 'USER_SESSION_TOKEN'                | Nome da variável de autenticação para `session`                                                                                |
+| refreshStorageProp | string                   | 'USER_REFRESH_TOKEN'                | Nome da variável de autenticação para `refresh`                                                                                |
+| useDebug           | boolean                  | false                               | Habilita Relay Dev Tools no navegador. (Necessário ter instalado o plugin)                                                     |
+| useRetries         | boolean                  | false                               | Habilita a funcionalidade de reconexão                                                                                         |
+| loginRoute         | string                   | '/'                                 | Rota de login do sistema. Nessa rota não é adicionado no `Headers` os tokens de autenticação                                   |
+| redirectOnError    | true                     | true                                | Em caso de erro desconhecido ou de autenticação o sistema auutomaticamente desloga o usuário e direciona para a tela de login. |
+| retryWhen          | number[]                 | [504, 503, 521, 522, 524]           | Em casos dos erros HTTP configurados no array o sistema re-executa a `query`. (Necessário `useRetries` habilitado.)            |
+| storageType        | 'cookie', 'localstorage' | 'localstorage'                      | Define a estratégia para armazenar variáveis de autenticação                                                                   |

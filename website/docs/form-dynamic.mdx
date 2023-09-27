@@ -1,0 +1,161 @@
+---
+id: form-dynamic
+title: Dinâmico
+---
+
+import { DynamicFormExample } from "../src/examples/Components/Form/Form";
+
+## Exemplo
+
+Gera um formulário rapidamente de acordo com as necessidades.
+
+<DynamicFormExample />
+
+```jsx {3-12}
+<Form
+  handleSubmit={(values) => alert(JSON.stringify(values))}
+  conditionalFields={{
+    email: ({ input_options }) =>
+      Array.isArray(input_options) && input_options.includes("email"),
+    password: ({ input_options }) =>
+      Array.isArray(input_options) && input_options.includes("password"),
+    cellphone: ({ input_options }) =>
+      Array.isArray(input_options) && input_options.includes("cellphone"),
+    gender: ({ input_options }) =>
+      Array.isArray(input_options) && input_options.includes("gender"),
+    upload: ({ input_options }) =>
+      Array.isArray(input_options) && input_options.includes("upload"),
+    range: ({ input_options }) =>
+      Array.isArray(input_options) && input_options.includes("range"),
+    comment: ({ input_options }) =>
+      Array.isArray(input_options) && input_options.includes("comment"),
+  }}
+  fields={{
+    input_options: {
+      label: "Selecione as operadoras com quem trabalha:",
+      validation: Yup.string().required("Required"),
+      component: FieldGroup,
+      inputProps: {
+        type: "checkbox",
+        columns: 3,
+        gap: { column: 40, row: 15 },
+        inputs: [
+          { name: "email", value: "email", label: "E-Mail" },
+          { name: "password", value: "password", label: "Password" },
+          {
+            name: "cellphone",
+            value: "cellphone",
+            label: "Cellphone",
+          },
+          { name: "gender", value: "gender", label: "Gender" },
+          { name: "upload", value: "upload", label: "Upload" },
+          { name: "range", value: "range", label: "Range" },
+          { name: "comment", value: "comment", label: "Comment" },
+        ],
+      },
+    },
+    email: {
+      label: "Email",
+      component: Input,
+      validation: Yup.string()
+        .email("isn't a valid email")
+        .required("Required"),
+      inputProps: {
+        type: "email",
+        placeholder: "your.email@apollion.com",
+        autoComplete: "off",
+      },
+    },
+    password: {
+      label: "Password",
+      component: Input,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        type: "password",
+        placeholder: "Type your password",
+      },
+    },
+    cellphone: {
+      label: "Celular",
+      component: InputMask,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        type: "text",
+        mask: "(00) 0 0000-0000",
+        placeholder: "(xx) x xxxx-xxxx",
+        clearable: true,
+      },
+    },
+    gender: {
+      label: "Gênero",
+      component: InputSelect,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        placeholder: "Selecione seu gênero",
+        isSearchable: false,
+        isClearable: true,
+        options: [
+          { label: "Masculino", value: "M" },
+          { label: "Feminino", value: "F" },
+          { label: "Outro", value: "N/A" },
+        ],
+      },
+    },
+    range: {
+      label: "Current Balance",
+      component: InputRange,
+      validation: Yup.number().required("Required"),
+      inputProps: {
+        min: 40,
+        max: 99,
+        step: 1,
+        display: true,
+      },
+    },
+    upload: {
+      label: "File",
+      component: UploadCard,
+      validation: Yup.mixed().test("hasFile", "A file is required", (value) =>
+        Array.isArray(value)
+      ),
+      inputProps: {
+        compact: true,
+        text: "upload",
+        accept: ".png",
+      },
+    },
+    comment: {
+      label: "Descrição",
+      component: TextArea,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        maxLength: 120,
+      },
+    },
+    olderThan18: {
+      label: "Terms of Service",
+      component: Checkbox,
+      validation: Yup.boolean().required("Required"),
+      inputProps: {
+        label: "Aceito qualquer coisa",
+      },
+    },
+  }}
+>
+  {({ olderThan18, ...values }) => {
+    const isDisabled = !olderThan18;
+    return <Button text="Custom" type="submit" disabled={isDisabled} />;
+  }}
+</Form>
+```
+
+A doc. do formulário é a mesma que do [formulário básico](form-basic#api-doc)
+
+### DynamicForm API
+
+| Propriedade       | Tipo                                                                    | Padrão    | Descrição                                                                                                                                                                                         |
+| ----------------- | ----------------------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| handleSubmit      | (values, helpers) => void                                               | null      | função que é chamada sempre que o formulário é enviado. Com isso, você pode acessar os valores do formulário (1º argumento) e alguns auxiliares (2º argumento).                                   |
+| conditionalFields | [key in keyof Fields]?: (values: Partial<Values<Fields\>\>) => boolean; | undefined | Um objeto em que cada chave corresponde a uma chave do `Field`, o valor deve ser uma função retornando um **boolean**                                                                             |
+| fields            | [Fields]                                                                |           | Receberá os campos e os renderizará dentro do formulário, respeitando o `grid` que foi passado também. Cada ** key **(chave) no objeto ** fields **(campos) será considerada como `área` no Grid. |
+| inputProps        |                                                                         |           | Aceita as propriedades especificas do componente utilizado. Ex: `maxLength` para o TextArea                                                                                                       |

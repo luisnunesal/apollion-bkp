@@ -1,0 +1,30 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+[ -n "$CI" ] && exit 0
+
+while read oldrev newrev ref
+do
+  BRANCH=$(git rev-parse --symbolic --abbrev-ref $ref)
+
+  if [ $BRANCH = "master" ]
+  then
+    echo "Validating for production"
+    yarn validate
+
+  elif [ $BRANCH = "sandbox" ]
+  then
+    echo "Validating for production"
+    yarn validate
+
+  elif [ $BRANCH = "staging" ]
+  then
+    echo "Validating for development"
+    yarn validate
+
+  else
+    echo "Validating for development"
+    yarn validate
+
+  fi
+done

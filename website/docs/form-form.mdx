@@ -1,0 +1,277 @@
+---
+id: form-form
+title: Todos os campos
+---
+
+import { FormExample } from "../src/examples/Components/Form/Form";
+
+## Objetivo
+
+Providencia uma maneira dinâmica de criar formulários com validação, usando ou [Flex](containers-flex) ou [Grid](containers-grid) e objetos literais
+
+## Implementação
+
+Para utilizar, nós precisamos:
+
+- Definir um objeto que irá conter todos os valores iniciais (**initialValues**).
+- Declarar um **método submit** que vai ser chamado quando o usuário enviar o formulário.
+- Definir um objeto de objetos que contenha **todos os campos** que serão renderizados no formulário.
+- Definir um objeto do tipo [Grid Breakpoints](containers-grid) que irá orgnizar todos os `inputs`.
+
+### With all field types
+
+<FormExample />
+
+### Exemplo de configuração
+
+```tsx
+export const FormExample = () => {
+  const formFields: FormFieldsType = {
+    name: {
+      label: "Nome",
+      component: Input,
+      validation: Yup.string().required("Required"), // OPCIONAL
+      inputProps: {
+        placeholder: "Digite seu nome",
+        clearable: true,
+      },
+    },
+    email: {
+      label: "Email",
+      component: Input,
+      validation: Yup.string()
+        .email("isn't a valid email")
+        .required("Required"),
+      inputProps: {
+        type: "email",
+        clearable: true,
+        placeholder: "seu.email@apollion.com",
+      },
+    },
+    password: {
+      label: "Senha",
+      component: Input,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        type: "password",
+        clearable: true,
+        placeholder: "Digite sua senha",
+      },
+    },
+    cellphone: {
+      label: "Celular",
+      component: InputMask,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        type: "text",
+        mask: "(00) 0 0000-0000",
+        placeholder: "(xx) x xxxx-xxxx",
+        clearable: true,
+      },
+    },
+    comment: {
+      label: "Descrição",
+      component: TextArea,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        maxLength: 120,
+      },
+    },
+    gender: {
+      label: "Gênero",
+      component: InputSelect,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        placeholder: "Selecione seu gênero",
+        isSearchable: false,
+        isClearable: true,
+        options: [
+          { label: "Masculino", value: "M" },
+          { label: "Feminino", value: "F" },
+          { label: "Outro", value: "N/A" },
+        ],
+      },
+    },
+    age: {
+      label: "Idade",
+      component: Input,
+      validation: Yup.number().required("Required"),
+      inputProps: {
+        type: "number",
+        placeholder: "Idade",
+        maxLength: 3,
+      },
+    },
+    olderThan18: {
+      label: "Eu sou maior de 18",
+      component: Checkbox,
+      validation: Yup.boolean().required("Required"),
+      inputProps: {
+        label: "Eu sou maior de 18",
+      },
+    },
+    money: {
+      label: "Saldo Atual",
+      component: InputRange,
+      validation: Yup.number().required("Required"),
+      inputProps: {
+        min: 40,
+        max: 99,
+        step: 1,
+        display: true,
+      },
+    },
+    file: {
+      label: "Arquivo",
+      component: UploadCard,
+      validation: Yup.mixed().test(
+        "hasFile",
+        "Um arquivo é requirido",
+        (value) => Array.isArray(value)
+      ),
+      inputProps: {
+        compact: true,
+        text: "upload",
+        accept: ".png",
+      },
+    },
+    async: {
+      label: "Async",
+      component: InputSelect,
+      validation: Yup.string().required("Required"),
+      inputProps: {
+        loadOptions: (inputValue) => {
+          return fetchQuery(Environment, graphQLQuery, variables)
+            .then((res) => res.json())
+            .then((response) => {
+              const options = response.map((item) => ({
+                value: item.id,
+                label: item.title,
+              }));
+
+              if (!inputValue) {
+                return options;
+              }
+
+              return options.filter((item) => item.label.includes(inputValue));
+            });
+        },
+      },
+    },
+    payment_device: {
+      label: "Selecione as operadoras com quem trabalha:",
+      validation: Yup.string().required("Required"),
+      component: FieldGroup,
+      inputProps: {
+        type: "checkbox",
+        columns: 2,
+        gap: { column: 40, row: 15 },
+        inputs: [
+          { name: "getnet", value: "getnet", label: "Getnet" },
+          { name: "rede", value: "rede", label: "Rede" },
+          { name: "bin", value: "bin", label: "Bin" },
+          { name: "cielo", value: "cielo", label: "Cielo" },
+          { name: "stone", value: "stone", label: "Stone" },
+          { name: "outros", value: "outros", label: "Outros" },
+        ],
+      },
+    },
+    usage_time: {
+      label: "Há quanto tempo você trabalha com elas?",
+      validation: Yup.string().required("Required"),
+      component: FieldGroup,
+      inputProps: {
+        type: "radio",
+        gap: 10,
+        inputs: [
+          { id: "v1", value: "<6M", label: "Menos de 6 meses" },
+          { id: "v2", value: "6M-1A", label: "De 6 meses a 1 ano" },
+          { id: "v3", value: ">1A", label: "Mais de 1 ano" },
+        ],
+      },
+    },
+  };
+
+  const FormGrid = {
+    medias: {
+      xs: {
+        columns: "1fr",
+        rows: "10fr",
+        areas: `
+          "name"
+          "email"
+          "password"
+          "cellphone"
+          "comment"
+          "gender"
+          "age"
+          "async"
+          "file"
+          "olderThan18"
+          "money"
+          "payment_device"
+          "usage_time"
+          "button"
+        `,
+        columnGap: "micro",
+        rowGap: "micro",
+      },
+      sm: {
+        columns: "2fr",
+        rows: "10fr",
+        areas: `
+          "name name"
+          "email email"
+          "password password"
+          "cellphone cellphone"
+          "comment comment"
+          "gender age"
+          "async async"
+          "olderThan18 ."
+          "file file"
+          "money money"
+          "payment_device payment_device"
+          "usage_time usage_time"
+          "button button"
+        `,
+        columnGap: "xs",
+        rowGap: "xs",
+      },
+    },
+  };
+
+  const initialValues = {
+    email: "",
+    name: "Nome inicial",
+    payment_device: ["getnet", "stone"],
+    usage_time: "6M-1A",
+  };
+
+  return (
+    <ApollionProvider>
+      <Form
+        fields={formFields}
+        handleSubmit={console.log}
+        medias={FormGrid.medias}
+        initialValues={initialValues}
+      />
+    </ApollionProvider>
+  );
+};
+```
+
+### Form API
+
+| Propriedade         | Tipo                                                                        | Padrão   | Descrição                                                                                                                                                                 |
+| ------------------- | --------------------------------------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| fields              | [Fields]                                                                    |          | Irá receber os campos que serão renderizados dentro do Form, respeitando o grid que for passado. Cada **chave** do objeto **fields** será considerado uma `area` no Grid. |
+| handleSubmit        | (values, helpers) => void                                                   | null     | Função que será chamada quando o formulário for enviado. Com isso você consegue acessar valores do formulário (primeiro argumento) e alguns helpers (segundo argumento).  |
+| onError             | (fields: Record<string, any>) => void                                       |          | Função chamada quando houver erros de validação.                                                                                                                          |
+| initialValues       | [key: string]: string / boolean / number / { value: string, label: string } | ''       | Objeto contendo qualquer valor inicial que seus campos podem ter. Eles são preenchidos pela chave provida no objeto.                                                      |
+| children?           | ReactNode                                                                   |          | Componentes filhos que renderizam qualquer coisa, mas são usados para renderizar o botão com **type='submit'**                                                            |
+| medias?             | [Grid Breakpoints](containers-grid)                                         |          | Tipo do Grid que define onde cada um dos elementos serão posicionados                                                                                                     |
+| flex?               | [Flex Properties](containers-flex)                                          |          | Tipo do Grid que define onde cada um dos elementos serão posicionados                                                                                                     |
+| inverted?           | boolean                                                                     | false    | Utilize quando houver background escuro.                                                                                                                                  |
+| submitLabel?        | string                                                                      | 'Enviar' | Texto que será utilizado no botão de submit padrão se o filho foi null.                                                                                                   |
+| validationOnBlur?   | boolean                                                                     | false    | Se for true, toda vez que um campo acionar o evento `blur` irá validar o campo, baseado na validação que foi fornecida no objeto `fields`.                                |
+| validationOnChange? | boolean                                                                     | false    | Se for true, toda vez que um campo acionar o evento `change` irá validar o campo, baseado na validação que foi fornecida no objeto `fields`.                              |

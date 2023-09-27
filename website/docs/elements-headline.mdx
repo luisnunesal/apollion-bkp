@@ -1,0 +1,51 @@
+---
+id: elements-headline
+title: Headline
+---
+
+import { Headline, Flex, Paper } from "@captalys-platform/core";
+
+Heading são títulos de páginas e utilizados semanticamente como as tags HTML H1 até H6.
+
+**Obs**: É possivel utilizar todas as propiedades do componente [Typography](/docs/elements-typography)
+
+### Variantes
+
+<Flex gap="large" mb="xl">
+  <Flex gap="micro">
+    <Headline variant="h1" text="Headline - h1" />
+    <Headline variant="h2" text="Headline - h2" />
+    <Headline variant="h3" text="Headline - h3" />
+    <Headline variant="h4" text="Headline - h4" />
+    <Headline variant="h5" text="Headline - h5" />
+    <Headline variant="h6" text="Headline - h6" />
+  </Flex>
+</Flex>
+
+```jsx
+<Headline variant="h1" text="Headline - h1" />
+<Headline variant="h2" text="Headline - h2" />
+<Headline variant="h3" text="Headline - h3" />
+<Headline variant="h4" text="Headline - h4" />
+<Headline variant="h5" text="Headline - h5" />
+<Headline variant="h6" text="Headline - h6" />
+```
+
+## Headline API
+
+| Propriedade    | Tipo                                                                                                                        | Padrão        | Descrição |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------- | --------- |
+| children       | ReactNode                                                                                                                   |               |           |
+| variant        | `h1` \| `h2` \| `h3` \| `h4` \| `h5` \| `h6`                                                                                | none          |           |
+| align          | `start` \| `end` \| `left` \| `right` \| `center` \| `justify` \| `match-parent`                                            | none          |           |
+| fontSize       | `nano` \| `micro` \| `small` \| `normal` \| `medium` \| `large` \| `xl` \| `xxl` \| `giant` \| `colossal` \| `gargantua` \| |               |           |
+| fontWeight     | `light` \| `regular` \| `bold` \| `stronger`                                                                                |               |           |
+| lineHeight     | `tight` \| `close` \| `regular` \| `wild`                                                                                   |               |           |
+| letterSpacing  | `tight` \| `regular` \| `wild`                                                                                              |               |           |
+| textTransform  | `uppercase` \| `lowercase` \| `captalyze` \| `none`                                                                         |               |           |
+| textDecoration | `none` \| `overline` \| `underline` \| `line-through`                                                                       |               |           |
+| fontStyle      | `normal` \| `code`                                                                                                          | `normal`      |           |
+| area           | String                                                                                                                      |               |           |
+| color          | String                                                                                                                      | `neutral.180` |           |
+| text           | String                                                                                                                      |               |           |
+| htmlFor        | String                                                                                                                      |               |           |

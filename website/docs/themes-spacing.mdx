@@ -1,0 +1,54 @@
+---
+id: themes-spacing
+title: Spacing
+---
+
+import { Flex, Image } from "@captalys-platform/core";
+import {
+  Interactive,
+  boolean,
+  select,
+  text,
+} from "../src/components/Interactive";
+
+Nós utilizamos um padrão baseado em grid com espaçamento unitário de 4px, dividido em um algoritmo que considera uma escala de crescimento orgânico.
+
+## Demo
+
+<Interactive hideCode>
+  <Flex
+    flexDirection="row"
+    gap={select("Spacing", "medium", [
+      "micro",
+      "xs",
+      "small",
+      "medium",
+      "large",
+      "xl",
+      "xxl",
+      "giant",
+    ])}
+  >
+    <Image
+      style={{ width: 100, height: "auto" }}
+      src="https://avatars2.githubusercontent.com/u/19891059?s=460&u=98b1f0d4b0207ad22899b054332e4e87654bcaa3&v=4"
+    />
+    <Image
+      style={{ width: 100, height: "auto" }}
+      src="https://avatars2.githubusercontent.com/u/19891059?s=460&u=98b1f0d4b0207ad22899b054332e4e87654bcaa3&v=4"
+    />
+  </Flex>
+</Interactive>
+
+## Spacing units table
+
+| Alias            | Use                                         | REM unit | DP/PX Unit |
+| ---------------- | ------------------------------------------- | -------- | ---------- |
+| micro            | Espaçamento interno de agrupamentos         | .25      | 4          |
+| xs               | Entrelinhas de agrupamentos                 | .5       | 8          |
+| small            | Espaçamentos de inputs e de blocos internos | .75      | 12         |
+| medium / Default | Espaçamento entre componentes externos      | 1        | 16         |
+| large            | Espaçamento entre blocos de componentes     | 1.75     | 28         |
+| xl               | Espaçamento entre blocos de conteúdo        | 2.75     | 44         |
+| xxl              | Espaçamento entre seções de páginas         | 4.5      | 72         |
+| giant            | Espaçamentos entre conteúdos diferentes     | 7.25     | 116        |

@@ -1,0 +1,85 @@
+---
+id: containers-paper
+title: Paper
+---
+
+import { Paper, Flex, Image, Typography } from "@captalys-platform/core";
+import { Interactive, select } from "../src/components/Interactive";
+import { colors, sizes } from "../src/examples/Components/Elements/Icon";
+import { PaperDeepExample } from "../src/examples/Components/Containers/Paper";
+
+Utilize o `Paper` quando necessitar de sombras para indicar profundidade. `Paper` possui todas as props do `Flex`.
+
+### Profundidade
+
+`Paper` (`Flex` também) possuem 8 niveis de profundidade começando em -1 até 6.
+
+<Flex mb="xl">
+  <PaperDeepExample />
+</Flex>
+
+```jsx
+<Paper bgColor="neutral.5" p="small">
+  <Paper deep={-1} />
+  <Paper deep={0} />
+  <Paper deep={1} />
+  <Paper deep={2} />
+  <Paper deep={3} />
+  <Paper deep={4} />
+  <Paper deep={5} />
+  <Paper deep={6} />
+</Paper>
+```
+
+## Alterando cor das sombras.
+
+`deepColor` altera a cor da sombra.
+
+<Interactive>
+  <Paper
+    deep={select("deep", -1, [-1, 0, 1, 2, 3, 4, 5, 6])}
+    deepColor={select("deepColor", "danger", colors)}
+    p="small"
+  >
+    <Typography variant="h4" text="Lorem Ipsum" />
+  </Paper>
+</Interactive>
+
+## Paper API
+
+| Propriedade    | Tipo                                                    | Padrão         | Descrição                        |
+| -------------- | ------------------------------------------------------- | -------------- | -------------------------------- |
+| deep           | `-1` \| `0` \| `1` \| `2` \| `3` \| `4` \| `5` \| `6`   | `2`            | nivel de profundidade            |
+| deepColor      | string                                                  | `grayscale.50` | cor da sombra                    |
+| noShadow       | boolean                                                 | false          | desativar sombra de profundidade |
+| square         | boolean                                                 | false          | remover `borderRadius`           |
+| gap            | number \| `SpacingInterface`                            |                |                                  |
+| direction      | `row` \| `row-reverse` \| `column` \| `column-reverse`; | `column`       |                                  |
+| justifyContent | string                                                  | `flex-start`   |                                  |
+| alignItems     | string                                                  | `streach`      |                                  |
+| borderStyle    | string                                                  |                |                                  |
+| borderWidth    | string                                                  |                |                                  |
+| borderColor    | string                                                  |                |                                  |
+| borderRadius   | string                                                  |                |                                  |
+| bgColor        | string                                                  |                |                                  |
+| color          | string                                                  |                |                                  |
+| height         | number \| string                                        |                |                                  |
+| maxHeight      | number \| string                                        |                |                                  |
+| minHeight      | number \| string                                        |                |                                  |
+| width          | number \| string                                        |                |                                  |
+| maxWidth       | number \| string                                        |                |                                  |
+| minWidth       | number \| string                                        |                |                                  |
+| p              | number \| `SpacingInterface`                            |                | padding                          |
+| px             | number \| `SpacingInterface`                            |                | padding horizontal               |
+| py             | number \| `SpacingInterface`                            |                | padding vertical                 |
+| pt             | number \| `SpacingInterface`                            |                | padding-top                      |
+| pb             | number \| `SpacingInterface`                            |                | padding-bottom                   |
+| pl             | number \| `SpacingInterface`                            |                | padding-left                     |
+| pr             | number \| `SpacingInterface`                            |                | padding-right                    |
+| m              | number \| `SpacingInterface`                            |                | margin                           |
+| mx             | number \| `SpacingInterface`                            |                | margin horizontal                |
+| my             | number \| `SpacingInterface`                            |                | margin vertical                  |
+| mt             | number \| `SpacingInterface`                            |                | margin-top                       |
+| mb             | number \| `SpacingInterface`                            |                | margin-bottom                    |
+| ml             | number \| `SpacingInterface`                            |                | margin-left                      |
+| mr             | number \| `SpacingInterface`                            |                | margin-right                     |

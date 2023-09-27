@@ -1,0 +1,434 @@
+---
+id: containers-flex
+title: Flex
+---
+
+import {
+  Flex,
+  Paper,
+  Typography,
+  Button,
+  Image,
+  Text,
+  BaseText,
+} from "@captalys-platform/core";
+
+import {
+  Interactive,
+  boolean,
+  pill,
+  select,
+} from "../src/components/Interactive";
+
+import {
+  FlexCardExample,
+  FlexBackgroundExample,
+} from "../src/examples/Components/Containers/Flex";
+import { colors } from "../src/examples/Components/Elements/Icon";
+
+`Flex` é o principal componente sobre o qual todos os outros componentes da IU do Apollion são construídos. Por padrão, ele renderiza um elemento div.
+
+### Espaçamento
+
+Com `Flex` é possivel criar espaçamento entre elementos e orienta-los em linha ou coluna, com as props `gap` e `direction`.
+
+<Interactive>
+  <Flex
+    gap={select("Gap", "xl", [
+      "micro",
+      "xs",
+      "small",
+      "medium",
+      "large",
+      "xl",
+      "xxl",
+      "giant",
+    ])}
+    flexDirection={select("Direction", "row", [
+      "row",
+      "column",
+      "row-reverse",
+      "column-reverse",
+    ])}
+  >
+    <Button variant="outlined" size="small" text="Cancelar" />
+    <Button text="Comprar" size="small" />
+  </Flex>
+</Interactive>
+
+Também é possivel controlar margin e padding usando atalhos
+
+```jsx
+<Flex p="micro" />       // padding
+<Flex pt="xs" />         // padding-top
+<Flex pb="small" />      // padding-bottom
+<Flex pl="medium" />     // padding-left
+<Flex pr="large" />      // padding-right
+<Flex py="xl" />         // padding-top & padding-bottom
+<Flex px="xxl" />        // padding-right
+
+<Flex m="micro" />       // margin
+<Flex mt="xs" />         // margin-top
+<Flex mb="small" />      // margin-bottom
+<Flex ml="medium" />     // margin-left
+<Flex mr="large" />      // margin-right
+<Flex my="xl" />         // margin-top & margin-bottom
+<Flex mx="xxl" />        // margin-right
+```
+
+### Flex
+
+Use `flex="initial` para permitir que um _**flex children**_ encolha, mas não aumente, levando em consideração seu tamanho inicial:
+
+<Flex
+  gap="large"
+  borderRadius="md"
+  color="neutral.0"
+  bgColor="grayscale.5"
+  p="large"
+  mb="large"
+>
+  <Flex gap="small">
+    <Typography text="Os itens não crescem quando há espaço extra" />
+    <Flex flexDirection="row" gap="small">
+      <Flex flex="initial" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Short</BaseText>
+      </Flex>
+      <Flex flex="initial" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Medium lenght</BaseText>
+      </Flex>
+    </Flex>
+  </Flex>
+
+  <Flex gap="small">
+    <Typography text="Os itens diminuem, se possível, quando necessário" />
+    <Flex flexDirection="row" gap="small">
+      <Flex flex="initial" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Short</BaseText>
+      </Flex>
+      <Flex flex="initial" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Medium lenght</BaseText>
+      </Flex>
+      <Flex flex="initial" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui ad
+          labore ipsam, aut rem quo repellat esse tempore id, quidem{" "}
+        </BaseText>
+      </Flex>
+    </Flex>
+  </Flex>
+</Flex>
+
+```jsx
+<Flex flexDirection="row" gap="small">
+  <Flex flex="initial">
+    {/* Não vai crescer, mas vai encolher se necessário */}
+  </Flex>
+  <Flex flex="initial">
+    {/* Não vai crescer, mas vai encolher se necessário */}
+  </Flex>
+  <Flex flex="initial">
+    {/* Não vai crescer, mas vai encolher se necessário */}
+  </Flex>
+</Flex>
+```
+
+Use `flex="fluid"` para permitir que um _**flex children**_ aumente e diminua conforme necessário, ignorando seu tamanho inicial:
+
+<Flex
+  gap="large"
+  borderRadius="md"
+  color="neutral.0"
+  bgColor="grayscale.5"
+  p="large"
+  mb="large"
+>
+  <Flex gap="small">
+    <Typography text="Comportamento padrão" />
+    <Flex flexDirection="row" gap="small">
+      <Flex borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Short</BaseText>
+      </Flex>
+      <Flex borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Medium lenght</BaseText>
+      </Flex>
+    </Flex>
+  </Flex>
+
+  <Flex gap="small">
+    <Typography text={`com flex="fluid"`} />
+    <Flex flexDirection="row" gap="small">
+      <Flex flex="fluid" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Short</BaseText>
+      </Flex>
+      <Flex flex="fluid" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Medium lenght</BaseText>
+      </Flex>
+      <Flex flex="fluid" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">
+          Significantly larger amount of content.
+        </BaseText>
+      </Flex>
+    </Flex>
+  </Flex>
+</Flex>
+
+```jsx
+<Flex flexDirection="row" gap="small">
+  <Flex flex="fluid">
+    {/* Aumentará e diminuirá conforme necessário, sem levar em consideração o tamanho inicial */}
+  </Flex>
+  <Flex flex="fluid">
+    {/* Aumentará e diminuirá conforme necessário, sem levar em consideração o tamanho inicial */}
+  </Flex>
+  <Flex flex="fluid">
+    {/* Aumentará e diminuirá conforme necessário, sem levar em consideração o tamanho inicial */}
+  </Flex>
+</Flex>
+```
+
+Use `flex="auto"` para permitir que um _**flex children**_ aumente e diminua, levando em consideração seu tamanho inicial:
+
+<Flex
+  gap="large"
+  borderRadius="md"
+  color="neutral.0"
+  bgColor="grayscale.5"
+  p="large"
+  mb="large"
+>
+  <Flex gap="small">
+    <Typography text="Comportamento padrão" />
+    <Flex flexDirection="row" gap="small">
+      <Flex borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Short</BaseText>
+      </Flex>
+      <Flex borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Medium lenght</BaseText>
+      </Flex>
+      <Flex borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">
+          Significantly larger amount of content.
+        </BaseText>
+      </Flex>
+    </Flex>
+  </Flex>
+
+  <Flex gap="small">
+    <Typography text={`com flex="auto"`} />
+    <Flex flexDirection="row" gap="small">
+      <Flex flex="auto" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Short</BaseText>
+      </Flex>
+      <Flex flex="auto" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">Medium lenght</BaseText>
+      </Flex>
+      <Flex flex="auto" borderRadius="sm" p="small" bgColor="primary">
+        <BaseText fontWeight="bold">
+          Significantly larger amount of content.
+        </BaseText>
+      </Flex>
+    </Flex>
+  </Flex>
+</Flex>
+
+```jsx
+<Flex flexDirection="row" gap="small">
+  <Flex flex="auto">
+    {/* Aumentará e diminuirá conforme necessário, levando em consideração o tamanho inicial */}
+  </Flex>
+  <Flex flex="auto">
+    {/* Aumentará e diminuirá conforme necessário, levando em consideração o tamanho inicial */}
+  </Flex>
+  <Flex flex="auto">
+    {/* Aumentará e diminuirá conforme necessário, levando em consideração o tamanho inicial */}
+  </Flex>
+</Flex>
+```
+
+Use `flex="none"` para evitar que um _**flex children**_ aumente ou diminua:
+
+<Flex
+  gap="large"
+  borderRadius="md"
+  color="neutral.0"
+  bgColor="grayscale.5"
+  p="large"
+  mb="large"
+>
+  <Flex flexDirection="row" gap="small">
+    <Flex flex="fluid" borderRadius="sm" p="small" bgColor="primary">
+      <BaseText fontWeight="bold">
+        Item que pode aumentar ou diminuir, se necessário
+      </BaseText>
+    </Flex>
+    <Flex flex="none" borderRadius="sm" p="small" bgColor="primary">
+      <BaseText fontWeight="bold">Item that cannot grow or shrink</BaseText>
+    </Flex>
+    <Flex flex="fluid" borderRadius="sm" p="small" bgColor="primary">
+      <BaseText fontWeight="bold">
+        Item que pode aumentar ou diminuir, se necessário
+      </BaseText>
+    </Flex>
+  </Flex>
+</Flex>
+
+```jsx
+<Flex flexDirection="row" gap="small">
+  <Flex flex="fluid">{/* Aumentará e diminuirá conforme necessário */}</Flex>
+  <Flex flex="none">{/* Não vai crescer ou encolher */}</Flex>
+  <Flex flex="fluid">{/* Aumentará e diminuirá conforme necessário*/}</Flex>
+</Flex>
+```
+
+### Bordas
+
+<Interactive>
+  <Flex
+    overflow="hidden"
+    borderRadius={select("BorderRadius", "circular", [
+      "straight",
+      "micro",
+      "xs",
+      "sm",
+      "md",
+      "large",
+      "circular",
+    ])}
+    borderStyle={select("BorderStyle", "solid", ["solid", "dotted", "dashed"])}
+    borderWidth={select("BorderWidth", "great", [
+      "none",
+      "thin",
+      "regular",
+      "great",
+      "bold",
+    ])}
+    borderColor={select("BorderColor", "danger", colors)}
+    height={150}
+    width={150}
+  >
+    <Image cover src="https://picsum.photos/200?random=1" />
+  </Flex>
+</Interactive>
+
+### Background
+
+`Flex` aceita qualquer cor presente no tema como background, usando `bgColor`.
+
+<Interactive hideCode>
+  <FlexBackgroundExample color={select("Background", "danger", colors)} />
+</Interactive>
+
+```jsx
+<Flex bgColor={color} height={100} justifyContent="center">
+  <Typography
+    contrast={color}
+    text="lorem ipsum dolor sit amet"
+    fontSize="large"
+    fontWeight="bold"
+  />
+</Flex>
+```
+
+### Exemplos
+
+`Flex` fornece muitos estilos que podem ser passados como prop, além de facilitar a criação de layouts.
+
+<Flex gap="small" mb="xl">
+  <Flex bgColor="primary.light" height={150}>
+    <Image cover src="https://picsum.photos/500?random=10" />
+  </Flex>
+  <Flex flexDirection="row" gap="small" height={150}>
+    <Flex bgColor="danger.light" flex="fluid" />
+    <Flex bgColor="danger.light" flex="fluid" />
+    <Flex bgColor="danger.light" flex="fluid" />
+  </Flex>
+</Flex>
+
+```jsx
+<Flex gap="small">
+  <Flex bgColor="primary.light" height={150}>
+    <Image cover src="https://picsum.photos/500?random=10" />
+  </Flex>
+  <Flex flexDirection="row" gap="small" height={150}>
+    <Flex bgColor="danger.light" flex="fluid" />
+    <Flex bgColor="danger.light" flex="fluid" />
+    <Flex bgColor="danger.light" flex="fluid" />
+  </Flex>
+</Flex>
+```
+
+<Flex mb="xl">
+  <FlexCardExample />
+</Flex>
+
+```jsx
+<Flex
+  maxWidth={280}
+  minWidth={220}
+  borderWidth="thin"
+  borderRadius="xs"
+  borderStyle="solid"
+  borderColor="neutral.40"
+  overflow="hidden"
+>
+  <Flex h={200}>
+    <Image cover src="https://picsum.photos/200" />
+  </Flex>
+  <Flex p="small">
+    <Typography
+      text="Lorem ipsum"
+      color="grayscale.80"
+      fontSize="medium"
+      fontWeight="bold"
+    />
+    <Typography color="grayscale.80">
+      R$ 1,900.00
+      <Typography color="grayscale.50" fontSize="small">
+        / mês
+      </Typography>
+    </Typography>
+    <Flex flexDirection="row" justifyContent="end" mt="small">
+      <Button size="small" variant="outlined" text="Alugar" />
+    </Flex>
+  </Flex>
+</Flex>
+```
+
+## Flex API
+
+| Propriedade    | Tipo                                                              | Padrão    | Descrição          |
+| -------------- | ----------------------------------------------------------------- | --------- | ------------------ |
+| gap            | number \| `SpacingInterface`                                      |           |                    |
+| direction      | `row` \| `row-reverse` \| `column` \| `column-reverse`;           | `column`  |                    |
+| flex           | `fluid` \| `initial` \| `auto` \| `none`                          |           |                    |
+| justifyContent | `start` \| `end` \| `center` \| `between` \| `around` \| `evenly` | `start`   |                    |
+| alignItems     | `start` \| `end` \| `center` \| `baseline` \| `stretch`           | `streach` |                    |
+| wrap           | `wrap` \| `reverse` \| `nowrap`                                   |           |                    |
+| order          | number \| `first` \| `last`                                       |           |                    |
+| borderStyle    | string                                                            |           |                    |
+| borderWidth    | string                                                            |           |                    |
+| borderColor    | string                                                            |           |                    |
+| borderRadius   | string                                                            |           |                    |
+| bgColor        | string                                                            |           |                    |
+| color          | string                                                            |           |                    |
+| height         | number \| string                                                  |           |                    |
+| maxHeight      | number \| string                                                  |           |                    |
+| minHeight      | number \| string                                                  |           |                    |
+| width          | number \| string                                                  |           |                    |
+| maxWidth       | number \| string                                                  |           |                    |
+| minWidth       | number \| string                                                  |           |                    |
+| p              | number \| `SpacingInterface`                                      |           | padding            |
+| px             | number \| `SpacingInterface`                                      |           | padding horizontal |
+| py             | number \| `SpacingInterface`                                      |           | padding vertical   |
+| pt             | number \| `SpacingInterface`                                      |           | padding-top        |
+| pb             | number \| `SpacingInterface`                                      |           | padding-bottom     |
+| pl             | number \| `SpacingInterface`                                      |           | padding-left       |
+| pr             | number \| `SpacingInterface`                                      |           | padding-right      |
+| m              | number \| `SpacingInterface`                                      |           | margin             |
+| mx             | number \| `SpacingInterface`                                      |           | margin horizontal  |
+| my             | number \| `SpacingInterface`                                      |           | margin vertical    |
+| mt             | number \| `SpacingInterface`                                      |           | margin-top         |
+| mb             | number \| `SpacingInterface`                                      |           | margin-bottom      |
+| ml             | number \| `SpacingInterface`                                      |           | margin-left        |
+| mr             | number \| `SpacingInterface`                                      |           | margin-right       |

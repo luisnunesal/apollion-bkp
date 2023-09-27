@@ -1,0 +1,117 @@
+module.exports = {
+  docs: [
+    {
+      type: 'category',
+      label: 'Conceitos',
+      items: ['concept-foundations', 'concept-design-tokens'],
+    },
+    {
+      type: 'category',
+      label: 'Iniciando',
+      items: ['getting-started-installation', 'getting-started-development'],
+    },
+    {
+      type: 'category',
+      label: 'Utilizando elementos básicos',
+      items: [
+        'elements-avatar',
+        'elements-button',
+        'elements-icon-button',
+        'elements-image',
+        'elements-link',
+        'elements-label',
+        'elements-svg',
+        'elements-icon',
+        'elements-typography',
+        'elements-headline',
+        'elements-display',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Exibindo dados',
+      items: [
+        'data-display-list',
+        'data-display-tabs',
+        'data-display-table',
+        'data-display-datatable',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Containers',
+      items: [
+        'containers-flex',
+        'containers-grid',
+        'containers-paper',
+        'containers-card',
+        'containers-scroll',
+        'containers-notification',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Componentes funcionais',
+      items: [
+        'functional-modal',
+        'functional-progress-bar',
+        'functional-spinner',
+        'functional-dropdown',
+        'functional-tooltip',
+        'functional-popover',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Formulários',
+      items: [
+        'form-basic',
+        'form-dynamic',
+        'form-form',
+        {
+          type: 'category',
+          label: 'Tipos Input',
+          items: [
+            'form-field-wrapper',
+            'form-input',
+            'form-input-mask',
+            'form-input-date',
+            'form-textarea',
+            'form-checkbox',
+            'form-radio',
+            'form-input-select',
+            'form-input-range',
+            'form-input-range-multiple',
+            'form-upload-card',
+          ],
+        },
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Pré-Carregamento',
+      items: ['skeleton-composed', 'skeleton-presets'],
+    },
+    {
+      type: 'category',
+      label: 'Usando Hooks',
+      items: ['hook-usemediaquery', 'hook-useclipboard'],
+    },
+    {
+      type: 'category',
+      label: 'Definições do Tema',
+      items: [
+        'themes-create',
+        'themes-apollion-provider',
+        'themes-global-style',
+        'themes-colors',
+        'themes-spacing',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Pacotes auxiliares',
+      items: ['aux-relay'],
+    },
+  ],
+};

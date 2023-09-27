@@ -1,0 +1,18 @@
+{
+  "files": ["src/index.ts"],
+  "exclude": ["node_modules", "lib", "coverage", "__tests__"],
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "dom"],
+    "allowJs": false,
+    "checkJs": false,
+    "declaration": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "typeRoots": ["./node_modules/@types", "./typings"],
+    "outDir": "lib"
+  }
+}

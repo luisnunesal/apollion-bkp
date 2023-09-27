@@ -1,0 +1,2208 @@
+---
+id: data-display-table
+title: Tabela
+---
+
+import {
+  Table,
+  TableHeader,
+  TableBody,
+  TableHeaderCell,
+  TableRow,
+  TableCell,
+  TableFooter,
+  TableEmpty,
+  TableHeaderCheckboxCell,
+  TableCheckboxCell,
+  Thead,
+  Th,
+  Thc,
+  Tbody,
+  Tr,
+  Td,
+  Tdc,
+  Tfooter,
+  Paper,
+  Link,
+  Tooltip,
+  Flex,
+  Button,
+} from "@captalys-platform/core";
+import {
+  Interactive,
+  boolean,
+  select,
+  text,
+} from "../src/components/Interactive";
+
+import { ExampleCustomizer } from "../src/components/ExampleCustomizer";
+import { TableSimples } from "../src/examples/DataDisplay/Table";
+
+Tabelas são uma representação matricial, em linhas e colunas de informações de maneira
+fácil e padronizada. No Apollion, retiramos cada importante caracteristica de uma Tabela
+HTML e melhoramos para facilitar a vida dos usuarios e desenvolvedores.
+As tabelas podem incluir:
+
+- Uma visualização correspondente
+- Navegação
+- Ferramentas para consultar e manipular dados
+
+### Elementos da Tabela
+
+Nossa Tabela tem todos os elementos básicos necessários para criar a melhor tabela do mundo: `Table`, `TableHeader`, `TableHeaderCell`, `TableHeaderCheckboxCell`, `TableBody`, `TableRow`, `TableCell`, `TableCheckboxCell` e `TableFooter`.
+
+Além disso você pode importar pelo _aliases_
+abreviados mais similares ao **HTML**: `Thead`, `Th`, `Thc`, `Tbody`, `Tr`,`Thc`, `Td` e `Tfooter`.
+
+## Tabela Simples
+
+Um exemplo simples sem frescuras.
+
+<Flex margin="0 0 50px 0">
+  <TableSimples />
+</Flex>
+
+Você também pode adicionar titulo a sua tabela, através da prop `title`:
+
+<Flex margin="0 0 50px 0">
+  <ExampleCustomizer
+    code={`
+    <Table title="Mini Pokedex">
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>001</TableCell>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  `}
+    example={
+      <Table title="Mini Pokedex">
+        <TableHeader>
+          <TableRow>
+            <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+            <TableHeaderCell>Nome</TableHeaderCell>
+            <TableHeaderCell>Tipo</TableHeaderCell>
+            <TableHeaderCell>Região</TableHeaderCell>
+            <TableHeaderCell>Geração</TableHeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>001</TableCell>
+            <TableCell>Bulbasauro</TableCell>
+            <TableCell>Grama</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    }
+  />
+</Flex>
+
+E com a prop `searching` sua os resultados da sua tabela podem ser buscados ao digitar no campo e teclar `enter`:
+
+<Flex margin="0 0 50px 0">
+  <ExampleCustomizer
+    code={`
+    <Table title="Mini Pokedex">
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>001</TableCell>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>004</TableCell>
+        <TableCell>Chamander</TableCell>
+        <TableCell>Fogo</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+        <TableRow>
+        <TableCell>007</TableCell>
+        <TableCell>Squirtle</TableCell>
+        <TableCell>Agua</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  `}
+    example={
+      <Table title="Mini Pokedex" searching>
+        <TableHeader>
+          <TableRow>
+            <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+            <TableHeaderCell>Nome</TableHeaderCell>
+            <TableHeaderCell>Tipo</TableHeaderCell>
+            <TableHeaderCell>Região</TableHeaderCell>
+            <TableHeaderCell>Geração</TableHeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>001</TableCell>
+            <TableCell>Bulbasauro</TableCell>
+            <TableCell>Grama</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>002</TableCell>
+            <TableCell>Ivysauro</TableCell>
+            <TableCell>Grama</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>004</TableCell>
+            <TableCell>Chamander</TableCell>
+            <TableCell>Fogo</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>005</TableCell>
+            <TableCell>Charmeleon</TableCell>
+            <TableCell>Fogo</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>007</TableCell>
+            <TableCell>Squirtle</TableCell>
+            <TableCell>Agua</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>008</TableCell>
+            <TableCell>Wartortle</TableCell>
+            <TableCell>Agua</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    }
+  />
+</Flex>
+
+## Condensada/Listrada
+
+Além da espessura padrão das linhas você pode alterar para dois tamanhos direntes através da prop `rowSize`:
+
+#### Compact
+
+<Flex margin="0 0 50px 0">
+  <ExampleCustomizer
+    code={`
+    <Table title="Mini Pokedex" searching rowSize="Compact">
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>001</TableCell>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>004</TableCell>
+        <TableCell>Charmander</TableCell>
+        <TableCell>Fogo</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>007</TableCell>
+        <TableCell>Squirtle</TableCell>
+        <TableCell>Agua</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  `}
+    example={
+      <Table title="Mini Pokedex" searching rowSize="Compact">
+        <TableHeader>
+          <TableRow>
+            <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+            <TableHeaderCell>Nome</TableHeaderCell>
+            <TableHeaderCell>Tipo</TableHeaderCell>
+            <TableHeaderCell>Região</TableHeaderCell>
+            <TableHeaderCell>Geração</TableHeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>001</TableCell>
+            <TableCell>Bulbasauro</TableCell>
+            <TableCell>Grama</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>004</TableCell>
+            <TableCell>Charmander</TableCell>
+            <TableCell>Fogo</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>007</TableCell>
+            <TableCell>Squirtle</TableCell>
+            <TableCell>Agua</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    }
+  />
+</Flex>
+
+#### Expansive
+
+<Flex margin="0 0 50px 0">
+  <ExampleCustomizer
+    code={`
+    <Table title="Mini Pokedex" searching rowSize="Expansive">
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>001</TableCell>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>004</TableCell>
+        <TableCell>Charmander</TableCell>
+        <TableCell>Fogo</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>007</TableCell>
+        <TableCell>Squirtle</TableCell>
+        <TableCell>Agua</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  `}
+    example={
+      <Table title="Mini Pokedex" searching rowSize="Expansive">
+        <TableHeader>
+          <TableRow>
+            <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+            <TableHeaderCell>Nome</TableHeaderCell>
+            <TableHeaderCell>Tipo</TableHeaderCell>
+            <TableHeaderCell>Região</TableHeaderCell>
+            <TableHeaderCell>Geração</TableHeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>001</TableCell>
+            <TableCell>Bulbasauro</TableCell>
+            <TableCell>Grama</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>004</TableCell>
+            <TableCell>Charmander</TableCell>
+            <TableCell>Fogo</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>007</TableCell>
+            <TableCell>Squirtle</TableCell>
+            <TableCell>Agua</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    }
+  />
+</Flex>
+
+## Listrada
+
+Sua tabela também pode ser "zebrada" para facilitar a visualização. Para isso, é só adicionar a prop `striped`.
+
+<Flex margin="0 0 50px 0">
+  <ExampleCustomizer
+    code={`
+    <Table title="Mini Pokedex" searching striped>
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>001</TableCell>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>004</TableCell>
+        <TableCell>Charmander</TableCell>
+        <TableCell>Fogo</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+      <TableRow>
+        <TableCell>007</TableCell>
+        <TableCell>Squirtle</TableCell>
+        <TableCell>Agua</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  `}
+    example={
+      <Table title="Mini Pokedex" searching striped>
+        <TableHeader>
+          <TableRow>
+            <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+            <TableHeaderCell>Nome</TableHeaderCell>
+            <TableHeaderCell>Tipo</TableHeaderCell>
+            <TableHeaderCell>Região</TableHeaderCell>
+            <TableHeaderCell>Geração</TableHeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>001</TableCell>
+            <TableCell>Bulbasauro</TableCell>
+            <TableCell>Grama</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>004</TableCell>
+            <TableCell>Charmander</TableCell>
+            <TableCell>Fogo</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>007</TableCell>
+            <TableCell>Squirtle</TableCell>
+            <TableCell>Agua</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>025</TableCell>
+            <TableCell>Pikachu</TableCell>
+            <TableCell>Eletrico</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>I</TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    }
+  />
+</Flex>
+
+## Cabeçalho Fixo
+
+Um exemplo de uma tabela com linhas roláveis e cabeçalhos de coluna fixos. Ela se beneficia do suporte de `stickyHeader` (⚠️ sem suporte ao IE 11).
+
+**Além disso nossa tabela aceita qualquer coisa inclusive links e tooltips por exemplo, como pode ver abaixo.**
+
+<ExampleCustomizer
+  code={`
+   <Paper maxHeight="500px" depth="level-zero">
+    <Table title="Mini Pokedex" searching striped stickyHeader>
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+     <Tbody>   
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>004</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/charmander"
+              target="blank"
+            >
+              Charmander
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>007</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/squirtle"
+              target="blank"
+            >
+              Squirtle
+            </Link>
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>152</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/chikorita"
+              target="blank"
+            >
+              Chikorita
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/cyndaquil"
+              target="blank"
+            >
+              Cyndaquil
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>158</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/totodile"
+              target="blank"
+            >
+              Totodile
+            </Link>
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>252</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/treecko"
+              target="blank"
+            >
+              Treecko
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Rustboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+        <Tr>
+          <Td>255</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/torchic"
+              target="blank"
+            >
+              Torchic
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Rustboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+        <Tr>
+          <Td>258</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/mudkip"
+              target="blank"
+            >
+              Mudkip
+            </Link>
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: Rustboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+        <Tr>
+          <Td>387</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/turtwig"
+              target="blank"
+            >
+              Turtwig
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Jubilife City" interactive>
+              Sinnoh
+            </Tooltip>
+          </Td>
+          <Td>IV</Td>
+        </Tr>
+        <Tr>
+          <Td>390</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/chimchar"
+              target="blank"
+            >
+              Chimchar
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Jubilife City" interactive>
+              Sinnoh
+            </Tooltip>
+          </Td>
+          <Td>IV</Td>
+        </Tr>
+        <Tr>
+          <Td>393</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/piplup"
+              target="blank"
+            >
+              Piplup
+            </Link>
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: Jubilife City" interactive>
+              Sinnoh
+            </Tooltip>
+          </Td>
+          <Td>IV</Td>
+        </Tr>
+      </Tbody>
+      <Tfooter>
+        <Tr>
+          <Td colSpan='5'>
+            <Flex flexDirection="row"  justifyContent="center" alignItems="center">
+              <Button variant="outlined">
+                Carregar mais resultados
+              </Button>
+            </Flex>
+          </Td>
+        </Tr>
+      </Tfooter>
+    </Table>
+   </Paper>
+  `}
+  example={
+    <Paper maxHeight="500px" depth="level-zero">
+      <Table title="Mini Pokedex" searching striped stickyHeader>
+        <Thead>
+          <Tr>
+            <Th>Nº Pokedex</Th>
+            <Th>Nome</Th>
+            <Th>Tipo</Th>
+            <Th>Região</Th>
+            <Th>Geração</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Td>001</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/bulbasaur"
+                target="blank"
+              >
+                Bulbasauro
+              </Link>
+            </Td>
+            <Td>Grama</Td>
+            <Td>
+              <Tooltip content="Capital: Saffron City" interactive>
+                Kanto
+              </Tooltip>
+            </Td>
+            <Td>I</Td>
+          </Tr>
+          <Tr>
+            <Td>004</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/charmander"
+                target="blank"
+              >
+                Charmander
+              </Link>
+            </Td>
+            <Td>Fogo</Td>
+            <Td>
+              <Tooltip content="Capital: Saffron City" interactive>
+                Kanto
+              </Tooltip>
+            </Td>
+            <Td>I</Td>
+          </Tr>
+          <Tr>
+            <Td>007</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/squirtle"
+                target="blank"
+              >
+                Squirtle
+              </Link>
+            </Td>
+            <Td>Água</Td>
+            <Td>
+              <Tooltip content="Capital: Saffron City" interactive>
+                Kanto
+              </Tooltip>
+            </Td>
+            <Td>I</Td>
+          </Tr>
+          <Tr>
+            <Td>152</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/chikorita"
+                target="blank"
+              >
+                Chikorita
+              </Link>
+            </Td>
+            <Td>Grama</Td>
+            <Td>
+              <Tooltip content="Capital: Cherrygrove City" interactive>
+                Johto
+              </Tooltip>
+            </Td>
+            <Td>II</Td>
+          </Tr>
+          <Tr>
+            <Td>155</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/cyndaquil"
+                target="blank"
+              >
+                Cyndaquil
+              </Link>
+            </Td>
+            <Td>Fogo</Td>
+            <Td>
+              <Tooltip content="Capital: Cherrygrove City" interactive>
+                Johto
+              </Tooltip>
+            </Td>
+            <Td>II</Td>
+          </Tr>
+          <Tr>
+            <Td>158</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/totodile"
+                target="blank"
+              >
+                Totodile
+              </Link>
+            </Td>
+            <Td>Água</Td>
+            <Td>
+              <Tooltip content="Capital: Cherrygrove City" interactive>
+                Johto
+              </Tooltip>
+            </Td>
+            <Td>II</Td>
+          </Tr>
+          <Tr>
+            <Td>252</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/treecko"
+                target="blank"
+              >
+                Treecko
+              </Link>
+            </Td>
+            <Td>Grama</Td>
+            <Td>
+              <Tooltip content="Capital: Rustboro  City" interactive>
+                Hoenn
+              </Tooltip>
+            </Td>
+            <Td>III</Td>
+          </Tr>
+          <Tr>
+            <Td>255</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/torchic"
+                target="blank"
+              >
+                Torchic
+              </Link>
+            </Td>
+            <Td>Fogo</Td>
+            <Td>
+              <Tooltip content="Capital: Rustboro  City" interactive>
+                Hoenn
+              </Tooltip>
+            </Td>
+            <Td>III</Td>
+          </Tr>
+          <Tr>
+            <Td>258</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/mudkip"
+                target="blank"
+              >
+                Mudkip
+              </Link>
+            </Td>
+            <Td>Água</Td>
+            <Td>
+              <Tooltip content="Capital: Rustboro  City" interactive>
+                Hoenn
+              </Tooltip>
+            </Td>
+            <Td>III</Td>
+          </Tr>
+          <Tr>
+            <Td>387</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/turtwig"
+                target="blank"
+              >
+                Turtwig
+              </Link>
+            </Td>
+            <Td>Grama</Td>
+            <Td>
+              <Tooltip content="Capital: Jubilife City" interactive>
+                Sinnoh
+              </Tooltip>
+            </Td>
+            <Td>IV</Td>
+          </Tr>
+          <Tr>
+            <Td>390</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/chimchar"
+                target="blank"
+              >
+                Chimchar
+              </Link>
+            </Td>
+            <Td>Fogo</Td>
+            <Td>
+              <Tooltip content="Capital: Jubilife City" interactive>
+                Sinnoh
+              </Tooltip>
+            </Td>
+            <Td>IV</Td>
+          </Tr>
+          <Tr>
+            <Td>393</Td>
+            <Td>
+              <Link
+                href="https://www.pokemon.com/br/pokedex/piplup"
+                target="blank"
+              >
+                Piplup
+              </Link>
+            </Td>
+            <Td>Água</Td>
+            <Td>
+              <Tooltip content="Capital: Jubilife City" interactive>
+                Sinnoh
+              </Tooltip>
+            </Td>
+            <Td>IV</Td>
+          </Tr>
+        </Tbody>
+        <Tfooter>
+          <Tr>
+            <Td colSpan="5">
+              <Flex
+                flexDirection="row"
+                justifyContent="center"
+                alignItems="center"
+              >
+                <Button variant="outlined">Carregar mais resultados</Button>
+              </Flex>
+            </Td>
+          </Tr>
+        </Tfooter>
+      </Table>
+    </Paper>
+  }
+/>
+
+## Alinhamento
+
+Para alinhar sua tabela é super simples, basta passar: `align:` `left | center | right` ou um array com as props `direction` e `target`
+para alinhamento individual das colunas.
+
+#### Left
+
+<ExampleCustomizer
+  code={`
+    <Table title="Mini Pokedex" searching striped align="left">
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+     <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  `}
+  example={
+    <Table title="Mini Pokedex" searching striped align="left">
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Button variant="contained" color="danger">
+              Left
+            </Button>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  }
+/>
+
+#### Right
+
+<ExampleCustomizer
+  code={`
+    <Table title="Mini Pokedex" searching striped align="right">
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+     <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  `}
+  example={
+    <Table title="Mini Pokedex" searching striped align="right">
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Button variant="contained" color="danger">
+              Right
+            </Button>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  }
+/>
+
+#### Center (Padrão) - Não necessário passar nenhuma prop.
+
+<ExampleCustomizer
+  code={`
+    <Table title="Mini Pokedex" searching striped >
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+     <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  `}
+  example={
+    <Table title="Mini Pokedex" searching striped>
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Button variant="contained" color="danger">
+              Center
+            </Button>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  }
+/>
+
+#### Por colunas (Alinhamento individual)
+
+<ExampleCustomizer
+  code={`
+    <Table
+      align={[
+        { direction: "left", target: "3" },
+        { direction: "right", target: "5" },
+        { direction: "center", target: "2" },
+      ]}
+    >
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>Normal</Td>
+          <Td>
+            <Button variant="contained" color="danger">
+              Centro
+            </Button>
+          </Td>
+          <Td>Esquerda</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Normal
+            </Tooltip>
+          </Td>
+          <Td>Direita</Td>
+        </Tr>
+        <Tr>
+          <Td>Normal</Td>
+          <Td>
+            <Button variant="contained" color="danger">
+              Centro
+            </Button>
+          </Td>
+          <Td>Esquerda</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Normal
+            </Tooltip>
+          </Td>
+          <Td>
+            <Button variant="contained" color="success">
+              Direita
+            </Button>
+          </Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  `}
+  example={
+    <Table
+      align={[
+        { direction: "left", target: "3" },
+        { direction: "right", target: "5" },
+        { direction: "center", target: "2" },
+      ]}
+    >
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>Normal</Td>
+          <Td>
+            <Button variant="contained" color="danger">
+              Centro
+            </Button>
+          </Td>
+          <Td>Esquerda</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Normal
+            </Tooltip>
+          </Td>
+          <Td>Direita</Td>
+        </Tr>
+        <Tr>
+          <Td>Normal</Td>
+          <Td>
+            <Button variant="contained" color="danger">
+              Centro
+            </Button>
+          </Td>
+          <Td>Esquerda</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Normal
+            </Tooltip>
+          </Td>
+          <Td>
+            <Button variant="contained" color="success">
+              Direita
+            </Button>
+          </Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  }
+/>
+
+## Tamanho
+
+Para alterar a largura da tabela é só usar `width`:
+
+<ExampleCustomizer
+  code={`
+    <Table width="200px">
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+     <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/cyndaquil"
+              target="blank"
+            >
+              Cyndaquil
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  `}
+  example={
+    <Table width="200px">
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/cyndaquil"
+              target="blank"
+            >
+              Cyndaquil
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  }
+/>
+
+## Largura da Coluna
+
+Para customizar a largura das colunas você precisa passar um array especificando o **tamanho** `width` e o **tipo** `max` ou `min`. O component vai adicionando os tamanhos na ordem em que forem passados:
+
+`columnSize={[{width:'100'},'', {width:250,type:'min'},{width:'300',type:'min'}, {width:'210', type:'max'}]}`
+
+**⚠️Atenção: Caso não seja passado nenhum tamanho ele deixa o tamanho natural da coluna e caso no objetivo seja passado `width` sem o `type` ele adiciona somente o `width`, caso o contrario será `max-width` ou `min-width`**
+
+<ExampleCustomizer
+  code={`
+    <Table columnSize={[{width:'100'},'', {width:'200',type:'min'},{width:'300',type:'min'},'']}>
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+     <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/cyndaquil"
+              target="blank"
+            >
+              Cyndaquil
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>258</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/mudkip"
+              target="blank"
+            >
+              Mudkip
+            </Link>
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: RuTboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  `}
+  example={
+    <Table
+      columnSize={[
+        { width: "100" },
+        "",
+        { width: 250, type: "min" },
+        { width: "300", type: "min" },
+        { width: "210", type: "max" },
+      ]}
+    >
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/cyndaquil"
+              target="blank"
+            >
+              Cyndaquil
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>258</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/mudkip"
+              target="blank"
+            >
+              Mudkip
+            </Link>
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: RuTboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  }
+/>
+
+## Ellipsis
+
+Por padrão é possivel quebrar linhas nas celulas da tabela mas caso nao queria essa opção temos a prop `ellipsis` que oculta parte do conteúdo.
+
+<ExampleCustomizer
+  code={`
+    <Table ellipsis>
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            Bulbasauro
+            é um pequeno Pokémon quadrúpede que tem uma pele azul-esverdeada com
+            manchas mais escuras.
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>
+            Cyndaquil se protege queimando as chamas em suas costas
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>258</Td>
+          <Td>
+            Mudkip atua como um radar altamente sensível.
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: RuTboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  `}
+  example={
+    <Table title="Mini Pokedex" searching ellipsis>
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            Bulbasauro é um pequeno Pokémon de grama.Bulbasauro é um pequeno
+            Pokémon de grama.Bulbasauro é um pequeno Pokémon de grama.Bulbasauro
+            é um pequeno Pokémon de grama.
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>Cyndaquil é um pequeno Pokémon de fogo.</Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>258</Td>
+          <Td>Mudkip é um pequeno Pokémon de agua.</Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: RuTboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  }
+/>
+
+## Hoverable
+
+Você pode passar a propriedade `hoverable` para que suas linhas sejam destacadas ao passar o cursor do mouse.
+
+<ExampleCustomizer
+  code={`
+    <Table
+      hoverable
+    >
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/cyndaquil"
+              target="blank"
+            >
+              Cyndaquil
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>258</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/mudkip"
+              target="blank"
+            >
+              Mudkip
+            </Link>
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: Rustboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  `}
+  example={
+    <Table hoverable>
+      <Thead>
+        <Tr>
+          <Th>Nº Pokedex</Th>
+          <Th>Nome</Th>
+          <Th>Tipo</Th>
+          <Th>Região</Th>
+          <Th>Geração</Th>
+        </Tr>
+      </Thead>
+      <Tbody>
+        <Tr>
+          <Td>001</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/bulbasaur"
+              target="blank"
+            >
+              Bulbasauro
+            </Link>
+          </Td>
+          <Td>Grama</Td>
+          <Td>
+            <Tooltip content="Capital: Saffron City" interactive>
+              Kanto
+            </Tooltip>
+          </Td>
+          <Td>I</Td>
+        </Tr>
+        <Tr>
+          <Td>155</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/cyndaquil"
+              target="blank"
+            >
+              Cyndaquil
+            </Link>
+          </Td>
+          <Td>Fogo</Td>
+          <Td>
+            <Tooltip content="Capital: Cherrygrove City" interactive>
+              Johto
+            </Tooltip>
+          </Td>
+          <Td>II</Td>
+        </Tr>
+        <Tr>
+          <Td>258</Td>
+          <Td>
+            <Link
+              href="https://www.pokemon.com/br/pokedex/mudkip"
+              target="blank"
+            >
+              Mudkip
+            </Link>
+          </Td>
+          <Td>Água</Td>
+          <Td>
+            <Tooltip content="Capital: Rustboro  City" interactive>
+              Hoenn
+            </Tooltip>
+          </Td>
+          <Td>III</Td>
+        </Tr>
+      </Tbody>
+    </Table>
+  }
+/>
+
+## Check
+
+Caso você precise de uma tabela com linhas checáveis basta utilizar os componentes `TableCheckboxCell`
+e `TableHeaderCheckboxCell` na primeira coluna dos respectivos `TableHeader` e `TableBody`, podendo
+usar as abreviações destes componentes tambem.
+
+Ao utilizar da maneira correta como descrita acima, sua tabela automaticamente poderá ser checada e apresentará
+colocaração diferente ao escolher um item. Veja o exemplo abaixo.
+
+<Flex margin="0 0 50px 0">
+  <ExampleCustomizer
+    code={`
+  <Table>
+        <Thead>
+          <Tr>
+            <Thc>Nº Pokedex</Thc>
+            <Th>Nome</Th>
+            <Th>Tipo</Th>
+            <Th>Região</Th>
+            <Th>Geração</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Tdc>001</Tdc>
+            <Td>Bulbasauro</Td>
+            <Td>Grama</Td>
+            <Td>Kanto</Td>
+            <Td>I</Td>
+          </Tr>
+          <Tr>
+            <Tdc>002</Tdc>
+            <Td>Ivysauro</Td>
+            <Td>Grama</Td>
+            <Td>Kanto</Td>
+            <Td>I</Td>
+          </Tr>
+          <Tr>
+            <Tdc>003</Tdc>
+            <Td>Venusauro</Td>
+            <Td>Grama</Td>
+            <Td>Kanto</Td>
+            <Td>I</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+  `}
+    example={
+      <Table>
+        <Thead>
+          <Tr>
+            <Thc>Nº Pokedex</Thc>
+            <Th>Nome</Th>
+            <Th>Tipo</Th>
+            <Th>Região</Th>
+            <Th>Geração</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
+          <Tr>
+            <Tdc>001</Tdc>
+            <Td>Bulbasauro</Td>
+            <Td>Grama</Td>
+            <Td>Kanto</Td>
+            <Td>I</Td>
+          </Tr>
+          <Tr>
+            <Tdc>002</Tdc>
+            <Td>Ivysauro</Td>
+            <Td>Grama</Td>
+            <Td>Kanto</Td>
+            <Td>I</Td>
+          </Tr>
+          <Tr>
+            <Tdc>003</Tdc>
+            <Td>Venusauro</Td>
+            <Td>Grama</Td>
+            <Td>Kanto</Td>
+            <Td>I</Td>
+          </Tr>
+        </Tbody>
+      </Table>
+    }
+  />
+</Flex>
+
+## Vazia (Empty)
+
+Quando o resultados de uma busca não sao encontrados na tabela o componente `tableEmpty` é acionado,
+mostrando uma mensagem amigável para o usuário que nao foram encontrados resultados para aquela busca.
+
+Caso voce queria personalizar as mensagens ou icone padrão você deverar usar as propriedades específicas
+`iconPropsEmpty`, `titleEmpty`, `subtitleEmpty`.
+
+<Interactive>
+  <TableEmpty />
+</Interactive>
+
+## Paginação
+
+Quase sempre temos a necessidade de mostrar uma paginação ao usuário, mesmo que simples, para isso basta
+passar as propriedes `initialPagination`, `finalPagination`, `totalPagination` e `linesPerPage`.
+
+Lembrando que todas são obrigatórias para a aparecer a paginação corretamente.
+
+<Flex margin="0 0 50px 0">
+  <ExampleCustomizer
+    code={`
+    <Table 
+        title="Mini Pokedex"
+        searching
+        initialPagination="1"
+        finalPagination="10"
+        totalPagination="30"
+        linesPerPage={[
+          { label: "10", value: 10 },
+          { label: "20", value: 20 },
+          { label: "30", value: 30 },
+        ]}
+        >
+    <TableHeader>
+      <TableRow>
+        <Thc>Nº Pokedex</Thc>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <Tdc>001</Tdc>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+       <TableRow>
+        <Tdc>002</Tdc>
+        <TableCell>Ivysauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+       <TableRow>
+        <Tdc>003</Tdc>
+        <TableCell>Venusauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+  `}
+    example={
+      <BrowserOnly>
+        {() => (
+          <ApollionProvider>
+            <Table
+              title="Mini Pokedex"
+              searching
+              initialPagination="1"
+              finalPagination="10"
+              totalPagination="30"
+              linesPerPage={[
+                { label: "10", value: 10 },
+                { label: "20", value: 20 },
+                { label: "30", value: 30 },
+              ]}
+            >
+              <TableHeader>
+                <TableRow>
+                  <Thc>Nº Pokedex</Thc>
+                  <TableHeaderCell>Nome</TableHeaderCell>
+                  <TableHeaderCell>Tipo</TableHeaderCell>
+                  <TableHeaderCell>Região</TableHeaderCell>
+                  <TableHeaderCell>Geração</TableHeaderCell>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <Tdc>001</Tdc>
+                  <TableCell>Bulbasauro</TableCell>
+                  <TableCell>Grama</TableCell>
+                  <TableCell>Kanto</TableCell>
+                  <TableCell>I</TableCell>
+                </TableRow>
+                <TableRow>
+                  <Tdc>002</Tdc>
+                  <TableCell>Ivysauro</TableCell>
+                  <TableCell>Grama</TableCell>
+                  <TableCell>Kanto</TableCell>
+                  <TableCell>I</TableCell>
+                </TableRow>
+                <TableRow>
+                  <Tdc>003</Tdc>
+                  <TableCell>Venusauro</TableCell>
+                  <TableCell>Grama</TableCell>
+                  <TableCell>Kanto</TableCell>
+                  <TableCell>I</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </ApollionProvider>
+        )}
+      </BrowserOnly>
+    }
+  />
+</Flex>
+
+## Soma (Footer)
+
+Para obter uma tabela com soma você pode passar a prop `columnSum` com o index da coluna
+que deseja somar do tipo `number` além de passar o component `<TableFooter />`.
+
+<Flex margin="0 0 50px 0">
+  <ExampleCustomizer
+    code={`
+    <Table 
+        title="Mini Pokedex"
+        searching
+        columnSum={4}
+        >
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>001</TableCell>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>1</TableCell>
+      </TableRow>
+       <TableRow>
+        <TableCell>155</TableCell>
+        <TableCell>Cyndaquil</TableCell>
+        <TableCell>Fogo</TableCell>
+        <TableCell>Johto</TableCell>
+        <TableCell>2</TableCell>
+      </TableRow>
+       <TableRow>
+        <TableCell>258</TableCell>
+        <TableCell>Mudkip</TableCell>
+        <TableCell>Água</TableCell>
+        <TableCell>Hoenn</TableCell>
+        <TableCell>3</TableCell>
+      </TableRow>
+    </TableBody>
+   <TableFooter/>
+  </Table>
+  `}
+    example={
+      <Table title="Mini Pokedex" searching columnSum={4}>
+        <TableHeader>
+          <TableRow>
+            <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+            <TableHeaderCell>Nome</TableHeaderCell>
+            <TableHeaderCell>Tipo</TableHeaderCell>
+            <TableHeaderCell>Região</TableHeaderCell>
+            <TableHeaderCell>Geração</TableHeaderCell>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          <TableRow>
+            <TableCell>001</TableCell>
+            <TableCell>Bulbasauro</TableCell>
+            <TableCell>Grama</TableCell>
+            <TableCell>Kanto</TableCell>
+            <TableCell>1</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>155</TableCell>
+            <TableCell>Cyndaquil</TableCell>
+            <TableCell>Fogo</TableCell>
+            <TableCell>Johto</TableCell>
+            <TableCell>2</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>258</TableCell>
+            <TableCell>Mudkip</TableCell>
+            <TableCell>Água</TableCell>
+            <TableCell>Hoenn</TableCell>
+            <TableCell>3</TableCell>
+          </TableRow>
+        </TableBody>
+        <TableFooter />
+      </Table>
+    }
+  />
+</Flex>
+
+## Loading (Footer)
+
+A `Table` é muito flexível. Para implmentarmos um botão de loading basta colocar uma linha com uma célula dentro do `TableBody`
+com seu botão personalido.
+
+**⚠️Atenção: Por algum motivo ainda nao funciona o `TableFooter` só funciona o no `TableBody`**
+
+<Interactive>
+  <Table>
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <Tr>
+        <Td colSpan="5">
+          <Flex flexDirection="row" justifyContent="center" alignItems="center">
+            <Button>Carregar Mais</Button>
+          </Flex>
+        </Td>
+      </Tr>
+    </TableBody>
+  </Table>
+</Interactive>
+
+## Share
+
+Na nossa `Table` caso queira habilitar o botão de compartilhar, basta colocar a prop `share` e passar os argumentos `email` e `social` com as funções
+respectivas, tudo de maneira fácil e intuitiva.
+
+<Interactive>
+  <Table
+    share={{
+      email: () => console.log("enviar email"),
+      social: () => console.log("enviar rede social"),
+    }}
+  >
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>001</TableCell>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</Interactive>
+
+## Linhas Variáveis
+
+Na nossa `Table` caso queira habilitar o botão de variação de tamanho das linhas, basta passar a prop `rowType`. Ele habilitará um dropdown com
+opções de tamanho entre as linhas `Compact | Default | Expansive`
+
+<Interactive>
+  <Table rowTypes>
+    <TableHeader>
+      <TableRow>
+        <TableHeaderCell>Nº Pokedex</TableHeaderCell>
+        <TableHeaderCell>Nome</TableHeaderCell>
+        <TableHeaderCell>Tipo</TableHeaderCell>
+        <TableHeaderCell>Região</TableHeaderCell>
+        <TableHeaderCell>Geração</TableHeaderCell>
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      <TableRow>
+        <TableCell>001</TableCell>
+        <TableCell>Bulbasauro</TableCell>
+        <TableCell>Grama</TableCell>
+        <TableCell>Kanto</TableCell>
+        <TableCell>I</TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</Interactive>
+
+....
+
+**Last Update:** _Luis "Dudu" Nunes, dev-front - 29/12/2020_

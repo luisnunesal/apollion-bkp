@@ -1,0 +1,75 @@
+---
+id: themes-create
+title: createTheme
+---
+
+import { Flex } from "@captalys-platform/core";
+import { CreateThemeExample } from "../src/examples/Themes";
+
+## Objetivo
+
+Função utilizada para criar um tema customizado para utilizar no ApollionProvider. O retorno dessa função é do tipo `Theme`.
+
+## Exemplo
+
+### Cor
+
+No exemplo a seguir é apresentado um botão do tipo `warning` de cor verde definido com a utilização do `createTheme`.
+
+<Flex mb="xl">
+  <CreateThemeExample />
+</Flex>
+
+```jsx
+import { ApollionProvider, Button, createTheme } from "@captalys-platform/core";
+
+const theme = createTheme({
+  colors: {
+    // contrast Colors
+    baseDark: "#26292E",
+    baseLight: "#FCFCFC",
+
+    // deep Colors
+    deepDark: "#000",
+    deepLight: "#FFF",
+
+    // brand Colors
+    main: "#003750",
+    opposite: "#003750",
+    complementary: "#F6BA20",
+
+    // action Colors
+    information: "#3399FF",
+    success: "#2CB567",
+    danger: "#E12712",
+    warning: "green",
+
+    // main Colors
+    primary: "#32AFDC",
+    secondary: "#2D81AA",
+    tertiary: "#2CE571",
+  },
+});
+
+<ApollionProvider theme={theme}>
+  <Button text="Enviar" color="warning" />
+</ApollionProvider>;
+```
+
+É possível criar o código de cores de maneira fácil e rápido através [deste tópico da documentação](./themes-colors.mdx).
+
+### API doc
+
+| Propriedade | Tipo                 | Padrão | Opcional | Descrição                                                  |
+| ----------- | -------------------- | ------ | -------- | ---------------------------------------------------------- |
+| inputs      | ThemeInputsInterface |        | Não      | Definição do tema que será aplicado nos componentes filhos |
+
+#### ThemeInputsInterface
+
+| Parâmetro   | Tipo                            | padrão | Opcional |
+| ----------- | ------------------------------- | ------ | -------- |
+| breakpoints | BreakpointDefault               |        | Sim      |
+| spacing     | CreateSpacingArguments          |        | Sim      |
+| colors      | `Partial<InputColorsInterface>` |        | Sim      |
+| font        | `Partial<FontThemeInterface>`   |        | Sim      |
+| border      | `Partial<BorderThemeInterface>` |        | Sim      |

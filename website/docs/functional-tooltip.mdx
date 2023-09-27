@@ -1,0 +1,107 @@
+---
+id: functional-tooltip
+title: Tooltip
+---
+
+import { Flex, Button, Icon } from "@captalys-platform/core";
+
+import {
+  Tooltip,
+  TooltipControlled,
+} from "../src/examples/Components/Elements/Tooltip";
+
+import { Interactive, text, select } from "../src/components/Interactive";
+
+export const positions = [
+  "top",
+  "top-start",
+  "top-end",
+  "bottom-end",
+  "bottom-end",
+  "bottom-end",
+  "left",
+  "right",
+];
+
+Dicas exibem texto informativo quando os usuários passam o mouse, focalizam ou tocam em um elemento.
+
+### Posições
+
+Você pode posicionar o `Tooltip` em até 8 lugares.
+
+<Interactive>
+  <Flex p="large" justifyContent="center" alignItems="center">
+    <Tooltip
+      visible
+      onDismiss={() => {}}
+      content="Olá eu sou o Goku"
+      position={select("Position", "top", positions)}
+    >
+      <Button
+        size="small"
+        text="Hover me"
+        icon={<Icon name="thumbsUp" />}
+        iconPosition="right"
+      />
+    </Tooltip>
+  </Flex>
+</Interactive>
+
+### Interagindo com o `Tooltip`
+
+Usando `interactive` é possivel selecionar o conteudo `Tooltip`
+
+<Flex mb="xl">
+  <Tooltip interactive content="Você pode me selecionar">
+    <Button size="small" text="Olá novamente" />
+  </Tooltip>
+</Flex>
+
+```jsx
+<Tooltip interactive content="Você pode me selecionar">
+  <Button size="small" text="Olá novamente" />
+</Tooltip>
+```
+
+### Tooltip `Controlled`
+
+`visible` e `onDismiss` controlam se o `Tooltip` deve ser exibido.
+
+<Flex mb="xl">
+  <TooltipControlled />
+</Flex>
+
+```jsx
+import { useToggle, Button, Tooltip } from '@captalys-platform/core'
+
+const { active, enabe, disable, toggle } = useToggle(true)
+
+<Tooltip
+  visible={active}
+  onDismiss={disable}
+  position="right"
+  content="Estou sempre visivel"
+>
+  <Button
+    onClick={toggle}
+    size="small"
+    text="Prosseguir"
+    icon={<Icon name="arrowRight" />}
+    iconPosition="right"
+  />
+</Tooltip>
+```
+
+:::caution
+`onDismiss` deve ser fornecido sempre que `visible` for utilizado
+:::
+
+### Tooltip API
+
+| Propriedade | Tipo                                   | Padrão | Descrição                                       |
+| ----------- | -------------------------------------- | ------ | ----------------------------------------------- |
+| content     | `ReactNode`                            |        |                                                 |
+| position    | `top` \| `bottom` \| `left` \| `right` | top    | Posição to `Tooltip` em volta do elemento alvo  |
+| noArrow     | boolean                                | false  | Se a seta deve ser exibida                      |
+| visible     | boolean                                |        | Controla se o `Tooltip` deve ser exibido        |
+| onDismiss   | () => `void`                           |        | Função chamado quando clickar fora do `Tooltip` |

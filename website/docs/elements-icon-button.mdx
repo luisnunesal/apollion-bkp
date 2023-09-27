@@ -1,0 +1,117 @@
+---
+id: elements-icon-button
+title: IconButton
+---
+
+import { Icon, IconButton, Flex, CogIcon } from "@captalys-platform/core";
+import {
+  Interactive,
+  boolean,
+  text,
+  select,
+} from "../src/components/Interactive";
+
+import Link from "@docusaurus/Link";
+
+Botões de ícones são comumente encontrados em barras de aplicativos e barras de ferramentas.
+
+## Quando usar
+
+Ícones são também adequados para botões de alternância que permitem uma escolha única para ser selecionado ou desmarcado, como adicionar ou remover uma estrela para um item.
+
+# Cores
+
+<Flex flexDirection="row" alignItems="center" gap="xs" mb="xl">
+  <IconButton icon={<Icon name="thumbsUp" />} color="primary" />
+  <IconButton icon={<Icon name="thumbsUp" />} color="secondary" />
+  <IconButton icon={<Icon name="thumbsUp" />} color="tertiary" />
+  <IconButton icon={<Icon name="thumbsUp" />} color="success" />
+  <IconButton icon={<Icon name="thumbsUp" />} color="warning" />
+  <IconButton icon={<Icon name="thumbsUp" />} color="danger" />
+</Flex>
+
+```jsx
+<IconButton icon={<Icon name="thumbsUp" />} color="primary" />
+<IconButton icon={<Icon name="thumbsUp" />} color="secondary" />
+<IconButton icon={<Icon name="thumbsUp" />} color="tertiary" />
+<IconButton icon={<Icon name="thumbsUp" />} color="success" />
+<IconButton icon={<Icon name="thumbsUp" />} color="warning" />
+<IconButton icon={<Icon name="thumbsUp" />} color="danger" />
+```
+
+## Variantes
+
+<Flex flexDirection="row" alignItems="center" gap="xs" mb="xl">
+  <IconButton icon={<Icon name="thumbsUp" />} variant="contained" />
+  <IconButton
+    icon={<Icon name="thumbsUp" />}
+    color="secondary"
+    variant="outlined"
+  />
+  <IconButton icon={<Icon name="thumbsUp" />} variant="linked" />
+</Flex>
+
+```jsx
+<IconButton icon={<Icon name="thumbsUp" />} variant="contained" />
+<IconButton icon={<Icon name="thumbsUp" />} color="secondary" variant="outlined" />
+<IconButton icon={<Icon name="thumbsUp" />} variant="linked" />
+```
+
+## Tamanhos
+
+<Flex flexDirection="row" alignItems="center" gap="xs" mb="xl">
+  <IconButton icon={<Icon name="cog" />} color="secondary" size="extraSmall" />
+  <IconButton icon={<Icon name="cog" />} color="secondary" size="small" />
+  <IconButton icon={<Icon name="cog" />} color="secondary" size="medium" />
+  <IconButton icon={<Icon name="cog" />} color="secondary" size="large" />
+</Flex>
+
+```jsx
+  <IconButton icon={<Icon name="cog" />} color="secondary" size="extraSmall" />
+  <IconButton icon={<Icon name="cog" />} color="secondary" size="small" />
+  <IconButton icon={<Icon name="cog" />} color="secondary" size="medium" />
+  <IconButton icon={<Icon name="cog" />} color="secondary" size="large" />
+```
+
+## Demo Interativa
+
+<Interactive>
+  <IconButton
+    color={select("Color", "primary", [
+      "primary",
+      "secondary",
+      "tertiary",
+      "success",
+      "warning",
+      "danger",
+    ])}
+    variant={select("Variant", "contained", [
+      "contained",
+      "outlined",
+      "linked",
+    ])}
+    size={select("Size", "default", [
+      "default",
+      "extraSmall",
+      "small",
+      "large",
+    ])}
+    disabled={boolean("Disabled", false)}
+    isLoading={boolean("isLoading", false)}
+    icon={<Icon name="cog" />}
+  />
+</Interactive>
+
+## IconButton API
+
+| Propriedade | Tipo                                                                         | Padrão      | Descrição |
+| ----------- | ---------------------------------------------------------------------------- | ----------- | --------- |
+| color       | 'primary' \| 'secondary' \| 'tertiary' \| 'success' \| 'warning' \| 'danger' | 'primary'   |           |
+| variant     | 'contained' \| 'outlined' \| 'linked'                                        | 'contained' |           |
+| size        | 'default' \| 'extraSmall' \| 'small' \| 'large'                              | 'default'   |           |
+| disabled    | boolean                                                                      | false       |           |
+| icon        | icon                                                                         | undefined   |           |
+| isLoading   | boolean                                                                      | false       |           |
+| area        | string                                                                       | undefined   |           |
+| justifySelf | string                                                                       | undefined   |           |
+| alignSelf   | string                                                                       | undefined   |           |

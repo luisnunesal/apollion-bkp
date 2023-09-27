@@ -1,0 +1,56 @@
+---
+id: form-radio
+title: Radio
+---
+
+import { Flex, Radio } from "@captalys-platform/core";
+import {
+  Interactive,
+  text,
+  select,
+  boolean,
+} from "../src/components/Interactive";
+
+## Definição
+
+Radio buttons geralmente estão presentes em radio groups (uma coleção de radio buttons descrevendo um conjunto de opções relacionadas).
+Apenas o radio button em um grupo pode ser selecionado por vez. **Este Radio Button foi feito puramente com ícones SVG.**
+
+## Como Usar
+
+O `<Radio />` define um componente radio button.
+
+## Demo
+
+<Flex gap="xs">
+  <Radio
+    label="Radio com multiplas linhas não trava o template, e você é livre para escrever o que conseguir imaginar. :)"
+    id="radio1"
+    name="radio"
+    value="1"
+  />
+  <Radio label="Opção 2" id="radio2" name="radio" value="2" />
+  <Interactive>
+    <Radio
+      name="radio"
+      id="radio3"
+      value="1"
+      label={text("Label Text", "Radio Label")}
+      variant={select("Variant", "default", ["default", "success", "error"])}
+      disabled={boolean("Disabled", false)}
+      onChange={(e) => console.log("changed", e)}
+    />
+  </Interactive>
+</Flex>
+
+## Radio API
+
+| Propriedade | Tipo                                       | Padrão    | Descrição                                                                                                             |
+| ----------- | ------------------------------------------ | --------- | --------------------------------------------------------------------------------------------------------------------- |
+| variant     | string ['default' \| 'success' \| 'error'] | 'default' | A propriedade `variant` descreve os diferentes tipos de estados.                                                      |
+| disabled    | boolean                                    | false     | A propriedade `disabled` muda o input para um estado inutilizável e não possível de clicar.                           |
+| checked     | boolean                                    | false     | Quando presente, especifica que um componente `<Radio>` deve vir pré-selecionado (checkado) quando a pagina carregar. |
+
+....
+
+**Last Update:** _Rodolfo Vieira, dev-front - 29/01/2021_

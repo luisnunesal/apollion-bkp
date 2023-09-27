@@ -1,0 +1,3 @@
+##### :{emojiName}: {categoryLabel}
+
+{categoryLogs}

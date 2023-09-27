@@ -1,0 +1,42 @@
+{
+  "name": "@captalys-platform/root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "postinstall": "yarn bootstrap",
+    "start": "yarn bootstrap && lerna run start --scope={@captalys-platform/core,@captalys-platform/website} --parallel",
+    "build": "lerna run build --scope=@captalys-platform/website --scope=@captalys-platform/core --stream ",
+    "lint": "lerna run lint",
+    "audit-dependencies": "lerna run audit-dependencies",
+    "clear:all": "rimraf packages/**/node_modules/ node_modules website/node_modules website/build packages/**/lib",
+    "release": "lerna run release --scope=@captalys-platform/core",
+    "validate": "lerna run validate",
+    "format": "lerna run format",
+    "test": "lerna run test",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "lerna": "3.22.1",
+    "lint-staged": "10.0.8",
+    "rimraf": "3.0.2",
+    "husky": "^6.0.0"
+  },
+  "resolutions": {
+    "prettier": ">= 2.0.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "website"
+    ],
+    "nohoist": [
+      "**/html-minifier-terser",
+      "**/html-minifier-terser/*",
+      "**/file-loader",
+      "**/file-loader/*"
+    ]
+  },
+  "dependencies": {
+    "@captalys-platform/changelog-generator": "^1.0.0"
+  }
+}

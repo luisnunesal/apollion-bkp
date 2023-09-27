@@ -1,0 +1,109 @@
+---
+id: elements-svg
+title: Svg
+---
+
+import { Svg, Flex, CaptalysLogoProps } from "@captalys-platform/core";
+
+Desenvolvido para facilitar a manipulação e animação de vetores na sua aplicação. O objetivo aplicar o mesmo padrão do uso do `SVG` em todo o projeto.
+
+O componente precisa das propriedades abaixo para renderizar:
+
+```json
+{
+  viewBox: "0 0 366.31 165.66",
+  width: 200, // opcional
+  height: 150, // opcional
+  fill: "#sua_cor_default", // opcional
+  paths: [
+    {
+      d: "M323.41 163.16 38.42 ...",
+      fill: "#sua_cor_customizada",
+    },
+    {
+      d: "M323.41 91.75 318.42 ...",
+    },
+    {
+      d: "M15.8,119.37a4.42,4. ...",
+    },
+  ],
+};
+```
+
+`viewBox`: Mantém a proporção do desenho. Não importa o tamanho definido, sempre preserva a proporção.
+
+`width` e `height`: São opcionais e tem mais utilidade usando SSR.
+
+`fill`: Define a cor padrão dos paths. Se nada for definido ele usa o padrão do `theme`.
+
+`paths`: Aceita um `Array` de paths. Com isso é possível compor uma imagem.
+
+## Aplicações práticas
+
+### Usando o `size`.
+
+Renderiza uma imagem quadrada (`ratio` 1:1).
+
+<Flex flexDirection="row" justifyContent="center">
+  <Svg {...CaptalysLogoProps} size={300} />
+</Flex>
+
+```jsx
+import { Svg, CaptalysLogoProps } from "@captalys-platform/core";
+
+const Example = () => {
+  return <Svg {...CaptalysLogoProps} size={300} />;
+};
+```
+
+> Caso o `size` esteja nas propriedades, `dimensions` será ignorado.
+
+### Usando o `dimensions`.
+
+Usamos a largura (`width`) como base para o dimensionamento. Com isso conseguimos definir a proporção (`ratio`) para altura.
+
+<Flex flexDirection="row" justifyContent="center" my="small">
+  <Svg {...CaptalysLogoProps} dimensions={{ width: 300, ratio: 16 / 9 }} />
+</Flex>
+
+```jsx
+import { Svg, CaptalysLogoProps } from "@captalys-platform/core";
+
+const Example = () => {
+  return (
+    <Svg {...CaptalysLogoProps} dimensions={{ width: 300, ratio: 16 / 9 }} />
+  );
+};
+```
+
+### Especificando largura e altura.
+
+Ainda aplicando o `dimensions`, podemos passar uma `string` para definir as dimensões também.
+
+<Flex flexDirection="row" justifyContent="center" my="small">
+  <Svg {...CaptalysLogoProps} dimensions={{ width: "300px", height: "80px" }} />
+</Flex>
+
+```jsx
+import { Svg, CaptalysLogoProps } from "@captalys-platform/core";
+
+const Example = () => {
+  return (
+    <Svg
+      {...CaptalysLogoProps}
+      dimensions={{ width: "300px", height: "80px" }}
+    />
+  );
+};
+```
+
+## SVG API
+
+| Propriedade | Tipo                                                                   | Padrão        | Descrição                                                               |
+| ----------- | ---------------------------------------------------------------------- | ------------- | ----------------------------------------------------------------------- |
+| error       | string \| Record<string, unknown>                                      |
+| fillAll     | String                                                                 | `neutral.180` |
+| paths       | Path[]                                                                 | []            | Conjuntos de `paths` a serem renderizados dentro do SVG                 |
+| size        | string                                                                 | number        | Usando esse propriedade a imagem automaticamente tem a proporção de 1:1 |
+| title       | string                                                                 |               |                                                                         |
+| dimensions  | { width: string \| number, height?: string \| number, ratio?: number } |               | Com isso é possível configurar a proporção da imagem                    |

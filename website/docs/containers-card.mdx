@@ -1,0 +1,171 @@
+---
+id: containers-card
+title: Card
+---
+
+import {
+  Card,
+  Typography,
+  Flex,
+  Link,
+  Button,
+  Icon,
+  IconButton,
+  Image,
+  BaseText,
+} from "@captalys-platform/core";
+import { Interactive } from "../src/components/Interactive";
+
+Um Card é um recipiente de conteúdo flexível e extensível. Ele inclui opções para cabeçalhos e rodapés, uma grande variedade de conteúdo, cores contextuais de fundo.
+
+### Card com Mídia
+
+O Card pode ter uma foto para ilustrar o conteudo, e além disso é possível mover os conteudos dentro dele na ordem que preferir através da prop `area`.
+
+<Flex mb="xl">
+  <Card
+    width={300}
+    title="Um titulo aqui"
+    actionComponent={<Button fullWidth text="Aceitar" variant="contained" />}
+    media={
+      <Image
+        cover
+        src="https://tecnoblog.net/wp-content/uploads/2019/07/pokemon-go-001-700x355.jpg"
+      />
+    }
+  >
+    <Flex flexDirection="row" alignItems="center" mb="small" gap={4}>
+      <Icon name="emojiStar" color="warning" />
+      <Icon name="emojiStar" color="warning" />
+      <Icon name="emojiStar" color="warning" />
+    </Flex>
+    <Typography fontSize="xs">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel metus
+      sit amet diam placerat finibus in non lacus.
+    </Typography>
+  </Card>
+</Flex>
+
+```jsx
+<Card
+  width={300}
+  title="Um titulo aqui"
+  actionComponent={<Button fullWidth text="Aceitar" variant="contained" />}
+  media={
+    <Image
+      cover
+      src="https://tecnoblog.net/wp-content/uploads/2019/07/pokemon-go-001-700x355.jpg"
+    />
+  }
+>
+  <Flex flexDirection="row" alignItems="center" mb="small" gap={4}>
+    <Icon name="emojiStar" color="warning" />
+    <Icon name="emojiStar" color="warning" />
+    <Icon name="emojiStar" color="warning" />
+  </Flex>
+  <Typography fontSize="xs">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vel metus
+    sit amet diam placerat finibus in non lacus.
+  </Typography>
+</Card>
+```
+
+### Card sem Mídia
+
+Caso deseje um card sem imagem ele tambem pode ser feito apenas ocultando a prop `image`.
+
+<Flex mb="xl">
+  <Card
+    width={300}
+    title={
+      <Flex flexDirection="row" alignItems="center" gap="small">
+        <Icon name="roundedCheck" />
+        <Typography variant="h5" text="Títutlo sem imagem!" />
+      </Flex>
+    }
+  >
+    <Typography
+      color="primary"
+      variant="p"
+      text="Meu conteudo novo é só um link:"
+    />
+    <Link href="https://www.figma.com/">Acesse o Figma! :)</Link>
+  </Card>
+</Flex>
+
+```jsx
+<Card
+  width={300}
+  title={
+    <Flex flexDirection="row" alignItems="center" gap="small">
+      <Icon name="roundedCheck" />
+      <Typography variant="h5" text="Títutlo sem imagem!" />
+    </Flex>
+  }
+>
+  <Typography
+    color="primary"
+    variant="p"
+    text="Meu conteudo novo é só um link:"
+  />
+  <Link href="https://www.figma.com/">Acesse o Figma! :)</Link>
+</Card>
+```
+
+#### Ações
+
+Apenas passe a prop `actionComponent` com qualquer componente.
+
+<Flex mb="xl">
+  <Card
+    width={300}
+    media={
+      <Image
+        cover
+        src="https://tecnoblog.net/wp-content/uploads/2019/07/pokemon-go-001-700x355.jpg"
+      />
+    }
+    actionComponent={
+      <Flex flexDirection="row" alignItems="center" justifyContent="between">
+        <Button size="small" color="danger" text="Deletar" variant="outlined" />
+        <Button size="small" text="Confirmar" variant="contained" />
+      </Flex>
+    }
+  >
+    <Typography variant="p">Uhuul Botões de ação</Typography>
+  </Card>
+</Flex>
+
+```jsx
+<Card
+  width={300}
+  media={
+    <Image
+      cover
+      src="https://tecnoblog.net/wp-content/uploads/2019/07/pokemon-go-001-700x355.jpg"
+    />
+  }
+  actionComponent={
+    <Flex flexDirection="row" alignItems="center" justifyContent="between">
+      <Button size="small" color="danger" text="Deletar" variant="outlined" />
+      <Button size="small" text="Confirmar" variant="contained" />
+    </Flex>
+  }
+>
+  <Typography variant="p">Uhuul Botões de ação</Typography>
+</Card>
+```
+
+## Card API
+
+| Propriedade     | Tipo                | Padrão    | Descrição                                                                       |
+| --------------- | ------------------- | --------- | ------------------------------------------------------------------------------- |
+| title           | string \| ReactNode | undefined | É o titulo principal do card. Permite passar componentes como icones e avatares |
+| description     | string \| ReactNode | undefined | É o subtitulo do card. Permite passar outro component alem do texto.            |
+| children        | ReactNode           | undefined | É o conteudo principal do card. Permite passar todo tipo de componente.         |
+| media           | string              | undefined | Pode ser qualquer componente, preferencialmente Imagem, video.                  |
+| actionComponent | ReactNode           | undefined | Passa-se os botões e funções como o usuario preferir                            |
+
+....
+
+**Last Update:** _Luis "Dudu" Nunes, dev-front - 16/10/2020_

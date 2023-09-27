@@ -1,0 +1,8 @@
+{
+  "packageName": "scripts",
+  "category": "feature",
+  "title": "Adiciona a variável SERVICE e IS_PROD_MODE para que outros projetos possam utilizar",
+  "author": "Samuel Monteiro",
+  "version": "0.5.0-dev",
+  "issue": 509
+}

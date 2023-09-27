@@ -1,0 +1,56 @@
+---
+id: skeleton-composed
+title: Compor um Skeleton
+---
+
+import { Skeleton, Circle, Rect, Flex } from "@captalys-platform/core";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+## Quando usar
+
+O Skeleton é usado para indicar que a tela está carregando e não carregar gradualmente o conteúdo (o conteúdo real deve substituir os objetos do sleleton imediatemente quando o dado estiver disponível).
+
+Deve ser utilizado ao invés do _Spinners_ quando o componente tem uma forma estruturada de mostrar os dados. Aparenta carrega mais rápido se comparado com uma tela em branco ou até um _Spinner_.
+
+## Padrões de geometria disponíveis
+
+Recomendamos fortemete usar apenas componentes do _Apollion_ SVG quando compor o Skeleton. Apesar de também poder utilizar elementos svg convencionais.
+
+## Exemplo
+
+<BrowserOnly>
+  {() => (
+    <Flex flexDirection="row" alignItems="center" gap="xs">
+      <Skeleton width={300} height={100}>
+        <Circle cx={50} cy={50} r={30} />
+        <Rect x={100} y={35} width={200} height={13} />
+        <Rect x={100} y={55} width={200} height={13} />
+      </Skeleton>
+    </Flex>
+  )}
+</BrowserOnly>
+
+```jsx
+import React from "react";
+import { Skeleton, Circle, Rect } from "@captalys-platform/core";
+
+export function SkeletonExample() {
+  return (
+    <Skeleton width={300} height={100}>
+      <Circle cx={50} cy={50} r={30} />
+      <Rect x={100} y={35} width={200} height={13} />
+      <Rect x={100} y={55} width={200} height={13} />
+    </Skeleton>
+  );
+}
+```
+
+## Skeleton API
+
+| Propriedade     | Tipo                                                                         | Padrão | Descrição |
+| --------------- | ---------------------------------------------------------------------------- | ------ | --------- |
+| children        | ReactChild                                                                   |        |           |
+| backgroundColor | 'primary' \| 'secondary' \| 'tertiary' \| 'success' \| 'warning' \| 'danger' | 'n10'  |           |
+| foregroundColor | 'primary' \| 'secondary' \| 'tertiary' \| 'success' \| 'warning' \| 'danger' | 'n30'  |           |
+| width           | 'number' \| 'string'                                                         |        |           |
+| height          | 'number' \| 'string'                                                         |        |           |

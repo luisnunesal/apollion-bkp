@@ -1,0 +1,98 @@
+---
+id: form-field-wrapper
+title: Field Wrapper
+---
+
+import { Field as FieldComponent, Input, Flex } from "@captalys-platform/core";
+import {
+  Interactive,
+  boolean,
+  text,
+  select,
+} from "../src/components/Interactive";
+
+import { FieldFormExample } from "../src/examples/Components/Form/Field";
+
+export const Field = (props) => {
+  return <FieldComponent component={Input} {...props} />;
+};
+
+Fornece uma maneira fácil de renderizar um campo de entrada que com rótulo e mostre mensagens de erro.
+
+### Rotulo e Mensagens
+
+<Interactive>
+  <Field
+    label={text("Label", "Um Rotulo")}
+    optionalText={text(
+      "optionalText",
+      "Obrigatorio - exibido quando o campo de entrada for Obrigatorio"
+    )}
+    hintText={text("hintText", "Mensagem de feedback generica :)")}
+    hintErrorText={text("hintErrorText", "Compareço quando algo da errado xD")}
+    hintSuccessText={text(
+      "hintSuccessText",
+      "Compareço quando algo da certo :)"
+    )}
+    errors={boolean("errors", false)}
+    success={boolean("success", false)}
+    readOnly={boolean("readOnly", false)}
+    inputProps={{
+      required: true,
+    }}
+  />
+</Interactive>
+
+### Field no `Form`
+
+`Field` deve ser passado como objeto no `Form`
+
+> Mensagens retornadas pela validação do campo são transformados em `hintErrorText`
+
+<Flex mb="xl">
+  <FieldFormExample />
+</Flex>
+
+```jsx
+<Form
+  handleSubmit={console.log}
+  fields={{
+    file: {
+      label: "Envie suas fotos (PNG)",
+      optionalText: "Obrigatorio - Não envie nudes",
+      component: UploadCard,
+      validation: Yup.mixed().test(
+        "hasFile",
+        "Pelo menos um arquivo deve ser enviado",
+        (value) => Array.isArray(value)
+      ),
+      inputProps: {
+        required: true,
+        compact: true,
+        text: "upload",
+        accept: ".png",
+      },
+    },
+  }}
+/>
+```
+
+### Field API
+
+| Propriedade      | Tipo            | Padrão           | Descrição                                                                     |
+| ---------------- | --------------- | ---------------- | ----------------------------------------------------------------------------- |
+| component        | ReactNode       |                  | Um Campo de entrada (input, select, checkbox)                                 |
+| name             | string          |                  | String que será passada para o campo de entrada como o prop **name** e **id** |
+| value?           | any             |                  | O valor do campo de entrada.                                                  |
+| label?           | string          |                  | O Rotulo do campo de entrada.                                                 |
+| optionalText?    | string          |                  | Texto usado para indicar um campo obrigatorio.                                |
+| hintText?        | string          |                  | Mensagem de feedback                                                          |
+| hintErrorText?   | string          |                  | Mensagem de feedback de erro.                                                 |
+| hintSuccessText? | string          |                  | Mensagem de feedback de sucesso.                                              |
+| hideLabel        | boolean         | false            | Caso seja `true` o rotulo não sera exibido.                                   |
+| readOny          | boolean         | false            | Caso seja `true` o rotulo com `readOnlyText` sera exibido.                    |
+| readOnyText      | string          | 'apenas leitura' |                                                                               |
+| errors           | boolean         | false            |                                                                               |
+| success          | boolean         | false            |                                                                               |
+| inputProps?      | InputInterface  |                  | Propriedades adicionais que devem ser passadas para o campo de entreda        |
+| handleChange?    | (event) => void |                  | Propriedade fornecida pelo `Form`                                             |

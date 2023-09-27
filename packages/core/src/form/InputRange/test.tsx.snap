@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Default Input Range valid props Snapshot should match default 1`] = `
+<div
+  class="sc-AxirZ hGDxvN"
+>
+  <div
+    class="sc-AxirZ VZfRX"
+    height="100%"
+    width="100%"
+  >
+    <div
+      class="sc-fznJRM lgfvyv"
+    >
+      <span
+        class="sc-AxmLO NrfFd"
+        color="primary"
+      >
+        50
+      </span>
+    </div>
+    <div
+      class="sc-AxirZ sc-fzoLag izmZQM"
+      flexDirection="row"
+      width="100%"
+    >
+      <input
+        class="sc-fzoyAV fFyzSZ sc-fzoXzr bgOjVx"
+        max="100"
+        min="0"
+        step="25"
+        type="range"
+        value="50"
+      />
+    </div>
+  </div>
+</div>
+`;

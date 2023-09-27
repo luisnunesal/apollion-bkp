@@ -1,0 +1,50 @@
+---
+id: functional-popover
+title: Popover
+---
+
+import { Flex } from "@captalys-platform/core";
+import { PopoverExample } from "../src/examples/Components/Elements/Popover";
+
+`Popover` é semelhante ao `Tooltip`, mas podendo conter muito mais conteúdo.
+
+**Obs**: `Popover` possui todas as props do `Tooltip`
+
+### Exemplo
+
+<Flex mb="xl" flexDirection="row" gap="large" justifyContent="center">
+  <PopoverExample />
+</Flex>
+
+```jsx
+<Popover
+  title="Popover example"
+  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis."
+  icon={<Icon name="upload" />}
+>
+  <IconButton icon={<Icon name="playCircle" />} />
+</Popover>
+
+<Popover
+  inverted
+  title="Popover example"
+  description="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis."
+  icon={<Icon name="upload" />}
+>
+  <IconButton icon={<Icon name="emojiAngry" />} />
+</Popover>
+```
+
+## Popover API
+
+| Propriedade | Tipo                                   | Padrão | Descrição                                       |
+| ----------- | -------------------------------------- | ------ | ----------------------------------------------- |
+| content     | `ReactNode`                            |        |                                                 |
+| position    | `top` \| `bottom` \| `left` \| `right` | top    | Posição to `Tooltip` em volta do elemento alvo  |
+| noArrow     | boolean                                | false  | Se a seta deve ser exibida                      |
+| visible     | boolean                                |        | Controla se o `Tooltip` deve ser exibido        |
+| onDismiss   | () => `void`                           |        | Função chamado quando clickar fora do `Tooltip` |
+| icon        | `ReactNode`                            |        | Ícone                                           |
+| title       | string                                 |        | Titulo                                          |
+| description | string                                 |        | Descrição                                       |
+| inverted    | boolean                                |        | Se as cores devem do tipo `light`               |

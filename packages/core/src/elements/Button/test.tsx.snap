@@ -1,0 +1,2121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Snapshot should match color="danger" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #E12712;
+  color: #FFFFFF;
+  border-color: #E12712;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #B41F0E;
+  color: #FFFFFF;
+  border-color: #B41F0E;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #B41F0E;
+  color: #FFFFFF;
+  border-color: #F3A9A0;
+  box-shadow: 0 0 0 1px #F3A9A0;
+}
+
+.c0:focus:hover {
+  border-color: #B41F0E;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #F3A9A0;
+  color: #8F2012;
+  border-color: #FCE9E7;
+  box-shadow: 0 0 0 1px #FCE9E7;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="danger"
+  flexDirection="row"
+>
+  <span>
+    Color - Danger
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match color="primary" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Primary Button
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match color="primary" 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Color - Primary
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match color="secondary" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #2D81AA;
+  color: #FFFFFF;
+  border-color: #2D81AA;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #246788;
+  color: #FFFFFF;
+  border-color: #246788;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #246788;
+  color: #FFFFFF;
+  border-color: #ABCDDD;
+  box-shadow: 0 0 0 1px #ABCDDD;
+}
+
+.c0:focus:hover {
+  border-color: #246788;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ABCDDD;
+  color: #2D5A70;
+  border-color: #EAF2F7;
+  box-shadow: 0 0 0 1px #EAF2F7;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="secondary"
+  flexDirection="row"
+>
+  <span>
+    Color - Secondary
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match color="success" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #2CB567;
+  color: #FFFFFF;
+  border-color: #2CB567;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #239152;
+  color: #FFFFFF;
+  border-color: #239152;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #239152;
+  color: #FFFFFF;
+  border-color: #ABE1C2;
+  box-shadow: 0 0 0 1px #ABE1C2;
+}
+
+.c0:focus:hover {
+  border-color: #239152;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ABE1C2;
+  color: #2A754A;
+  border-color: #EAF8F0;
+  box-shadow: 0 0 0 1px #EAF8F0;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="success"
+  flexDirection="row"
+>
+  <span>
+    Color - Success
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match color="tertiary" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #2CE571;
+  color: #0C612C;
+  border-color: #2CE571;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #23B75A;
+  color: #FFFFFF;
+  border-color: #23B75A;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #23B75A;
+  color: #FFFFFF;
+  border-color: #ABF5C6;
+  box-shadow: 0 0 0 1px #ABF5C6;
+}
+
+.c0:focus:hover {
+  border-color: #23B75A;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ABF5C6;
+  color: #129541;
+  border-color: #EAFCF1;
+  box-shadow: 0 0 0 1px #EAFCF1;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="tertiary"
+  flexDirection="row"
+>
+  <span>
+    Color - Tertiary
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match color="warning" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #FFBB00;
+  color: #664B00;
+  border-color: #FFBB00;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #CC9600;
+  color: #FFFFFF;
+  border-color: #CC9600;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #CC9600;
+  color: #FFFFFF;
+  border-color: #FFE499;
+  box-shadow: 0 0 0 1px #FFE499;
+}
+
+.c0:focus:hover {
+  border-color: #CC9600;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #FFE499;
+  color: #A37800;
+  border-color: #FFF8E6;
+  box-shadow: 0 0 0 1px #FFF8E6;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="warning"
+  flexDirection="row"
+>
+  <span>
+    Color - Warning
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match content + icon 1`] = `
+.c2 {
+  width: auto;
+  height: auto;
+}
+
+.c3 {
+  fill: #003750;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .c1 {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .c1 > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <svg
+    class="c1 c2"
+    height="30"
+    viewBox="0 0 512 512"
+    width="30"
+  >
+    <g
+      class="c3"
+    >
+      <path
+        class=""
+        d="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"
+      />
+    </g>
+  </svg>
+  <span>
+    Content + Icon
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match size="default" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Size - Default
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match size="default" 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Size - Default
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match size="extraSmall" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 0.75rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.25rem 1rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 0.75rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Size - Extra Small
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match size="large" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1.44rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 1rem 2.75rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1.44rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Size - Large
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match size="small" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Size - Small
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match variant="contained" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Variant - Contained
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match variant="contained" 2`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: #32AFDC;
+  color: #FFFFFF;
+  border-color: #32AFDC;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+  box-shadow: none;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background: #ADDFF1;
+  color: #186E8D;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  border-color: #F1F5F6;
+  color: #C9D8DD;
+  box-shadow: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Variant - Contained
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match variant="linked" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: transparent;
+  color: #32AFDC;
+  border-color: transparent;
+  border-radius: 0;
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  color: #288CB0;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0:focus {
+  color: #32AFDC;
+  box-shadow: 0px 0px 1px 1px #E4EBEE;
+}
+
+.c0:active {
+  color: #ADDFF1;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.c0:disabled {
+  color: #4C6E77;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Variant - Linked
+  </span>
+</button>
+`;
+
+exports[`Button Snapshot should match variant="outlined" 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  outline: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  font-weight: 700;
+  font-weight: bold;
+  line-height: 1;
+  font-size: 1rem;
+  -webkit-letter-spacing: normal;
+  -moz-letter-spacing: normal;
+  -ms-letter-spacing: normal;
+  letter-spacing: normal;
+  padding: 0.75rem 1.75rem;
+  border-radius: 2rem;
+  background: transparent;
+  color: #32AFDC;
+  border-color: #32AFDC;
+}
+
+.c0 > * {
+  margin: 0 0.25rem !important;
+}
+
+.c0 > *:first-child {
+  margin-left: 0 !important;
+}
+
+.c0 > *:last-child {
+  margin-right: 0 !important;
+}
+
+.c0:hover {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #288CB0;
+}
+
+.c0:focus {
+  background: #288CB0;
+  color: #FFFFFF;
+  border-color: #ADDFF1;
+  box-shadow: 0 0 0 1px #ADDFF1;
+}
+
+.c0:focus:hover {
+  border-color: #288CB0;
+}
+
+.c0:active,
+.c0:active:hover,
+.c0:active:focus {
+  background-color: transparent;
+  color: #144658;
+  border-color: #EBF7FC;
+  box-shadow: 0 0 0 1px #EBF7FC;
+}
+
+.c0:disabled {
+  background: #F1F5F6;
+  color: #4C6E77;
+  border-color: #F1F5F6;
+  cursor: default;
+}
+
+.c0 .sc-AxiKw {
+  width: 1em;
+  height: 1em;
+}
+
+.c0 .sc-AxiKw > g {
+  fill: currentColor;
+}
+
+.c0 .sc-AxjAm {
+  width: 1em;
+  height: 1em;
+}
+
+@media (max-width:989.95px) {
+  .c0 {
+    font-size: 1rem;
+    -webkit-letter-spacing: normal;
+    -moz-letter-spacing: normal;
+    -ms-letter-spacing: normal;
+    letter-spacing: normal;
+  }
+}
+
+<button
+  class="sc-AxirZ c0"
+  color="primary"
+  flexDirection="row"
+>
+  <span>
+    Variant - Outlined
+  </span>
+</button>
+`;

@@ -1,0 +1,121 @@
+---
+id: data-display-list
+title: List
+---
+
+import {
+  SimpleListExample,
+  DefaultListExample,
+  IconListExample,
+  MultipleListExample,
+  LinkListExample,
+  ListExampleSelectCallback,
+} from "../src/examples/Components/Elements/List";
+
+Fornece uma maneira simples, mas dinâmica de declarar uma lista, que pode ser de seleção única ou múltipla.
+
+### Lista Simples
+
+Esta é a lista mais simples que você pode criar, apenas passando uma _Array_ de objetos contendo o título.
+
+<DefaultListExample />
+
+```jsx
+<List
+  content={[{ title: "Item 1" }, { title: "Item 2" }, { title: "Item 3" }]}
+/>
+```
+
+### Lista com icones
+
+Você tem a opção de exibir um ícone de verificação no lado esquerdo, sempre que selecionar um item da lista.
+
+<IconListExample />
+
+```jsx
+<List
+  showCheckIcon
+  content={[{ title: "Item 1" }, { title: "Item 2" }, { title: "Item 3" }]}
+/>
+```
+
+### Seleção Multipla
+
+A prop `multiple` permitirá que você selecione múltiplos campos.
+
+<MultipleListExample />
+
+```jsx
+<List
+  multiple
+  showCheckIcon
+  content={[{ title: "Item 1" }, { title: "Item 2" }, { title: "Item 3" }]}
+/>
+```
+
+### Link List
+
+Esta é uma lista de Link, que você cria passando a propriedade `to` para cada objeto no array.
+
+<LinkListExample />
+
+```jsx
+<List
+  content={[
+    { title: "Button", to: "/docs/elements-button" },
+    { title: "Text", to: "/docs/elements-text" },
+    { title: "Form", to: "/docs/form-form" },
+  ]}
+/>
+```
+
+### Callback de Seleção
+
+Um _callback_ pode se passado para obter o conteúdo da lista ao selecionar um item.
+
+<ListExampleSelectCallback />
+
+```jsx
+function ExampleSelectCallback() {
+  const { showNotification } = useNotification();
+
+  return (
+    <List
+      onSelectItems={(items) => {
+        const selected = items.filter((i) => i.isSelected);
+
+        selected.length &&
+          showNotification({
+            autoClose: 10,
+            variant: "warning",
+            message: selected.map((s) => s.title).join(", "),
+          });
+      }}
+      content={[
+        { title: "Tenet" },
+        { title: "Interstellar" },
+        { title: "inception" },
+      ]}
+    />
+  );
+}
+```
+
+## List API
+
+| Propriedade   | Tipo                                                   | Padrão | Descrição                                                                                                                              |
+| ------------- | ------------------------------------------------------ | ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
+| content       | [ListType](/docs/data-display-list#listtype)           | null   | É uma array de objetos onde cada objeto é um item que será renderizado na lista                                                        |
+| multiple      | boolean                                                | false  | Define se o usuário pode selecionar mais de um item da lista.                                                                          |
+| showCheckIcon | boolean                                                | false  | Indica se deve adicionar um ícone de verificação no lado esquerdo dos itens selecionados. Funciona em ambos, seleção múltipla ou única |
+| onSelectItems | ([ListType](/docs/data-display-list#listtype)) => void | false  | Função para chamar quando um item da lista é clicado                                                                                   |
+
+### ListType
+
+`ListType` é um _array_ de `ListItemType`, definido acima.
+
+| Propriedade | Tipo                  | Padrão    | Descrição                                                                                                                       |
+| ----------- | --------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| title       | string / ReactElement | undefined | Defina o que será renderizado em cada item da lista. Pode ser um texto simples, ou mesmo um botão ou qualquer outro componente. |
+| isSelected  | boolean               | false     | Define se o item da lista é selecionado.                                                                                        |
+| to?         | string                | undefined | Se passado, o item renderizado será um Link.                                                                                    |

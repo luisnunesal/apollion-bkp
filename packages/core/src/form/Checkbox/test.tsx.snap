@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Should match the layout 1`] = `
+.c0 {
+  position: relative;
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  color: #4F7F90;
+  font-size: 0.9rem;
+}
+
+.c6 {
+  width: auto;
+  height: auto;
+}
+
+.c9 {
+  fill: #ffffff;
+}
+
+.c3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.c5 {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #143D66;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.c8 {
+  opacity: 0;
+  -webkit-transform: translate(2.5px,1.8px);
+  -ms-transform: translate(2.5px,1.8px);
+  transform: translate(2.5px,1.8px);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0rem 2rem 1rem 0rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #143D66;
+}
+
+.c1 > .c4 {
+  border: 1px solid #143D66;
+}
+
+.c1:hover > .c4,
+.c1:focus > .c4 {
+  border-color: #297ACC;
+}
+
+.c1 > .c2:checked ~ .c4 {
+  border-color: #3399FF;
+  background-color: #3399FF;
+}
+
+.c1 > .c2:checked ~ .c4 > .c7 {
+  opacity: 1;
+}
+
+<label
+  class="c0 c1"
+  for="Input"
+>
+  <input
+    class="c2 c3"
+    name="Input"
+    type="checkbox"
+  />
+  <div
+    class="c4 c5"
+  >
+    <svg
+      class="c6 c7 c8"
+      height="22"
+      viewBox="0 0 22 22"
+      width="22"
+    >
+      <g
+        class="c9"
+        fill="#ffffff"
+      >
+        <path
+          class=""
+          d="M5.1,12.876a.739.739,0,0,0,1.055,0L14.8,4.741a.654.654,0,0,0,.205-.5.654.654,0,0,0-.205-.5l-1.084-1a.67.67,0,0,0-.513-.221.766.766,0,0,0-.542.221L5.628,9.389,2.345,6.29A.766.766,0,0,0,1.8,6.069a.67.67,0,0,0-.513.221l-1.084,1a.707.707,0,0,0,0,1Z"
+        />
+      </g>
+    </svg>
+  </div>
+  <span
+    style="line-height: 1.5;"
+  >
+    Input
+  </span>
+</label>
+`;
+
+exports[`Checkbox Should render with disabled={true} 1`] = `
+.c0 {
+  position: relative;
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  color: #4F7F90;
+  font-size: 0.9rem;
+}
+
+.c6 {
+  width: auto;
+  height: auto;
+}
+
+.c9 {
+  fill: #ffffff;
+}
+
+.c3 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.c5 {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #143D66;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.c8 {
+  opacity: 0;
+  -webkit-transform: translate(2.5px,1.8px);
+  -ms-transform: translate(2.5px,1.8px);
+  transform: translate(2.5px,1.8px);
+}
+
+.c1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0rem 2rem 1rem 0rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #143D66;
+  color: #BBCED4;
+}
+
+.c1 > .c4 {
+  border: 1px solid #143D66;
+}
+
+.c1:hover > .c4,
+.c1:focus > .c4 {
+  border-color: #297ACC;
+}
+
+.c1 > .c2:checked ~ .c4 {
+  border-color: #3399FF;
+  background-color: #3399FF;
+}
+
+.c1 > .c2:disabled {
+  cursor: default;
+}
+
+.c1 > .c2:disabled ~ .c4 {
+  background-color: #F1F5F6;
+  border-color: #F1F5F6;
+}
+
+.c1 > .c2:disabled ~ .c4 > .c7 > * {
+  fill: #BBCED4;
+}
+
+.c1 > .c2:checked ~ .c4 > .c7 {
+  opacity: 1;
+}
+
+<label
+  class="c0 c1"
+  disabled=""
+  for="Input"
+>
+  <input
+    class="c2 c3"
+    disabled=""
+    name="Input"
+    type="checkbox"
+  />
+  <div
+    class="c4 c5"
+  >
+    <svg
+      class="c6 c7 c8"
+      height="22"
+      viewBox="0 0 22 22"
+      width="22"
+    >
+      <g
+        class="c9"
+        fill="#ffffff"
+      >
+        <path
+          class=""
+          d="M5.1,12.876a.739.739,0,0,0,1.055,0L14.8,4.741a.654.654,0,0,0,.205-.5.654.654,0,0,0-.205-.5l-1.084-1a.67.67,0,0,0-.513-.221.766.766,0,0,0-.542.221L5.628,9.389,2.345,6.29A.766.766,0,0,0,1.8,6.069a.67.67,0,0,0-.513.221l-1.084,1a.707.707,0,0,0,0,1Z"
+        />
+      </g>
+    </svg>
+  </div>
+  <span
+    style="line-height: 1.5;"
+  >
+    Input
+  </span>
+</label>
+`;

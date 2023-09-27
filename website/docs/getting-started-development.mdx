@@ -1,0 +1,84 @@
+---
+id: getting-started-development
+title: Desenvolvimento
+---
+
+Você pode iniciar um novo projeto usando nosso `CLI` com o comando a seguir:
+
+```bash
+npx @captalys-platform/scripts create [PROJECT-NAME]
+cd PROJECT-NAME
+yarn start
+```
+
+Você não precisa instalar ou configurar ferramentas como `webpack` e `babel`,
+ambos já vem configurados para que você possa focar no codigo. Além disso o template
+inclui `eslint`, `prettier`, `jest`, `commitlint` e `Typescript`. O template tem a seguinte estrutura:
+
+```bash
+my-app
+├── node_modules
+├── package.json
+├── tsconfig.json
+├── jest.config.js
+├── commitlint.config.js
+├── .eslintrc.js
+├── .editorconfig.js
+├── .gitignore
+├── .prettierrc.js
+├── public
+│   ├── index.html
+└── src
+    ├── index.tsx
+    ├── App.tsx
+    ├── App.test.tsx
+```
+
+## Projetos existentes
+
+Para projetos já existentes é possivel utilizar nosso `CLI` da seguinte forma
+
+```bash
+# raiz do projeto
+yarn add --dev @captalys-platform/scripts
+```
+
+agora devemos atualizar o campo `scripts` do `package.json`
+
+```json
+{
+  "scripts": {
+    "dev": "scripts dev",
+    "build": "scripts build",
+    "test": "scripts test"
+  }
+}
+```
+
+unico requisito para funcionar é utilizar a estrutura de pasta a seguir:
+
+```bash
+project-name
+├── package.json
+├── public
+│   ├── index.html
+└── src
+    ├── index.tsx
+```
+
+## Comandos
+
+os comandos abaixo estão disponiveis em nosso template
+
+### `yarn start` ou `npm start`
+
+Roda o projeto em modo de desenvolvimento, com **reload** automatico.
+Abra [**http://localhost:3000/**](http://localhost:3000/) para visualizar no navegador.
+
+### `yarn build` ou `npm build`
+
+Cria o projeto para ser distribuido para produção, na pasta `build`.
+
+### `yarn test` ou `npm test`
+
+Roda os testes com `jest --watch` nos arquivos alterados a partir do ultimo commit.

@@ -1,0 +1,64 @@
+---
+id: form-input-range
+title: InputRange
+---
+
+import { Flex, InputRange } from "@captalys-platform/core";
+import { Interactive, text, boolean } from "../src/components/Interactive";
+
+O elemento `InputRange` permite ao usuário especificar um valor numérico que
+não deve ser menor que um determinado valor e não mais que outro valor fornecido.
+
+### Exemplos
+
+<Flex maxWidth={440} mx="small">
+  <InputRange min={0} max={200} />
+</Flex>
+
+```jsx
+  <InputRange min={0} max={200} value={50} onChange={(value: number) => void} />
+```
+
+### Marks
+
+<Flex maxWidth={440} mx="small">
+  <InputRange mark markLabel step={20} getLabelValue={(n) => `Step ${n}`} />
+</Flex>
+
+```jsx
+  <InputRange mark markLabel step={10} getLabelValue={(n) => `Step ${n}` />
+```
+
+### Gradient
+
+<Flex maxWidth={440} mx="small">
+  <InputRange
+    gradient
+    mark
+    markLabel
+    step={20}
+    getLabelValue={(n) => `${n} ℃`}
+  />
+</Flex>
+
+### Disabled
+
+<Flex maxWidth={440} mx="small">
+  <InputRange disabled />
+</Flex>
+
+### InputRange API
+
+| Propriedade   | Tipo                  | Padrão | Descrição |
+| ------------- | --------------------- | ------ | --------- |
+| max           | string                | 100    |           |
+| min           | string                | 0      |           |
+| value         | string                | 50     |           |
+| step          | string                | 1      |           |
+| mark          | boolean               | false  |           |
+| markLabel     | boolean               | false  |           |
+| getLabelValue | (n: number) => string |        |           |
+| gradient      | boolean               |        |           |
+| disabled      | boolean               |        |           |
+| value         | boolean               |        |           |
+| onChange      | (n: number) => void   |        |           |

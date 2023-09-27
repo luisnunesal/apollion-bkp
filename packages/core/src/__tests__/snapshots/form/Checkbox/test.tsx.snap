@@ -1,0 +1,322 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Should match the layout 1`] = `
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-right: 0.75rem;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #3399FF;
+  box-shadow: inset 0px 0px 4px 0px rgba(128,128,128,0.3);
+}
+
+.c8 {
+  position: relative;
+}
+
+.c5 {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  font-size: 0.75rem;
+  display: inline-block;
+  line-height: 0;
+}
+
+.c9 svg {
+  stroke: currentColor;
+  fill: currentColor;
+  stroke-width: 0;
+}
+
+.c9 svg g {
+  fill: currentColor;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.c6 {
+  width: 20px;
+  height: 20px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0rem 2rem 1rem 0rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #143D66;
+}
+
+.c0 > .c1 ~ .c3 > .c7 {
+  color: #FFFFFF;
+  opacity: 0;
+}
+
+.c0 > .c1:checked ~ .c3 > .c7 {
+  opacity: 1;
+}
+
+.c0 > .c3 {
+  border: 1px solid #143D66;
+}
+
+.c0:hover > .c3,
+.c0:focus > .c3 {
+  border-color: #297ACC;
+  box-shadow: 0px 0px 0px rgba(19,66,83,0.15);
+}
+
+.c0 > .c1:checked ~ .c3 {
+  border-color: #3399FF;
+  background-color: #3399FF;
+  box-shadow: 0px 0px 0px rgba(19,66,83,0.15);
+}
+
+.c10 {
+  visibility: inherit;
+  margin: 0;
+}
+
+<label
+  class="c0"
+>
+  <input
+    class="c1 c2"
+    hidden=""
+    name="Input"
+    type="checkbox"
+  />
+  <div
+    class="c3 c4 c5 c6"
+  >
+    <div
+      class="c7 c8 c9"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 512 512"
+        width="1em"
+      >
+        <path
+          d="M173.9 439.4L7.5 273c-10-10-10-26.2 0-36.2l36.2-36.2c10-10 26.2-10 36.2 0l112.1 112 240.1-240c10-10 26.2-10 36.2 0l36.2 36.2c10 10 10 26.2 0 36.2L210.1 439.4c-10 10-26.2 10-36.2 0z"
+        />
+      </svg>
+    </div>
+  </div>
+  <span
+    class="c10"
+  >
+    Input
+  </span>
+</label>
+`;
+
+exports[`Checkbox Should render with disabled={true} 1`] = `
+.c4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-right: 0.75rem;
+  border-style: solid;
+  border-radius: 4px;
+  border-width: 1px;
+  border-color: #3399FF;
+  box-shadow: inset 0px 0px 4px 0px rgba(128,128,128,0.3);
+}
+
+.c8 {
+  position: relative;
+}
+
+.c5 {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c9 {
+  font-size: 0.75rem;
+  display: inline-block;
+  line-height: 0;
+}
+
+.c9 svg {
+  stroke: currentColor;
+  fill: currentColor;
+  stroke-width: 0;
+}
+
+.c9 svg g {
+  fill: currentColor;
+}
+
+.c2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.c6 {
+  width: 20px;
+  height: 20px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+
+.c0 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  margin: 0rem 2rem 1rem 0rem;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  color: #143D66;
+  color: #BBCED4;
+}
+
+.c0 > .c1 ~ .c3 > .c7 {
+  color: #FFFFFF;
+  opacity: 0;
+}
+
+.c0 > .c1:checked ~ .c3 > .c7 {
+  opacity: 1;
+}
+
+.c0 > .c3 {
+  border: 1px solid #143D66;
+}
+
+.c0:hover > .c3,
+.c0:focus > .c3 {
+  border-color: #297ACC;
+  box-shadow: 0px 0px 0px rgba(19,66,83,0.15);
+}
+
+.c0 > .c1:checked ~ .c3 {
+  border-color: #3399FF;
+  background-color: #3399FF;
+  box-shadow: 0px 0px 0px rgba(19,66,83,0.15);
+}
+
+.c0 > .c1:disabled {
+  cursor: default;
+}
+
+.c0 > .c1:disabled ~ .c3 {
+  background-color: #F1F5F6;
+  border-color: #F1F5F6;
+  box-shadow: none;
+}
+
+.c0 > .c1:disabled ~ .c3 > .c7 {
+  color: #BBCED4;
+}
+
+.c10 {
+  visibility: inherit;
+  margin: 0;
+}
+
+<label
+  class="c0"
+  disabled=""
+>
+  <input
+    class="c1 c2"
+    disabled=""
+    hidden=""
+    name="Input"
+    type="checkbox"
+  />
+  <div
+    class="c3 c4 c5 c6"
+  >
+    <div
+      class="c7 c8 c9"
+    >
+      <svg
+        fill="currentColor"
+        height="1em"
+        stroke="currentColor"
+        stroke-width="0"
+        viewBox="0 0 512 512"
+        width="1em"
+      >
+        <path
+          d="M173.9 439.4L7.5 273c-10-10-10-26.2 0-36.2l36.2-36.2c10-10 26.2-10 36.2 0l112.1 112 240.1-240c10-10 26.2-10 36.2 0l36.2 36.2c10 10 10 26.2 0 36.2L210.1 439.4c-10 10-26.2 10-36.2 0z"
+        />
+      </svg>
+    </div>
+  </div>
+  <span
+    class="c10"
+  >
+    Input
+  </span>
+</label>
+`;

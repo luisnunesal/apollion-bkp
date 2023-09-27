@@ -1,0 +1,326 @@
+---
+id: data-display-datatable
+title: DataTable
+---
+
+import { List, Flex, RowColor, Button, Icon } from "@captalys-platform/core";
+
+import {
+  DataTable,
+  simpleColumns,
+  customCellColumns,
+  footerExampleColumns,
+  SelectExample,
+} from "../src/examples/Components/DataDisplay/DataTable";
+import { ExampleCustomizer } from "../src/components/ExampleCustomizer";
+import {
+  data,
+  sampleData,
+} from "../src/examples/Components/DataDisplay/DataTable/data";
+
+import { Interactive, boolean } from "../src/components/Interactive";
+
+DataTable (Tabela de Dados) é projetado para situações de uso que focam na manipulação de uma grande quantidade de dados tabulares.
+
+### DataTable Simples
+
+Este é o caso de uso mais simples, as colunas podem ser ordernadas e redimensionadas clickando no cabeçalho.
+
+<Flex mb="xl">
+  <DataTable title="Exemplo Titulo" data={data} columns={simpleColumns} />
+</Flex>
+
+As props **data** e **columns** são obrigatorios e **devem** utilizar `useMemo`.
+
+```jsx
+import { DataTable, Column} from "@captalys-platform/core";
+import { sampleData } from "../anywhere";
+
+const data = React.useMemo(() => sampleData.map(d => ({firstName, status, age})),
+  [sampleData]
+);
+
+const columns: Column<typeof data[number]>[] = React.useMemo(
+  () => [
+    {
+      Header: "Nome", // Header da Coluna
+      accessor: "firstName", // accessor deve ser um "key" presente no "data"
+    },
+    {
+      Header: "Status",
+      accessor: "status",
+    },
+    {
+      Header: "Idade",
+      accessor: "age",
+    },
+  ],
+  []
+);
+
+<DataTable title="Exemplo Titulo" data={data} columns={columns} />;
+```
+
+### Alinhamento da coluna
+
+Para customizar o alinhamento da coluna é necessario passar `align` na props `columns` .Todas as colunas são alinhadas a esquerda por padrão.
+
+```js {8,13,18}
+import { DataTable, CellAlign, Column } from "@captalys-platform/core";
+
+const columns: Column<typeof data[number]>[] = React.useMemo(
+  () => [
+    {
+      Header: 'Visitas',
+      accessor: 'visits',
+      align: CellAlign.right,
+    },
+    {
+      Header: 'Progresso',
+      accessor: 'progress',
+      align: CellAlign.right,
+    },
+    {
+      Header: 'Idade',
+      accessor: 'age',
+      align: CellAlign.right,
+    },
+  ],
+  []
+);
+
+<DataTable columns={columns} {...otherProps} />;
+```
+
+### Customizando conteúdo das Celulas
+
+<Flex mb="xl">
+  <DataTable
+    title="Exemplo Titulo"
+    height={200}
+    data={data}
+    columns={customCellColumns}
+  />
+</Flex>
+
+```jsx {6-10,15-20,25-29}
+import { CellAlign, Column } from "@captalys-platform/core";
+
+const columns: Column<typeof data[number]>[] = React.useMemo(
+  () => [
+    {
+      Header: (
+        <Tooltip content="№ de visitas">
+          Visitas
+        </Tooltip>
+      ),
+      accessor: 'visits',
+      align: CellAlign.right,
+    },
+    {
+      Header: (
+        <Tooltip content="Progresso">
+          Progresso
+        </Tooltip>
+      ),
+      Cell: ({ value }) => `${value}%`,
+      accessor: 'progress',
+      align: CellAlign.right,
+    },
+    {
+      Header: (
+        <Tooltip content="Idade">
+          Idade
+        </Tooltip>
+      ),
+      accessor: 'age',
+      align: CellAlign.right,
+    },
+  ],
+  []
+)
+```
+
+### Alterando cor das Linhas
+
+<Flex mb="xl">
+  <DataTable
+    title="Exemplo Titulo"
+    height={200}
+    data={data}
+    columns={simpleColumns}
+    setRowColor={(row) => {
+      if (row.original.age >= 20) {
+        return RowColor.alert;
+      }
+      if (row.original.visits <= 10) {
+        return RowColor.success;
+      }
+      return RowColor.error
+    }}
+/>
+
+</Flex>
+
+```jsx {7-15}
+import { DataTable, RowColor } from "@captalys-platform/core";
+
+<DataTable
+  data={data}
+  columns={columns}
+  height={200}
+  setRowColor={(row) => {
+    if (row.original.age >= 20) {
+      return RowColor.alert;
+    }
+    if (row.original.visits <= 10) {
+      return RowColor.success;
+    }
+    return RowColor.error;
+  }}
+/>;
+```
+
+### Adicionando Footer
+
+<Flex mb="xl">
+  <DataTable
+    title="Exemplo Titulo"
+    data={data}
+    height={200}
+    columns={footerExampleColumns}
+    hasFooter
+  />
+</Flex>
+
+```jsx {10-17}
+import { CellAlign, Column } from "@captalys-platform/core";
+
+const columns: Column<typeof data[number]>[] = React.useMemo(
+  () => [
+    ...otherColumns,
+    {
+      Header: "Idade",
+      accessor: "age",
+      align: CellAlign.right,
+      Footer: (table) => {
+        const total = React.useMemo(
+          () => info.rows.reduce((sum, row) => row.values.age + sum, 0),
+          [info.rows]
+        );
+
+        return <>Total: {total}</>;
+      },
+    },
+  ],
+  []
+);
+
+<DataTable data={data} columns={columns} height={200} />;
+```
+
+### Linha Selecionavel
+
+<Flex mb="xl">
+  <SelectExample />
+</Flex>
+
+```jsx {1,7-9}
+const [selected, setValues] = React.useState<any[]>([]);
+
+<DataTableComponent
+  data={data}
+  columns={columns}
+  height={200}
+  selectableColumn="Usuário"
+  selectableColumnWidth={100}
+  onRowSelect={setValues}
+/>
+
+<pre>
+  <code>
+    {JSON.stringify(
+      {
+        selected,
+      },
+      null,
+      2
+    )}
+  </code>
+</pre>
+```
+
+### Adicionando `Button` de "Carregar Mais"
+
+<ExampleCustomizer
+  code={`
+<DataTable
+  data={sampleData}
+  height={250}
+  columns={simpleColumns}
+  lastRowComponent={
+    <Flex flexDirection="row" justifyContent="center" alignItems="center">
+      <Button text="Carregar mais" variant="outlined" size="small" />
+    </Flex>
+  }
+/>
+  `}
+  example={
+
+<DataTable
+  data={sampleData}
+  height={250}
+  columns={simpleColumns}
+  lastRowComponent={
+    <Flex flexDirection="row" justifyContent="center" alignItems="center">
+      <Button text="Carregar mais" variant="outlined" size="small" />
+    </Flex>
+  }
+/>
+} />
+
+### Tabela sem dados
+
+<ExampleCustomizer
+  code={`
+<DataTable
+  data={[]}
+  height={250}
+  columns={simpleColumns}
+  emptyIcon={<Icon name="search" size="large" color="primary.dark" />}
+  emptyTitle="Sem Conteudo"
+  emptyDescription="Nenhum resultado foi encontrado"
+/>
+  `}
+  example={
+
+<DataTable
+  data={[]}
+  height={250}
+  columns={simpleColumns}
+  emptyIcon={<Icon name="search" size="large" color="primary.dark" />}
+  emptyTitle="Sem Conteudo"
+  emptyDescription="Nenhum resultado foi encontrado"
+/>
+} />
+
+### DataTable API
+
+| Propriedade           | Tipo                                | Padrão | Descrição                                                  |
+| --------------------- | ----------------------------------- | ------ | ---------------------------------------------------------- |
+| data                  | Item[]                              |        |                                                            |
+| columns               | Column<Item\>[]                     |        |                                                            |
+| spacing               | number                              |        | Altura adicional da linha.                                 |
+| height                | number                              |        | Altura do corpo da tabela.                                 |
+| selectableColumn      | boolean \| string                   |        | Coluna de seleção de linha.                                |
+| selectableColumnWidth | number                              |        | **width** da coluna de seleção.                            |
+| onRowSelect           | (data: Item[]) => void              |        | Callback retorna lista de linhas selecinadas.              |
+| onRowClick            | (data: Item) => void                |        | Callback retorna a linha pressionada.                      |
+| setRowColor           | (row: Row) => RowColor \| undefined |        |                                                            |
+| inputSearchComponent  | ReactNode                           | null   | Input de busca.                                            |
+| headerLeftComponent   | ReactNode                           | null   | Componentes a esquerda no header da tabela.                |
+| headerRightComponent  | ReactNode                           | null   | Componentes a direita no header da tabela.                 |
+| lastRowComponent      | ReactNode                           | null   | Componentes a ser posicionado como ultima linha da tabela. |
+| emptyIcon             | ReactNode                           | null   | Icone a ser exibido quando não houver dados.               |
+| emptyTitle            | string                              | null   | Titulo a ser exibido quando não houver dados.              |
+| emptyDescription      | string                              | null   | Descrição a ser exibido quando não houver dados.           |

@@ -1,0 +1,22 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+.mdxCodeBlock {
+	position: relative;
+	margin-bottom: var(--ifm-leading);
+	font-size: var(--ifm-code-font-size);
+}
+
+.mdxCodeBlock pre {
+	font-size: 0.85rem;
+}
+
+.CodeBlockLive textarea,
+.CodeBlockLive pre {
+	font-family: "Muli", sans-serif !important;
+	border-radius: var(--ifm-pre-border-radius);
+}

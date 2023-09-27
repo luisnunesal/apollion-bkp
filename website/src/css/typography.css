@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,900;1,300;1,400;1,600;1,900&display=swap");
+
+:root {
+	font-family: "Mulish", sans-serif;
+	--ifm-font-family-base: "Mulish", sans-serif;
+	--ifm-font-family-monospace: "Lucida Console", Monaco, monospace;
+}

@@ -1,0 +1,172 @@
+---
+id: elements-button
+title: Button
+---
+
+import {
+  Button,
+  Icon,
+  Flex,
+  createBreakpoints,
+  useMediaQuery,
+} from "@captalys-platform/core";
+
+import {
+  Interactive,
+  boolean,
+  select,
+  text,
+} from "../src/components/Interactive";
+
+import Link from "@docusaurus/Link";
+
+Botões permitem que os usuários tomem ações e decisões com um simples toque.
+
+## Quando usar
+
+Botões comunicam ações que os usuários podem realizar. Eles são normalmente colocados em toda a interface do usuário, em lugares como:
+
+- Caixa de diálogo
+- Janelas modais
+- Formulários
+- Cartões
+- Barras de ferramentas
+
+## Cores
+
+<Flex gap="xs" mb="xl">
+  <Flex flexDirection="row" gap="xs">
+    <Button color="primary" text="primary" />
+    <Button color="secondary" text="secondary" />
+    <Button color="tertiary" text="tertiary" />
+  </Flex>
+  <Flex flexDirection="row" gap="xs">
+    <Button color="success" text="success" />
+    <Button color="warning" text="warning" />
+    <Button color="danger" text="danger" />
+  </Flex>
+</Flex>
+
+```jsx
+  <Button color="primary" text="primary" />
+  <Button color="secondary" text="secondary" />
+  <Button color="tertiary" text="tertiary" />
+  <Button color="success" text="success" />
+  <Button color="warning" text="warning" />
+  <Button color="danger" text="danger" />
+```
+
+## Variantes
+
+Existe três variantes de Butões:
+
+- Contidos (Padrão)
+- Delineados
+- Text
+
+<Flex flexDirection="row" alignItems="center" gap="xs" mb="xl">
+  <Button variant="contained" text="Contidos" />
+  <Button color="secondary" variant="outlined" text="Delineados" />
+  <Button variant="linked" text="Texto" />
+</Flex>
+
+```jsx
+<Button variant="contained" text="Contidos" />
+<Button color="secondary" variant="outlined" text="Delineados" />
+<Button variant="linked" text="Texto" />
+```
+
+## Tamanhos
+
+Existe quatro tamanhos possiveis:
+
+- extraSmall
+- small
+- medium (Padrão)
+- large
+
+<Flex flexDirection="row" alignItems="center" gap="xs" mb="xl">
+  <Button size="extraSmall" text="extraSmall" />
+  <Button size="small" text="small" />
+  <Button size="medium" text="default" />
+  <Button size="large" text="large" />
+</Flex>
+
+```jsx
+<Button size="extraSmall" text="extraSmall" />
+<Button size="small" text="small" />
+<Button size="medium" text="default" />
+<Button size="large" text="large" />
+```
+
+## Icones
+
+Às vezes você pode querer ter ícones para determinado botão para melhorar o UX do aplicativo, reconhecemos logotipos mais facilmente do que o texto puro. Confira mais icones <Link to="/docs/elements-icon">aqui</Link>.
+
+<Flex flexDirection="row" alignItems="center" gap="xs" mb="xl">
+  <Button color="warning" icon={<Icon name="trash" />} text="Deletar" />
+  <Button icon={<Icon name="upload" />} text="Enviar" />
+  <Button
+    color="primary"
+    variant="linked"
+    icon={<Icon name="shareAlt" />}
+    text="Compartilhar"
+  />
+</Flex>
+
+```jsx
+<Button icon={<Icon name="trash" />} text="Deletar" color="warning" />
+<Button icon={<Icon name="upload" />} text="Enviar" />
+<Button icon={<Icon name="shareAlt" />} text="Compartilhar" color="primary" variant="linked"  />
+```
+
+## Demo Interativa
+
+<Interactive>
+  <Button
+    text={text("Text", "Hello World")}
+    color={select("Color", "primary", [
+      "primary",
+      "secondary",
+      "tertiary",
+      "success",
+      "warning",
+      "danger",
+    ])}
+    variant={select("Variant", "contained", [
+      "contained",
+      "outlined",
+      "linked",
+    ])}
+    size={select("Size", "default", [
+      "default",
+      "extraSmall",
+      "small",
+      "large",
+    ])}
+    icon={select("Icon", <></>, [
+      { label: "none", value: <></> },
+      { label: "trash", value: <Icon name="trash" /> },
+      { label: "upload", value: <Icon name="upload" /> },
+    ])}
+    disabled={boolean("Disabled", false)}
+    isLoading={boolean("Loading", false)}
+    fullWidth={boolean("Full Width", false)}
+  />
+</Interactive>
+
+## Button API
+
+| Propriedade | Tipo                                                                         | Padrão      | Descrição |
+| ----------- | ---------------------------------------------------------------------------- | ----------- | --------- |
+| text        | string                                                                       | undefined   |           |
+| color       | 'primary' \| 'secondary' \| 'tertiary' \| 'success' \| 'warning' \| 'danger' | 'primary'   |           |
+| variant     | 'contained' \| 'outlined' \| 'linked'                                        | 'contained' |           |
+| size        | 'default' \| 'extraSmall' \| 'small' \| 'large'                              | 'default'   |           |
+| disabled    | boolean                                                                      | false       |           |
+| isLoading   | boolean                                                                      | false       |           |
+| fullWidth   | boolean                                                                      | false       |           |
+| icon        | icon                                                                         | undefined   |           |
+| area        | string                                                                       | undefined   |           |
+| justifySelf | string                                                                       | undefined   |           |
+| alignSelf   | string                                                                       | undefined   |           |

@@ -1,0 +1,97 @@
+---
+id: elements-image
+title: Image
+---
+
+import {
+  Image,
+  Flex,
+  ImageLazy,
+  ApollionProvider,
+} from "@captalys-platform/core";
+
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
+import { ImageLazyExample } from "../src/examples/Components/Elements/Image";
+
+import {
+  Interactive,
+  boolean,
+  text,
+  pill,
+} from "../src/components/Interactive";
+
+O componente `Image` é usado para exibir imagens.
+
+<Flex mb="xl">
+  <Image width={400} height={237} src="http://lorempixel.com/400/237/" />
+</Flex>
+
+```jsx
+import { Image } from "@captalys-platform/core";
+
+const Example = () => {
+  return (
+    <Image width={400} height={237} src="http://lorempixel.com/400/237/" />
+  );
+};
+```
+
+### Image cover
+
+O componenete pode ocupar todo espaço disponivel usando `cover`.
+
+<Flex mb="xl">
+  <Flex height={150} borderRadius="large" overflow="hidden">
+    <Image cover src="http://picsum.photos/500?random=2" />
+  </Flex>
+</Flex>
+
+```jsx
+<Flex height={150} borderRadius="large" overflow="hidden">
+  <Image cover src="http://picsum.photos/500?random=2" />
+</Flex>
+```
+
+### ImageLazy
+
+O componente `ImageLazy` tem a mesma finalidade do componente `Image`, mas carrega a imagem de forma `lazy`.
+A prop `threshold` pode ser utiliza para configurar quando a imagem de ser carregada.
+
+ex: um **threshold** de _0.5_ indica que a imagem sera carregado quando 50% do componente estiver visivel em tela.
+
+<Flex mb="xl">
+  <ImageLazyExample
+    width={400}
+    height={237}
+    threshold={0.5}
+    src="http://picsum.photos/400/237/"
+  />
+</Flex>
+
+```jsx
+import { Image } from "@captalys-platform/core";
+
+const Example = () => {
+  return (
+    <ImageLazy
+      width={400}
+      height={237}
+      threshold={0.5}
+      src="http://picsum.photos/400/237/"
+    />
+  );
+};
+```
+
+### Image API
+
+| Propriedade | Tipo             | Padrão | Descrição                                                                                  |
+| ----------- | ---------------- | ------ | ------------------------------------------------------------------------------------------ |
+| src         | string           |        | a url da imagem                                                                            |
+| width       | number \| string |        | a url da imagem                                                                            |
+| height      | number \| string |        | a url da imagem                                                                            |
+| full        | boolean          |        | se a imagem deve ter **width="100%"**                                                      |
+| cover       | boolean          |        | se a imagem deve cobrir todo o componete pai                                               |
+| fallback    | React.ReactNode  | null   | (_ImageLazy_) o componente a ser exibido quando em **loading**                             |
+| threshold   | number           | 0.5    | (_ImageLazy_) porcentagem do componente visivel em tela, necessaria para carregar a imagem |

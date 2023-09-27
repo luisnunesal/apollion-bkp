@@ -1,0 +1,32 @@
+---
+id: elements-label
+title: Label
+---
+
+import { Label } from "@captalys-platform/core";
+import { Interactive, text, select } from "../src/components/Interactive";
+import DocsLink from "@docusaurus/Link";
+
+O componente Label é um componente de texto.
+
+Para utilizar basta passar as props `text` ou `children`. Também é possivel especificar uma `variant`
+
+<Interactive>
+  <Label
+    text={text("Text", "I'm a label")}
+    variant={select("Variant", "default", [
+      "default",
+      "info",
+      "success",
+      "warning",
+      "danger",
+    ])}
+  />
+</Interactive>
+
+## Label API
+
+| Propriedade | Tipo                                                      | Padrão    | Descrição |
+| ----------- | --------------------------------------------------------- | --------- | --------- |
+| text        | string                                                    | undefined |           |
+| variant     | `default` \| `info` \| `success` \| `warning` \| `danger` | `default` |           |
